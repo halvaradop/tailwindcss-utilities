@@ -1,0 +1,31 @@
+{
+  "name": "tailwindcss-flow",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/tailwindcss-flow.git"
+  },
+  "keywords": [
+    "tailwindcss",
+    "utilities",
+    "productivity",
+    "css",
+    "frontend",
+    "web",
+    "development"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halvaradop/tailwindcss-flow/issues"
+  },
+  "homepage": "https://github.com/halvaradop/tailwindcss-flow#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
+}
