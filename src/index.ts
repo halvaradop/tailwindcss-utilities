@@ -102,6 +102,10 @@ export const creator: PluginCreator = (configApi) => {
         }
     })
     addUtilities(entries)
+    
+    addVariant("scroll", "&::-webkit-scrollbar")
+    addVariant("thumb", "&::-webkit-scrollbar-thumb")
+    addVariant("track", "&::-webkit-scrollbar-track")
 }
 
 export default plugin(creator)
