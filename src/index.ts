@@ -37,6 +37,10 @@ const tags = [
 export const creator: PluginCreator = (configApi) => {
     const { addVariant } = configApi
     tags.forEach(tag => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
+
+    addVariant("scroll", "&::-webkit-scrollbar")
+    addVariant("thumb", "&::-webkit-scrollbar-thumb")
+    addVariant("track", "&::-webkit-scrollbar-track")
 }
 
 export default plugin(creator)
