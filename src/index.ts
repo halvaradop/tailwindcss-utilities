@@ -1,5 +1,8 @@
 import plugin from "tailwindcss/plugin"
 import { PluginCreator } from "tailwindcss/types/config"
+import { EntryCSS, FontFluency } from "./types";
+import { verifySelectorsTheme } from "./utils";
+
 
 const tags = [
     "div",
@@ -35,7 +38,7 @@ const tags = [
 ]
 
 
-const fontSizeUtilities: Record<string, Record<string, string>> = {
+const fontSizeUtilities: Record<string, EntryCSS<FontFluency>> = {
     "xs": {
         fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
         lineHeight: "1.25rem",
@@ -90,8 +93,10 @@ const fontSizeUtilities: Record<string, Record<string, string>> = {
 
 
 export const creator: PluginCreator = (configApi) => {
-    const { addVariant, addUtilities, e } = configApi
-    tags.forEach(tag => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
+    const { addVariant, addUtilities, e, theme } = configApi
+
+    const selectors = verifySelectorsTheme(theme("selectors")).concat(tags)
+    selectors.forEach(tag => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
 
     const entries: Record<string, Record<string, string>> = {}
     Object.keys(fontSizeUtilities).forEach(key => {
