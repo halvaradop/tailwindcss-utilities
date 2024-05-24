@@ -1,13 +1,16 @@
 {
-  "name": "@halvaradop_/tailwindcss-flow",
-  "version": "0.0.2",
-  "description": "",
+  "name": "tailwindcss-flow",
+  "version": "0.0.6",
+  "description": "Is a plugin designed to improve productivity in application development by providing additional utilities.",
   "main": "src/index.ts",
   "types": "src/index.d.ts",
   "scripts": {
     "build:ts": "tsc",
     "build:css": "npx tailwindcss -i src/utilities.css -o dist/tailwindcss.css",
     "build": "tsc && npm run build:css"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
