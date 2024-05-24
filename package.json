@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-flow",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Is a plugin designed to improve productivity in application development by providing additional utilities.",
   "main": "src/index.ts",
   "types": "src/index.d.ts",
