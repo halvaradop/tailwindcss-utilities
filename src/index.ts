@@ -2,6 +2,7 @@ import plugin from "tailwindcss/plugin"
 import { PluginCreator } from "tailwindcss/types/config"
 import { EntryCSS, FontFluency } from "./types";
 import { verifySelectorsTheme } from "./utils";
+import { scrollUtilities } from "./scroll-utilities";
 
 
 const tags = [
@@ -107,10 +108,7 @@ export const creator: PluginCreator = (configApi) => {
         }
     })
     addUtilities(entries)
-    
-    addVariant("scroll", "&::-webkit-scrollbar")
-    addVariant("thumb", "&::-webkit-scrollbar-thumb")
-    addVariant("track", "&::-webkit-scrollbar-track")
+    scrollUtilities(configApi)
 }
 
 export default plugin(creator)
