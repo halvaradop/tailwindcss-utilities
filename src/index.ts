@@ -1,50 +1,17 @@
 import plugin from "tailwindcss/plugin"
 import { PluginCreator } from "tailwindcss/types/config"
-import { verifySelectorsTheme } from "./utils";
 import { scrollUtilities } from "./scroll-utilities";
 import { fluencyUtilities } from "./fluency-utilities";
+import { selectorUtilities } from "./selector-utilities";
 
-
-const tags = [
-    "div",
-    "span",
-    "a",
-    "p",
-    "img",
-    "h1",
-    "h2",
-    "h3",
-    "h4",
-    "h5",
-    "h6",
-    "ul",
-    "ol",
-    "li",
-    "table",
-    "tr",
-    "td",
-    "form",
-    "input",
-    "button",
-    "section",
-    "main",
-    "body",
-    "article",
-    "label",
-    "img",
-    "figure",
-    "picture",
-    "caption",
-    "footer"
-]
-
-
+/**
+ * Entry point of the application. This encapsulates the utilities offered
+ * by the plugin.
+ * 
+ * @param configApi The configuration API object obtained from tailwindcss.config.ts
+ */
 export const creator: PluginCreator = (configApi) => {
-    const { addVariant, theme } = configApi
-
-    const selectors = verifySelectorsTheme(theme("selectors")).concat(tags)
-    selectors.forEach(tag => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
-
+    selectorUtilities(configApi)
     fluencyUtilities(configApi)
     scrollUtilities(configApi)
 }
