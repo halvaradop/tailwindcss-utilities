@@ -18,3 +18,28 @@ export const verifySelectorsTheme = (selectors: string[] = []): string[] => {
     }
     return selectors
 }
+
+
+/**
+ * Removes properties with empty values from an object to clean it up. It verifies if 
+ * the values are:
+ *  - an empty string
+ *  - null
+ *  - undefined
+ *  - an empty array
+ *  - an empty object
+ * 
+ * @param entry An object to clean up by removing empty properties.
+ * @returns The cleaned object.
+ */
+export const removeEmptyProperties = <T extends Record<string, any>>(entry: T) => {
+    for(const key in entry) {
+        const pairValue = entry[key]
+        const isArray = Array.isArray(pairValue)
+        const isObject = pairValue && typeof pairValue === "object" && !isArray
+        if((!pairValue) || pairValue === "" || (isArray && !pairValue.length) || (isObject && !Object.keys(pairValue).length)) {
+            delete entry[key]
+        }
+    }
+    return entry
+};

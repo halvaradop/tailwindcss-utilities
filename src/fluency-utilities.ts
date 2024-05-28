@@ -1,5 +1,6 @@
 import { PluginAPI } from "tailwindcss/types/config";
 import { EntryCSS, FontFluency } from "./types";
+import { removeEmptyProperties } from "./utils";
 
 /**
  * This object contains the values used for font utilities. Each property 
@@ -63,18 +64,37 @@ const fontSizeUtilities: Record<string, EntryCSS<FontFluency>> = {
  * on the viewport size of the device. These utilities support the responsive 
  * utility variants offered by TailwindCSS like :sm, :md, :lg.
  * 
+ * To extend the default utilities, add the new values within the theme property 
+ * in the configuration file under the "fluency" key with the following structure:
+ * 
+ * Partial<{
+ *  fontSize?: string,
+ *  lineHeight?: string,
+ *  letterSpacing?: string
+ * }>
+ * 
  * @param configApi The configuration API object obtained from tailwindcss.config.ts
  */
 export const fluencyUtilities = (configApi: PluginAPI) => {
-    const { addUtilities, e } = configApi
+    const { addUtilities, theme, e } = configApi
 
-    const entries: Record<string, Record<string, string>> = {}
-    Object.keys(fontSizeUtilities).forEach(key => {
-        entries[`.${e(`fluency-${key}`)}`] = {
-            "font-size": fontSizeUtilities[key]["fontSize"],
-            "line-height": fontSizeUtilities[key]["lineHeight"],
-            "letter-spacing": fontSizeUtilities[key]["letterSpacing"]
+    const fluencyTheme = theme("fluency") ?? {}
+    const merge = { ...fontSizeUtilities, ...fluencyTheme }
+
+    const entries = Object.keys(merge).reduce<Record<string, EntryCSS>>((previous, size) => {
+        const hasUpdate = !!fluencyTheme[size]
+        const newValues = fluencyTheme[size]
+
+        return {
+            ...previous,
+            [`.${e(`fluency-${size}`)}`]: {
+                "font-size": (hasUpdate ? newValues["fontSize"] : undefined) ?? fontSizeUtilities[size]["fontSize"],
+                "line-height": (hasUpdate ? newValues["lineHeight"] : undefined) ?? fontSizeUtilities[size]["lineHeight"],
+                "letter-spacing": (hasUpdate ? newValues["letterSpacing"] : undefined) ?? fontSizeUtilities[size]["letterSpacing"]
+            }
         }
-    })
+    }, {})
+
+    Object.keys(entries).forEach(key => removeEmptyProperties(entries[key]))
     addUtilities(entries)
-}
+};
