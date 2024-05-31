@@ -66,8 +66,8 @@ The selectors utility offers a set of selectors that provide improved access to 
 
 #### Usage
 ```html
-<section class=`li:mb-5`>
-    <article class=`my-5`></article>
+<section class="li:mb-5">
+    <article class="my-5"></article>
     <li></li>
 </section>
 ```
@@ -83,8 +83,8 @@ The font size dynamic utility enables modern scale typographic support using the
 #### Usage
 ```html
 <div>
-    <h1 class=`fluency-lg`></h1>
-    <p class=`fluency-sm`></p>
+    <h1 class="fluency-lg"></h1>
+    <p class="fluency-sm"></p>
 </div>
 ```
 
@@ -103,3 +103,19 @@ The scrollbar utility provides variants for customizing the scrollbar of a compo
     <p></p>
 </section>
 ```
+
+## Contribute
+Thank you for considering contributing to our project! Contributions are welcome and help us to continuously improve.
+
+If you're interested in contributing to the project and you find an error or problem, please open an issue in the repository, ensuring to explain with details about the problem. If you have an idea for a new feature or an enhancement, we would like to know about it. Similarly, you can open an issue with the details. And finally, if you want to contribute with code, create a pull request with the details of the changes.
+
+Make sure to follow the following guidelines to create your branch:
+
+- `chore`: daily changes
+- `feat`: introduces a new feature to the codebase
+- `fix`: used to fix an error in the code
+- `refactor`: enhancements in the code or
+- `docs`: changes in the documentation
+
+### Conduct code
+Please be aware that this project has a code of conduct, and we expect all contributors to follow these guidelines with their interactions.
