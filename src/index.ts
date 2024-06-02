@@ -3,6 +3,7 @@ import { PluginCreator } from "tailwindcss/types/config"
 import { scrollUtilities } from "./scroll-utilities";
 import { fluencyUtilities } from "./fluency-utilities";
 import { selectorUtilities } from "./selector-utilities";
+import { pseudoClassesUtilities } from "./pseudo-classes-utilities";
 
 /**
  * Entry point of the application. This encapsulates the utilities offered
@@ -14,6 +15,7 @@ export const creator: PluginCreator = (configApi) => {
     selectorUtilities(configApi)
     fluencyUtilities(configApi)
     scrollUtilities(configApi)
+    pseudoClassesUtilities(configApi)
 }
 
 export default plugin(creator)
