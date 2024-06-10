@@ -4,6 +4,7 @@ import { scrollUtilities } from "./scroll-utilities";
 import { fluencyUtilities } from "./fluency-utilities";
 import { selectorUtilities } from "./selector-utilities";
 import { pseudoClassesUtilities } from "./pseudo-classes-utilities";
+import { minWidthUtilities } from "./min-width-utilities";
 
 /**
  * Entry point of the application. This encapsulates the utilities offered
@@ -18,4 +19,8 @@ export const creator: PluginCreator = (configApi) => {
     pseudoClassesUtilities(configApi)
 }
 
-export default plugin(creator)
+export default plugin(creator, {
+    theme: {
+        minWidth: minWidthUtilities
+    }
+})
