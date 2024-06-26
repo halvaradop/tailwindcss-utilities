@@ -1,13 +1,13 @@
-# @halvaradop/tailwindcss-flow
+# @halvaradop/tailwindcss-utilities
 
-@halvaradop/tailwindcss-flow is a Tailwind CSS plugin designed to enhance productivity in application development by providing additional utilities. These utilities optimize the workflow, making it easier and more efficient for users to access and manipulate data.
+@halvaradop/tailwindcss-utilities is a Tailwind CSS plugin designed to enhance productivity in application development by providing additional utilities. These utilities optimize the workflow, making it easier and more efficient for users to access and manipulate data.
 
 ## Installation
 
 To install the plugin via npm, ensure that Tailwind CSS and its configuration are already installed. If not, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/installation) for instructions.
 
 ```bash
-npm install -D @halvaradop/tailwindcss-flow
+npm install -D @halvaradop/tailwindcss-utilities
 ```
 
 ## Configuration
@@ -16,7 +16,7 @@ To configure the plugin, add it to the plugins array in the Tailwind CSS configu
 ```ts
 // ts
 import type { Config } from "tailwindcss";
-import plugin from "@halvaradop/tailwindcss-flow"
+import plugin from "@halvaradop/tailwindcss-utilities"
 
 const config: Config = {
   content: [],
