@@ -97,12 +97,13 @@ The scrollbar utility provides variants for customizing the scrollbar of a compo
 - `thumb`: for styling the ::-webkit-scrollbar-thumb
 - `track`: for styling the ::-webkit-scrollbar-track
 
-### Usage
+## Usage
 ```html
 <section class="overflow-y-hidden scroll:w-1 thumb:rounded-full thumb:bg-slate-400 track:my-1">
     <p></p>
 </section>
 ```
 
-### Conduct code
-Please be aware that this project has a code of conduct, and we expect all contributors to follow these guidelines with their interactions.
+## Code of Conduct
+
+Please be aware that this project has a code of conduct, and we expect all contributors to follow these guidelines in their interactions. For more information, please read our [Code of Conduct](.github/CODE_OF_CONDUCT.md).
