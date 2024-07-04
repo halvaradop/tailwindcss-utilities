@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - uses: npm ci
-      - uses: npm test
+      - run: npm ci
+      - run: npm test
 
       - name: publish
         uses: JS-DevTools/npm-publish@v3
