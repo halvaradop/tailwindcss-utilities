@@ -3,7 +3,7 @@ const Index = () => {
 
     return (
         <main>
-
+                
         </main>
     )
 }
