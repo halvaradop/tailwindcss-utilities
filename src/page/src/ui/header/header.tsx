@@ -16,9 +16,9 @@ export const Header = () => {
     return (
         <header>
             <nav className="w-11/12 h-20 mx-auto text-white">
-                <div className="w-full h-full flex items-center justify-between">                
+                <div className="w-full h-full flex items-center justify-between relative z-20">                
                     <h2>Utilities</h2>
-                    <Image className="relative z-10" src={menu} alt="menu icon" onClick={handleToggleMenu} />
+                    <Image className="hover:cursor-pointer" src={menu} alt="menu icon" onClick={handleToggleMenu} />
                 </div>
                 <AnimatePresence>
                     { isOpen && <HeaderMenu /> }                    

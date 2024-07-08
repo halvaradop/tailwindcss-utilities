@@ -6,7 +6,7 @@ export const HeaderMenu = () => {
 
     return (
         <motion.aside 
-            className="w-10/12 max-w-md p-10 flex flex-col justify-evenly absolute inset-y-0 right-0 bg-[#161616]"
+            className="w-10/12 max-w-md p-10 flex flex-col justify-evenly absolute inset-y-0 right-0 z-10 bg-[#161616]"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
