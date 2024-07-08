@@ -15,7 +15,7 @@ export const Header = () => {
 
     return (
         <header>
-            <nav className="w-11/12 h-16 mx-auto text-white">
+            <nav className="w-11/12 h-20 mx-auto text-white">
                 <div className="w-full h-full flex items-center justify-between">                
                     <h2>Utilities</h2>
                     <Image className="relative z-10" src={menu} alt="menu icon" onClick={handleToggleMenu} />

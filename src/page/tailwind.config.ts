@@ -21,6 +21,9 @@ const config: Config = {
         orange: {
           DEFAULT: "#F78C6C"
         }
+      },
+      backgroundImage: {
+        background: "url(/assets/background-mobile.svg)"
       }
     },
   },
