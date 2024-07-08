@@ -7,3 +7,5 @@ export interface LayoutProps {
 }
 
 export type ButtonProps<T extends ArgsFunction> = ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<T>
+
+export interface CardUtilityProps extends LayoutProps {}
