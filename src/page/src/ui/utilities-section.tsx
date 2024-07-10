@@ -4,6 +4,7 @@ import phoneMobile from "@/assets/phone-mobile.svg"
 
 export const UtilitiesSection = () => {
 
+
     return (
         <section className="mt-12">
             <h2 className="mb-6 fluency-2xl text-white">Utilities</h2>
@@ -35,11 +36,6 @@ export const UtilitiesSection = () => {
                     <p>
                         Offers tools to style specific HTML elements efficiently
                     </p>
-                    <pre>
-                        <code>
-                            
-                        </code>
-                    </pre>
                 </CardUtility>
             </section>
         </section>
