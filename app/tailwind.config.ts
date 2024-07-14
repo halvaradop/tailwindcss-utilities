@@ -17,6 +17,7 @@ const config: Config = {
           DEFAULT: "#C0C0C0",
           100: "#262626",
           200: "#1B1B1B",
+          300: "#161616"
         },
         orange: {
           DEFAULT: "#F78C6C"
