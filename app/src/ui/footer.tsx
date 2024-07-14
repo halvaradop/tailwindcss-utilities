@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import github from "@/assets/github.svg"
 import moon from "@/assets/moon.svg"
+import npm from "@/assets/npm.svg"
 
 export const Footer = () => {
 
@@ -16,7 +17,12 @@ export const Footer = () => {
                 <figure className="ml-auto flex items-center gap-x-5">
                     <Image src={moon} alt="moon icon" />
                     <span>|</span>
-                    <Image src={github} alt="github icon" />
+                    <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
+                        <Image src={npm} alt="npm icon" />
+                    </Link>
+                    <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank">
+                        <Image src={github} alt="github icon" />
+                    </Link>
                 </figure>
                 <p className="mt-8 col-span-2 text-center">@2024, TailwindCSS Utilities</p>
             </section>
