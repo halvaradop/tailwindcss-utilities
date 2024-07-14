@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps) {
     return (
         <html lang="en">
-            <body className={`${poppins.className} antialiased relative overflow-x-hidden bg-black`}>
+            <body className={`${poppins.className} antialiased relative overflow-x-hidden bg-black scroll-smooth scroll:w-2 track:my-2 thumb:rounded thumb:bg-gray-100 has-[header.open]:scroll:bg-gray-300`}>
                 <Header />
                 {children}
                 <Footer />

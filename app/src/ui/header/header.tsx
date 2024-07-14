@@ -14,7 +14,7 @@ export const Header = () => {
     }
 
     return (
-        <header>
+        <header className={isOpen ? "open" : ""}>
             <nav className="w-11/12 h-20 mx-auto text-white">
                 <div className="w-full h-full flex items-center justify-between relative z-20">                
                     <h2>Utilities</h2>
