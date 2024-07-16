@@ -27,7 +27,7 @@ const config: Config = {
         }
       },
       backgroundImage: {
-        background: "url(/assets/background-mobile.svg)"
+        hero: "url(/assets/hero-mobile.svg)",
       }
     },
   },
