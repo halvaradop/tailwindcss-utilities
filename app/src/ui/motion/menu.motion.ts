@@ -1,8 +1,8 @@
-import { m, Variants } from "framer-motion"
+import { Variants } from "framer-motion"
 
 export const menuVariants: Variants = {
     hidden: {
-        x: "100%"
+        x: "var(--nav-menu)",
     },
     visible: {
         x: 0,
@@ -17,7 +17,7 @@ export const menuVariants: Variants = {
         }
     },
     exit: {
-        x: "100%",
+        x: "var(--nav-menu)",
         transition: {
             type: "spring",
             stiffness: 100,
@@ -30,7 +30,7 @@ export const menuVariants: Variants = {
 
 export const itemVariants: Variants = {
     hidden: {
-        x: 100,
+        x: "var(--nav-li)",
         opacity: 0
     },
     visible: {
