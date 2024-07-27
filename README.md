@@ -8,13 +8,14 @@ To install the plugin via npm, ensure that Tailwind CSS and its configuration ar
 
 ```bash
 npm install -D @halvaradop/tailwindcss-utilities
+npm install --save-dev @halvaradop/tailwindcss-utilities
 ```
 
 ## Configuration
 To configure the plugin, add it to the plugins array in the Tailwind CSS configuration file.
 
 ```ts
-// ts
+// TypeScript
 import type { Config } from "tailwindcss";
 import plugin from "@halvaradop/tailwindcss-utilities"
 
@@ -27,6 +28,19 @@ const config: Config = {
 export default config;
 ```
 
+```js
+// JavaScript
+import plugin from "@halvaradop/tailwindcss-utilities"
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [],
+  theme: {},
+  plugins: [plugin],
+}
+
+```
+
 ## Utilities
 Set of utilites offer by the dependency.
 
@@ -36,32 +50,48 @@ The selectors utility offers a set of selectors that provide improved access to 
 
 
 #### Supported Tags
-- `li`
+
+
+#### Structural Elements
+- `head`
+- `body`
+- `main`
+- `footer`
+- `section`
+- `article`
+- `label`
+- `nav`
 - `div`
-- `span`
-- `a`
+
+#### Text Content
 - `p`
-- `img`
+- `span`
 - `h1` to `h6`
+- `a`
+
+#### List
 - `ul`
 - `ol`
 - `li`
+
+#### Forms
+- `button`
+- `form`
+- `input`
+- `label`
+
+#### Tables
 - `table`
 - `tr`
 - `td`
-- `form`
-- `input`
-- `button`
-- `section`
-- `main`
-- `body`
-- `article`
-- `label`
+
+#### Media
 - `img`
 - `figure`
 - `picture`
 - `caption`
-- `footer`
+- `figcaption`
+
 
 
 #### Usage
