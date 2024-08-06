@@ -1,5 +1,5 @@
 import plugin from "tailwindcss/plugin"
-import { PluginCreator } from "tailwindcss/types/config"
+import { KeyValuePair, PluginCreator, ResolvableTo } from "tailwindcss/types/config"
 import { scrollUtilities } from "./utilities/scroll-utility";
 import { fluencyUtilities } from "./utilities/fluency-utility";
 import { selectorUtilities } from "./utilities/selector-utility";
@@ -21,6 +21,8 @@ export const creator: PluginCreator = (configApi) => {
 
 export default plugin(creator, {
     theme: {
-        minWidth: minWidthUtilities
+        extend: {
+            minWidth: minWidthUtilities
+        }
     }
 })
