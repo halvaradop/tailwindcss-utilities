@@ -89,14 +89,13 @@ export const fluencyUtilities = (configApi: PluginAPI) => {
             ...previous,
             [`.${e(`fluency-${size}`)}`]: {
                 "font-size": (hasUpdate ? newValues["fontSize"] : undefined) ?? fontSizeUtilities[size]["fontSize"],
-                "line-height":
-                    (hasUpdate ? newValues["lineHeight"] : undefined) ?? fontSizeUtilities[size]["lineHeight"],
+                "line-height": (hasUpdate ? newValues["lineHeight"] : undefined) ?? fontSizeUtilities[size]["lineHeight"],
                 "letter-spacing":
                     (hasUpdate ? newValues["letterSpacing"] : undefined) ?? fontSizeUtilities[size]["letterSpacing"],
             },
         }
     }, {})
 
-    Object.keys(entries).forEach((key) => removeEmptyProperties(entries[key]))
+    Object.keys(entries).forEach(key => removeEmptyProperties(entries[key]))
     addUtilities(entries)
 }

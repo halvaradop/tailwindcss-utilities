@@ -10,7 +10,7 @@ import { PluginAPI } from "tailwindcss/types/config"
 export const pseudoClassesUtilities = (configApi: PluginAPI) => {
     const { matchVariant } = configApi
 
-    matchVariant("is", (value) => `&:is(${value})`)
-    matchVariant("not", (value) => `&:not(${value})`)
-    matchVariant("where", (value) => `&:where(${value})`)
+    matchVariant("is", value => `&:is(${value})`)
+    matchVariant("not", value => `&:not(${value})`)
+    matchVariant("where", value => `&:where(${value})`)
 }

@@ -52,5 +52,5 @@ export const selectorUtilities = (configApi: PluginAPI) => {
     const { addVariant, theme } = configApi
 
     const selectors = verifySelectorsTheme(theme("selectors")).concat(tags)
-    selectors.forEach((tag) => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
+    selectors.forEach(tag => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
 }

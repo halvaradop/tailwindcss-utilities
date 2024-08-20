@@ -12,7 +12,7 @@ export const tagRegex = /^([a-z]{1,}\-?){1,}$/
  * @throws {InvalidSelectorError} If any selector is invalid
  */
 export const verifySelectorsTheme = (selectors: string[] = []): string[] => {
-    const haveInvalid = selectors.some((selector) => !tagRegex.test(selector))
+    const haveInvalid = selectors.some(selector => !tagRegex.test(selector))
     if (haveInvalid) {
         throw new InvalidSelectorError("Invalid HTML tag. Please verify the tags.")
     }
@@ -36,12 +36,7 @@ export const removeEmptyProperties = <T extends Record<string, any>>(entry: T) =
         const pairValue = entry[key]
         const isArray = Array.isArray(pairValue)
         const isObject = pairValue && typeof pairValue === "object" && !isArray
-        if (
-            !pairValue ||
-            pairValue === "" ||
-            (isArray && !pairValue.length) ||
-            (isObject && !Object.keys(pairValue).length)
-        ) {
+        if (!pairValue || pairValue === "" || (isArray && !pairValue.length) || (isObject && !Object.keys(pairValue).length)) {
             delete entry[key]
         }
     }

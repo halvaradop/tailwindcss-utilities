@@ -12,7 +12,7 @@ import { minWidthUtilities } from "./utilities/min-width-utility"
  *
  * @param configApi The configuration API object obtained from tailwindcss.config.ts
  */
-export const creator: PluginCreator = (configApi) => {
+export const creator: PluginCreator = configApi => {
     selectorUtilities(configApi)
     fluencyUtilities(configApi)
     scrollUtilities(configApi)
