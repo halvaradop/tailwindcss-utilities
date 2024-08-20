@@ -35,23 +35,22 @@ const tags: string[] = [
     "figure",
     "picture",
     "caption",
-    "footer"
+    "footer",
 ]
-
 
 /**
  * Defines a set of tag variant utilities that allow you to customize different
  * HTML tags within a project. This enables more specific styling of elements.
  * The plugin also allows users to extend the default set of supported tags.
- * 
- * To extend the default tags, you can add an array of new tags within the theme 
+ *
+ * To extend the default tags, you can add an array of new tags within the theme
  * property and set a `selectors` property in the Tailwind configuration file.
- * 
+ *
  * @param configApi The configuration API object obtained from tailwindcss.config.ts
  */
 export const selectorUtilities = (configApi: PluginAPI) => {
     const { addVariant, theme } = configApi
-    
+
     const selectors = verifySelectorsTheme(theme("selectors")).concat(tags)
     selectors.forEach(tag => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
 }

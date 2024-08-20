@@ -12,20 +12,21 @@ npm install --save-dev @halvaradop/tailwindcss-utilities
 ```
 
 ## Configuration
+
 To configure the plugin, add it to the plugins array in the Tailwind CSS configuration file.
 
 ```ts
 // TypeScript
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 import plugin from "@halvaradop/tailwindcss-utilities"
 
 const config: Config = {
-  content: [],
-  theme: {},
-  plugins: [plugin],
-};
+    content: [],
+    theme: {},
+    plugins: [plugin],
+}
 
-export default config;
+export default config
 ```
 
 ```js
@@ -34,67 +35,70 @@ import plugin from "@halvaradop/tailwindcss-utilities"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
-  theme: {},
-  plugins: [plugin],
+    content: [],
+    theme: {},
+    plugins: [plugin],
 }
-
 ```
 
 ## Utilities
+
 Set of utilites offer by the dependency.
 
-
 ### Selectors
-The selectors utility offers a set of selectors that provide improved access to HTML elements. Below is an example of usage:
 
+The selectors utility offers a set of selectors that provide improved access to HTML elements. Below is an example of usage:
 
 #### Supported Tags
 
-
 #### Structural Elements
-- `head`
-- `body`
-- `main`
-- `footer`
-- `section`
-- `article`
-- `label`
-- `nav`
-- `div`
+
+-   `head`
+-   `body`
+-   `main`
+-   `footer`
+-   `section`
+-   `article`
+-   `label`
+-   `nav`
+-   `div`
 
 #### Text Content
-- `p`
-- `span`
-- `h1` to `h6`
-- `a`
+
+-   `p`
+-   `span`
+-   `h1` to `h6`
+-   `a`
 
 #### List
-- `ul`
-- `ol`
-- `li`
+
+-   `ul`
+-   `ol`
+-   `li`
 
 #### Forms
-- `button`
-- `form`
-- `input`
-- `label`
+
+-   `button`
+-   `form`
+-   `input`
+-   `label`
 
 #### Tables
-- `table`
-- `tr`
-- `td`
+
+-   `table`
+-   `tr`
+-   `td`
 
 #### Media
-- `img`
-- `figure`
-- `picture`
-- `caption`
-- `figcaption`
 
-
+-   `img`
+-   `figure`
+-   `picture`
+-   `caption`
+-   `figcaption`
 
 #### Usage
+
 ```html
 <section class="li:mb-5">
     <article class="my-5"></article>
@@ -103,14 +107,15 @@ The selectors utility offers a set of selectors that provide improved access to 
 ```
 
 ### Font size dynamic
+
 The font size dynamic utility enables modern scale typographic support using the `clamp` function. This function dynamically adjusts the font size based on the viewport of the device, ensuring clear and responsive text in a linear manner.
 
-
 #### Supported Utilities
-- `fluency-{ xs | sm | base | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl }`
 
+-   `fluency-{ xs | sm | base | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl }`
 
 #### Usage
+
 ```html
 <div>
     <h1 class="fluency-lg"></h1>
@@ -119,15 +124,17 @@ The font size dynamic utility enables modern scale typographic support using the
 ```
 
 ### Scrollbar
+
 The scrollbar utility provides variants for customizing the scrollbar of a component, particularly useful when a component presents overflow. These utilities work with the `::-webkit-` prefix.
 
-
 ### utilities supported
-- `scroll`: for styling the ::-webkit-scrollbar
-- `thumb`: for styling the ::-webkit-scrollbar-thumb
-- `track`: for styling the ::-webkit-scrollbar-track
+
+-   `scroll`: for styling the ::-webkit-scrollbar
+-   `thumb`: for styling the ::-webkit-scrollbar-thumb
+-   `track`: for styling the ::-webkit-scrollbar-track
 
 ## Usage
+
 ```html
 <section class="overflow-y-hidden scroll:w-1 thumb:rounded-full thumb:bg-slate-400 track:my-1">
     <p></p>
@@ -137,7 +144,6 @@ The scrollbar utility provides variants for customizing the scrollbar of a compo
 ## Contributing
 
 Here, you will find a guide on how to contribute to the project and the necessary steps to do so. Please read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
-
 
 ## Code of Conduct
 
