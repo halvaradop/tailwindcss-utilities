@@ -7,7 +7,9 @@
   "scripts": {
     "build:ts": "tsc",
     "build:css": "npx tailwindcss -i src/utilities.css -o dist/tailwindcss.css",
-    "build": "tsc && npm run build:css"
+    "build": "tsc && npm run build:css",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check ."
   },
   "publishConfig": {
     "access": "public",
@@ -35,6 +37,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.3"
   },
   "peerDependencies": {
@@ -42,5 +45,12 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "prettier": {
+    "semi": true,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "singleQuote": false,
+    "printWidth": 120
+  }
 }
