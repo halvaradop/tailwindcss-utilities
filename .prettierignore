@@ -1,0 +1,8 @@
+.github
+app
+node_modules
+
+# Configuration
+tsconfig.json
+package.json
+package-lock.json
