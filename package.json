@@ -49,6 +49,6 @@
     "arrowParens": "avoid"
   },
   "workspaces": [
-    "packages"
+    "packages/*"
   ]
 }
