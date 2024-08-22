@@ -53,5 +53,8 @@
     "singleQuote": false,
     "printWidth": 130,
     "arrowParens": "avoid"
-  }
+  },
+  "workspaces": [
+    "packages"
+  ]
 }
