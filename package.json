@@ -1,5 +1,6 @@
 {
   "name": "@halvaradop/tailwindcss-utilities",
+  "private": true,
   "version": "0.2.1",
   "description": "A TailwindCSS plugin that provides a set of utilities to enhance the default functionalities and offer additional customization options.",
   "main": "dist/index.js",
