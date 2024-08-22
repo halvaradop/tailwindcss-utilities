@@ -1,14 +1,10 @@
 {
-  "name": "@halvaradop/tailwindcss-utilities",
+  "name": "@halvaradop/tailwindcss-workspace",
   "private": true,
-  "version": "0.2.1",
-  "description": "A TailwindCSS plugin that provides a set of utilities to enhance the default functionalities and offer additional customization options.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "0.0.0",
+  "description": "A monorepo projectmanage multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
-    "build:ts": "tsc",
-    "build:css": "npx tailwindcss -i src/utilities.css -o dist/tailwindcss.css",
-    "build": "tsc && npm run build:css",
+    "build": "npm run build --workspaces",
     "format": "npx prettier --write .",
     "format:check": "npx prettier --check ."
   },
