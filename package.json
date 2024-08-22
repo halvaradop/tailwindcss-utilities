@@ -40,9 +40,6 @@
   "peerDependencies": {
     "tailwindcss": ">=3.0.0"
   },
-  "files": [
-    "dist"
-  ],
   "prettier": {
     "semi": false,
     "tabWidth": 4,
