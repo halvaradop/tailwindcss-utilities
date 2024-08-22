@@ -1,0 +1,60 @@
+{
+  "name": "@halvaradop/tailwindcss-utilities",
+  "version": "0.2.1",
+  "description": "A TailwindCSS plugin that provides a set of utilities to enhance the default functionalities and offer additional customization options.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:css": "npx tailwindcss -i src/utilities.css -o dist/tailwindcss.css",
+    "build": "tsc && npm run build:css",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check ."
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/@halvaradop/tailwindcss-utilities"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/tailwindcss-utilities.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "tailwind plugin",
+    "utilities",
+    "productivity",
+    "web",
+    "development"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halvaradop/tailwindcss-utilities/issues"
+  },
+  "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.3"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "prettier": {
+    "semi": false,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "singleQuote": false,
+    "printWidth": 130,
+    "arrowParens": "avoid"
+  },
+  "workspaces": [
+    "packages"
+  ]
+}
