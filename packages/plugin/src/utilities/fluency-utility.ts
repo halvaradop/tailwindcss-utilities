@@ -1,5 +1,5 @@
-import { PluginAPI } from "tailwindcss/types/config"
-import { EntryCSS, FontFluency } from "../types"
+import type { PluginAPI } from "tailwindcss/types/config"
+import type { EntryCSS, FontFluency } from "../types"
 import { removeEmptyProperties } from "../utils/utils"
 
 /**
