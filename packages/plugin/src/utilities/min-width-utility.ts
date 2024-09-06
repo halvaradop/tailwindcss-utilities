@@ -1,4 +1,4 @@
-import type { KeyValuePair, ResolvableTo } from "tailwindcss/types/config"
+import type { KeyValuePair, ResolvableTo } from "tailwindcss/types/config.js"
 
 /**
  * Defines default values for the minWidth theme in TailwindCSS.
