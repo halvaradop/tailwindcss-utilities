@@ -1,4 +1,4 @@
-import { PluginAPI } from "tailwindcss/types/config"
+import type { PluginAPI } from "tailwindcss/types/config"
 
 /**
  * Defines a set of variant utilities for grouping elements and customizing

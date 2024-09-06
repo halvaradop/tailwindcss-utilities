@@ -1,5 +1,5 @@
 import plugin from "tailwindcss/plugin"
-import { KeyValuePair, PluginCreator, ResolvableTo } from "tailwindcss/types/config"
+import { PluginCreator } from "tailwindcss/types/config"
 import { scrollUtilities } from "./utilities/scroll-utility"
 import { fluencyUtilities } from "./utilities/fluency-utility"
 import { selectorUtilities } from "./utilities/selector-utility"

@@ -1,4 +1,4 @@
-import { PluginAPI } from "tailwindcss/types/config"
+import type { PluginAPI } from "tailwindcss/types/config"
 import { verifySelectorsTheme } from "../utils/utils"
 
 /**
