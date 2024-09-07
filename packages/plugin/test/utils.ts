@@ -1,6 +1,7 @@
 import postcss from "postcss"
 import tailwindcss from "tailwindcss"
 import plugin from "../src/index"
+import minify from "@csstools/postcss-minify"
 
 const TAILWIND_UTILITIES_DIRECTIVE = "@tailwind utilities;"
 
@@ -17,6 +18,7 @@ const TAILWIND_UTILITIES_DIRECTIVE = "@tailwind utilities;"
  */
 export const generateClasses = async (htmlContent: string) => {
     const classes = await postcss([
+        minify(),
         tailwindcss({
             plugins: [plugin],
             content: [{ raw: htmlContent }],
