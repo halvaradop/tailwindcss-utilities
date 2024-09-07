@@ -1,4 +1,4 @@
-import { InvalidSelectorError } from "./errors"
+import { InvalidSelectorError } from "./errors.js"
 
 export const tagRegex = /^([a-z]{1,}\-?){1,}$/
 

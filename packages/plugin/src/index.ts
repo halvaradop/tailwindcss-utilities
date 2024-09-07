@@ -1,10 +1,10 @@
-import plugin from "tailwindcss/plugin"
-import { PluginCreator } from "tailwindcss/types/config"
-import { scrollUtilities } from "./utilities/scroll-utility"
-import { fluencyUtilities } from "./utilities/fluency-utility"
-import { selectorUtilities } from "./utilities/selector-utility"
-import { pseudoClassesUtilities } from "./utilities/pseudo-classes-utility"
-import { minWidthUtilities } from "./utilities/min-width-utility"
+import plugin from "tailwindcss/plugin.js"
+import { PluginCreator } from "tailwindcss/types/config.js"
+import { scrollUtilities } from "./utilities/scroll-utility.js"
+import { fluencyUtilities } from "./utilities/fluency-utility.js"
+import { selectorUtilities } from "./utilities/selector-utility.js"
+import { pseudoClassesUtilities } from "./utilities/pseudo-classes-utility.js"
+import { minWidthUtilities } from "./utilities/min-width-utility.js"
 
 /**
  * Entry point of the application. This encapsulates the utilities offered

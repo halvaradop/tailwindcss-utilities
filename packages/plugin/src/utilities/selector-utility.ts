@@ -1,5 +1,5 @@
-import type { PluginAPI } from "tailwindcss/types/config"
-import { verifySelectorsTheme } from "../utils/utils"
+import type { PluginAPI } from "tailwindcss/types/config.js"
+import { verifySelectorsTheme } from "../utils/utils.js"
 
 /**
  * This array contains the default tags supported by the selector variant

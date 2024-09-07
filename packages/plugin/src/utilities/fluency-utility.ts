@@ -1,6 +1,6 @@
-import type { PluginAPI } from "tailwindcss/types/config"
-import type { EntryCSS, FontFluency } from "../types"
-import { removeEmptyProperties } from "../utils/utils"
+import type { PluginAPI } from "tailwindcss/types/config.js"
+import type { EntryCSS, FontFluency } from "../types.js"
+import { removeEmptyProperties } from "../utils/utils.js"
 
 /**
  * This object contains the values used for font utilities. Each property
