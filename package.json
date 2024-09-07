@@ -35,6 +35,7 @@
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
+    "@csstools/postcss-minify": "^2.0.1",
     "@types/node": "^22.5.4",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.45",
