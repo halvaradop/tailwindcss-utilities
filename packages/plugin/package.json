@@ -8,8 +8,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest --run",
-    "test:watch": "vitest --watch"
+    "test": "vitest --run --no-cache",
+    "test:watch": "vitest --watch --no-cache"
   },
   "publishConfig": {
     "access": "public",
