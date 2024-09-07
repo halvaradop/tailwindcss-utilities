@@ -32,7 +32,7 @@ describe("scroll utilities", () => {
         expect(css).toContain(".track\\:border::-webkit-scrollbar-track{border-width:1px}")
     })
 
-    test.concurrent("generate the css for scroll track utilities with custom background color", async ({ expect }) => {
+    test.concurrent("generate the css for scroll track utilities with custom border width", async ({ expect }) => {
         const html = `<div class="track:border-[3px]"></div>`
         const css = await generateClasses(html)
         expect(css).toContain(".track\\:border-\\[3px\\]::-webkit-scrollbar-track{border-width:3px}")
