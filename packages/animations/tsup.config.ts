@@ -1,10 +1,4 @@
 import { defineConfig } from "tsup"
+import { tsupConfig } from "@halvaradop/tailwindcss-core"
 
-export default defineConfig({
-    entry: ["src"],
-    format: ["cjs", "esm"],
-    dts: true,
-    minify: true,
-    clean: true,
-    splitting: false,
-})
+export default defineConfig(tsupConfig)
