@@ -1,6 +1,6 @@
 import { defineConfig } from "tsup"
 
-export default defineConfig({
+export const tsupConfig = defineConfig({
     entry: ["src"],
     format: ["cjs", "esm"],
     dts: true,

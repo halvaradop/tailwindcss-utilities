@@ -1,5 +1,5 @@
 {
-  "name": "@halvaradop/core",
+  "name": "@halvaradop/tailwindcss-core",
   "version": "0.1.0",
   "description": "Core package for building utilities and classes for Tailwind CSS",
   "type": "module",

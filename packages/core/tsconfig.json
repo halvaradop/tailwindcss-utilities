@@ -17,7 +17,5 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "resolvePackageJsonExports": true
-  },
-  "include": ["src/**/*.ts", "tsup.config.ts"],
-  "exclude": ["dist"]
+  }
 }
