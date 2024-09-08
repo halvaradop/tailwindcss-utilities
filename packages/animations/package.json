@@ -1,0 +1,36 @@
+{
+  "name": "@halvaradop/tailwindcss-animations",
+  "version": "0.1.0",
+  "description": "A collection of utility classes and utilities for animations using Tailwind CSS",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest --no-cache",
+    "test:watch": "vitest --watch --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/tailwindcss-utilities.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "tailwindcss",
+    "plugin",
+    "utilities",
+    "productivity",
+    "web",
+    "development"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halvaradop/tailwindcss-utilities/issues"
+  },
+  "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
+  "files": [
+    "dist"
+  ]
+}
