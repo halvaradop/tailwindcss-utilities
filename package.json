@@ -64,5 +64,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@halvaradop/tailwindcss-core": "^0.1.0"
+  }
 }
