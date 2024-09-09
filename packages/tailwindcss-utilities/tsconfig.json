@@ -1,0 +1,5 @@
+{
+  "extends": "../tailwindcss-core/tsconfig.json",
+  "include": ["src"],
+  "exclude": ["dist"]
+}
