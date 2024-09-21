@@ -9,7 +9,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest --run --no-cache",
-    "test:watch": "vitest --watch --no-cache"
+    "test:watch": "vitest --no-cache"
   },
   "publishConfig": {
     "access": "public",
