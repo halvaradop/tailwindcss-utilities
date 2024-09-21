@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "description": "A monorepo projectmanage multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
-    "build:watch": "npm run build:watch --workspaces",
-    "build": "npm run build --workspaces",
-    "format": "npx prettier --write .",
-    "format:check": "npx prettier --check .",
-    "test": "npm run test --workspaces",
-    "test:watch": "npm run test:watch --workspaces"
+    "build:watch": "npm run build:watch --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm run test --workspaces --if-present --silent",
+    "test:watch": "npm run test:watch --workspaces --if-present"
   },
   "publishConfig": {
     "access": "public",
