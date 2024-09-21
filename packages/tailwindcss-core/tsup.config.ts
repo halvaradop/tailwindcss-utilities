@@ -1,4 +1,4 @@
-import { defineConfig } from "tsup";
-import { tsupConfig } from "./src/tsup.config.js";
+import { defineConfig } from "tsup"
+import { tsupConfig } from "./src/tsup.config.js"
 
 export default defineConfig(tsupConfig)

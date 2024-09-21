@@ -1,8 +1,6 @@
-import { defineConfig } from "tsup"
+import { Options } from "tsup"
 
-type TsupConfig = Parameters<typeof defineConfig>[0]
-
-export const tsupConfig: TsupConfig = {
+export const tsupConfig: Options = {
     entry: ["src"],
     format: ["cjs", "esm"],
     dts: true,
