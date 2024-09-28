@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Core package for building utilities and classes for Tailwind CSS",
   "type": "module",
-  "main": "dist/index.js",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -31,6 +30,18 @@
     "url": "https://github.com/halvaradop/tailwindcss-utilities/issues"
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./utils": {
+      "types": "./dist/generate-classes.d.ts",
+      "import": "./dist/generate-classes.js"
+    },
+    "./tsconfig.base.json": "./tsconfig.base.json"
+  },
   "files": [
     "dist",
     "tsconfig.base.json"

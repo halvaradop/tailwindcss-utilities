@@ -1,5 +1,8 @@
 import { describe, test } from "vitest"
-import { generateClasses } from "./utils"
+import { extractClasses } from "@halvaradop/tailwindcss-core/utils"
+import plugin from "../src/index"
+
+const generateClasses = extractClasses(plugin)
 
 describe("scroll utilities", () => {
     test.concurrent("generate the css for scroll utilities", async ({ expect }) => {
