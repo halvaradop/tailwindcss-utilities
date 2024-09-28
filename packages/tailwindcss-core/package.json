@@ -39,7 +39,8 @@
     "./utils": {
       "types": "./dist/generate-classes.d.ts",
       "import": "./dist/generate-classes.js"
-    }
+    },
+    "./tsconfig.base.json": "./tsconfig.base.json"
   },
   "files": [
     "dist",
