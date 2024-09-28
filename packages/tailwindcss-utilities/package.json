@@ -3,8 +3,6 @@
   "version": "0.2.1",
   "description": "A TailwindCSS plugin that provides a set of utilities to enhance the default functionalities and offer additional customization options.",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -36,6 +34,13 @@
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
     "@halvaradop/tailwindcss-core": "^0.1.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
   "files": [
     "dist"
