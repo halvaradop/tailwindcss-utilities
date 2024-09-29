@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
-    "@halvaradop/tailwindcss-animations": "^0.1.0"
+    "@halvaradop/tailwindcss-core": "^0.1.0"
   },
   "exports": {
     ".": {
