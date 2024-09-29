@@ -1,13 +1,13 @@
 # @halvaradop/tailwindcss-utilities
 
-Open source TailwindCSS utilities that offer a serie of tools and plugings to improve the development using Tailwindcss.
+Open source TailwindCSS utilities that offer a series of tools and plugins to enhance development with TailwindCSS.
 
 ## Installation
 
-To install one of the plugins or tools follow the prefix `@halvaradop/tailwindcss-*` and look the [available packages](https://github.com/halvaradop/tailwindcss-utilities/tree/master/packages) execute one of the following commands:
+To install one of the plugins or tools, use the prefix `@halvaradop/tailwindcss-*` and check the [available packages](https://github.com/halvaradop/tailwindcss-utilities/tree/master/packages). Execute one of the following commands:
 
 ```bash
-npm i -D @halvaradop/tailwindcss-*
+npm install -D @halvaradop/tailwindcss-*
 // or
 pnpm add -D @halvaradop/tailwindcss-*
 ```

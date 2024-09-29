@@ -7,7 +7,7 @@ This is the core package of the `@halvaradop/tailwindcss-*` ecosystem, containin
 To install the package using either npm or pnpm, execute one of the following commands:
 
 ```bash
-npm i -D @halvaradop/tailwindcss-core
+npm install -D @halvaradop/tailwindcss-core
 // or
 pnpm add -D @halvaradop/tailwindcss-core
 ```
