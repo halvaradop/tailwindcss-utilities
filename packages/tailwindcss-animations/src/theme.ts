@@ -1,4 +1,4 @@
-export default {
+export const theme = {
     animation: {
         "blurred-fade-in": "blurred-fade-in 0.9s ease-in-out both",
         "fade-in": "fade-in 0.6s ease-in both",
@@ -573,3 +573,5 @@ export default {
         single: "--single-timeline",
     },
 }
+
+export default theme
