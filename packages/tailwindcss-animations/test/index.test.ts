@@ -17,9 +17,7 @@ describe("Plugin", () => {
         test.concurrent("Loaded utility classes do not create conflicts", async () => {
             const html = `<div class="w-full px-2 flex items-center"></div>`
             const css = await generateClasses(html)
-            expect(css).toMatch(
-                ".flex{display:flex}.w-full{width:100%}.items-center{align-items:center}.px-2{padding-left:0.5rem;padding-right:0.5rem}"
-            )
+            expect(css).toMatch(".flex{display:flex}.w-full{width:100%}.items-center{align-items:center}.px-2{padding-left:0.5rem;padding-right:0.5rem}")
         })
     })
 })
