@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "description": "A monorepo projectmanage multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
-    "build:watch": "npm run build:watch --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "dev": "turbo dev --parallel",
+    "build": "turbo build --parallel",
+    "format": "prettier --cache --write .",
+    "format:check": "prettier --cache --check .",
     "test": "npm run test --workspaces --if-present --silent",
     "test:watch": "npm run test:watch --workspaces --if-present"
   },
@@ -43,6 +43,7 @@
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
     "tsup": "^8.2.4",
+    "turbo": "^2.1.2",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   },
@@ -63,6 +64,7 @@
       }
     ]
   },
+  "packageManager": "npm@10.8.3",
   "workspaces": [
     "packages/*"
   ]
