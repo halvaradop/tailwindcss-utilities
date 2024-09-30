@@ -1,22 +1,28 @@
 import pluginCSS from "tailwindcss/plugin.js"
 import { Config, PluginCreator } from "tailwindcss/types/config.js"
-import { theme } from "./theme.js"
+import { theme as themeDefault } from "./theme.js"
+import { matchUtilitiesRegex, toSlashCase } from "./utils.js"
 
 export const config: Partial<Config> = {
-    theme,
+    theme: themeDefault,
 }
 
 export const creator: PluginCreator = configApi => {
     const { matchUtilities, theme } = configApi
 
-    matchUtilities(
-        {
-            "animate-delay": value => ({
-                "animation-delay": value,
-            }),
-        },
-        theme("animationDelay")
-    )
+    Object.keys(themeDefault).forEach(key => {
+        const toSlashKey = toSlashCase(key)
+        if (matchUtilitiesRegex.test(key)) {
+            matchUtilities(
+                {
+                    [toSlashKey]: value => ({
+                        [toSlashKey]: value,
+                    }),
+                },
+                { values: theme(key) }
+            )
+        }
+    })
 }
 
 export const plugin = pluginCSS(creator, config)

@@ -4,5 +4,3 @@ node_modules
 
 # Configuration
 package-lock.json
-test
-packages/**/test/*.test.ts
