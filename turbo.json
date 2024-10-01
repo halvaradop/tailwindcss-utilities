@@ -9,6 +9,14 @@
     },
     "dev": {
       "cache": false
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["test"]
+    },
+    "test:watch": {
+      "cache": false,
+      "inputs": ["test"]
     }
   },
   "cacheDir": ".turbo/cache"
