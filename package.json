@@ -8,8 +8,8 @@
     "build": "turbo build --parallel",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
-    "test": "npm run test --workspaces --if-present --silent",
-    "test:watch": "npm run test:watch --workspaces --if-present"
+    "test": "turbo test --filter=!@halvaradop/tailwindcss-core",
+    "test:watch": "turbo test:watch --parallel --filter=!@halvaradop/tailwindcss-core"
   },
   "publishConfig": {
     "access": "public",
