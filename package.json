@@ -61,6 +61,12 @@
           "printWidth": 120,
           "tabWidth": 2
         }
+      },
+      {
+        "files": "*.test.ts",
+        "options": {
+          "printWidth": 300
+        }
       }
     ]
   },
