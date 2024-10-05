@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "turbo dev --parallel",
     "build": "turbo build --parallel",
+    "build:core": "turbo build:core --filter @halvaradop/tailwindcss-core",
+    "build:ci": "npm run build:core && npm run build",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
     "test": "turbo test --filter=!@halvaradop/tailwindcss-core",
