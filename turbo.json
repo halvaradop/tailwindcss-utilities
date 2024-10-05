@@ -11,7 +11,7 @@
       "cache": false
     },
     "test": {
-      "cache": true,
+      "cache": false,
       "inputs": ["test"]
     },
     "test:watch": {
