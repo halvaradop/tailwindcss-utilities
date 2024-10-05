@@ -17,6 +17,7 @@ jobs:
         with:
           message: |
             Thank you, @${{ github.actor }}, for your contribution to [${{ github.repository }}](${{ github.event.repository.html_url }}).
+
             Your submission will be reviewed by [@halvaradop][1]. We will provide feedback or approval as soon as possible.
 
             [1]: https://github.com/halvaradop
