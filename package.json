@@ -2,6 +2,7 @@
   "name": "@halvaradop/tailwindcss-workspace",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "description": "A monorepo projectmanage multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
     "dev": "turbo dev --parallel",
