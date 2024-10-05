@@ -22,9 +22,9 @@ import type { Config } from "tailwindcss"
 import plugin from "@halvaradop/tailwindcss-utilities"
 
 const config: Config = {
-    content: [],
-    theme: {},
-    plugins: [plugin],
+  content: [],
+  theme: {},
+  plugins: [plugin],
 }
 
 export default config
@@ -36,9 +36,9 @@ import plugin from "@halvaradop/tailwindcss-utilities"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [],
-    theme: {},
-    plugins: [plugin],
+  content: [],
+  theme: {},
+  plugins: [plugin],
 }
 ```
 
@@ -54,56 +54,56 @@ The selectors utility offers a set of selectors that provide improved access to 
 
 #### Structural Elements
 
--   `head`
--   `body`
--   `main`
--   `footer`
--   `section`
--   `article`
--   `label`
--   `nav`
--   `div`
+- `head`
+- `body`
+- `main`
+- `footer`
+- `section`
+- `article`
+- `label`
+- `nav`
+- `div`
 
 #### Text Content
 
--   `p`
--   `span`
--   `h1` to `h6`
--   `a`
+- `p`
+- `span`
+- `h1` to `h6`
+- `a`
 
 #### List
 
--   `ul`
--   `ol`
--   `li`
+- `ul`
+- `ol`
+- `li`
 
 #### Forms
 
--   `button`
--   `form`
--   `input`
--   `label`
+- `button`
+- `form`
+- `input`
+- `label`
 
 #### Tables
 
--   `table`
--   `tr`
--   `td`
+- `table`
+- `tr`
+- `td`
 
 #### Media
 
--   `img`
--   `figure`
--   `picture`
--   `caption`
--   `figcaption`
+- `img`
+- `figure`
+- `picture`
+- `caption`
+- `figcaption`
 
 #### Usage
 
 ```html
 <section class="li:mb-5">
-    <article class="my-5"></article>
-    <li></li>
+  <article class="my-5"></article>
+  <li></li>
 </section>
 ```
 
@@ -113,14 +113,14 @@ The font size dynamic utility enables modern scale typographic support using the
 
 #### Supported Utilities
 
--   `fluency-{ xs | sm | base | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl }`
+- `fluency-{ xs | sm | base | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl }`
 
 #### Usage
 
 ```html
 <div>
-    <h1 class="fluency-lg"></h1>
-    <p class="fluency-sm"></p>
+  <h1 class="fluency-lg"></h1>
+  <p class="fluency-sm"></p>
 </div>
 ```
 
@@ -130,15 +130,15 @@ The scrollbar utility provides variants for customizing the scrollbar of a compo
 
 ### utilities supported
 
--   `scroll`: for styling the ::-webkit-scrollbar
--   `thumb`: for styling the ::-webkit-scrollbar-thumb
--   `track`: for styling the ::-webkit-scrollbar-track
+- `scroll`: for styling the ::-webkit-scrollbar
+- `thumb`: for styling the ::-webkit-scrollbar-thumb
+- `track`: for styling the ::-webkit-scrollbar-track
 
 ## Usage
 
 ```html
 <section class="overflow-y-hidden scroll:w-1 thumb:rounded-full thumb:bg-slate-400 track:my-1">
-    <p></p>
+  <p></p>
 </section>
 ```
 
