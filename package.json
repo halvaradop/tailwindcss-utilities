@@ -58,7 +58,12 @@
     "arrowParens": "avoid",
     "overrides": [
       {
-        "files": "*.json",
+        "files": [
+          "*.json",
+          "*.yml",
+          "*.yaml",
+          "README.md"
+        ],
         "options": {
           "printWidth": 120,
           "tabWidth": 2

@@ -22,9 +22,9 @@ import type { Config } from "tailwindcss"
 import plugin from "@halvaradop/tailwindcss-utilities"
 
 const config: Config = {
-    content: [],
-    theme: {},
-    plugins: [plugin],
+  content: [],
+  theme: {},
+  plugins: [plugin],
 }
 
 export default config
@@ -36,9 +36,9 @@ import plugin from "@halvaradop/tailwindcss-utilities"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [],
-    theme: {},
-    plugins: [plugin],
+  content: [],
+  theme: {},
+  plugins: [plugin],
 }
 ```
 
