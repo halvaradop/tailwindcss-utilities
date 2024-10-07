@@ -28,6 +28,8 @@ jobs:
         with:
           node-version: "18.x"
       - run: npm install
+      # rebuild the project to ensure that the test files are available
+      - run: npm run build:ci
       - run: npm test
 
   deploy-to-development:
