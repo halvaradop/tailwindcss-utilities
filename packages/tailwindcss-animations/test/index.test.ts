@@ -1,7 +1,6 @@
 import { describe, test, expect } from "vitest"
 import { extractClasses } from "@halvaradop/tailwindcss-core/utils"
 import { plugin } from "../src/index.js"
-import { toSlashCase } from "../src/utils.js"
 import { theme } from "../src/theme.js"
 
 export const generateClasses = extractClasses(plugin)
@@ -84,21 +83,6 @@ describe("Keyframes utility classes", () => {
             const html = `<div class="${className}"></div>`
             const css = await generateClasses(html)
             expect(css).toMatch(expected)
-        })
-    })
-})
-
-describe("toSlashCase", () => {
-    const testCases = [
-        { input: "animation", expected: "animation" },
-        { input: "animationDelay", expected: "animation-delay" },
-        { input: "animationDuration", expected: "animation-duration" },
-        { input: "animationIterationCount", expected: "animation-iteration-count" },
-    ]
-
-    testCases.forEach(({ input, expected }) => {
-        test(`converts ${input} to ${expected}`, () => {
-            expect(toSlashCase(input)).toBe(expected)
         })
     })
 })
