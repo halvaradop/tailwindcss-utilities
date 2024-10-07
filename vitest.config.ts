@@ -5,12 +5,11 @@ import { defineConfig } from "vitest/config"
  */
 export default defineConfig({
     test: {
-        include: ["packages/**/*.test.ts"],
         coverage: {
             provider: "v8",
             reporter: ["text", "html"],
-            include: ["packages/**/*.ts"],
-            exclude: ["node_modules", "packages/**/dist"],
+            include: ["packages/**/*.ts", "!packages/**/*.config.ts"],
+            exclude: ["**/node_modules", "**/dist"],
         },
     },
 })

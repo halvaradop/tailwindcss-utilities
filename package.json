@@ -2,10 +2,13 @@
   "name": "@halvaradop/tailwindcss-workspace",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "description": "A monorepo projectmanage multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
     "dev": "turbo dev --parallel",
     "build": "turbo build --parallel",
+    "build:core": "turbo build --filter @halvaradop/tailwindcss-core",
+    "build:ci": "npm run build:core && npm run build",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
     "test": "turbo test --filter=!@halvaradop/tailwindcss-core",
