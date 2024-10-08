@@ -3,12 +3,12 @@ import { extractClasses } from "../src/generate-classes"
 
 /**
  * Provide a mock implementation of the extractClasses function with an
- * empty plugin. The implementation is responsible for setting up the 
+ * empty plugin. The implementation is responsible for setting up the
  * plugin.
  */
-const generateClasses = extractClasses({ 
-    config: {}, 
-    handler: () => {} 
+const generateClasses = extractClasses({
+    config: {},
+    handler: () => {},
 })
 
 describe("Extract classes from tailwindcss", () => {
