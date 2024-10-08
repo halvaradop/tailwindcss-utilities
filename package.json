@@ -11,8 +11,8 @@
     "build:ci": "npm run build:core && npm run build",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
-    "test": "turbo test --filter=!@halvaradop/tailwindcss-core",
-    "test:watch": "turbo test:watch --parallel --filter=!@halvaradop/tailwindcss-core",
+    "test": "turbo test --parallel",
+    "test:watch": "turbo test:watch --parallel",
     "test:coverage": "vitest --coverage"
   },
   "publishConfig": {
