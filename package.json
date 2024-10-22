@@ -3,12 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "A monorepo projectmanage multiple packages with features and utilities for TailwindCSS.",
+  "description": "A monorepo project for managing multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
     "dev": "turbo dev --parallel",
-    "build": "turbo build --parallel",
-    "build:core": "turbo build --filter @halvaradop/tailwindcss-core",
-    "build:ci": "npm run build:core && npm run build",
+    "build": "turbo build --filter @halvaradop/*core && turbo build --filter=!@halvaradop/*core --parallel",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
     "test": "turbo test --parallel",
@@ -56,7 +54,6 @@
     "semi": false,
     "tabWidth": 4,
     "trailingComma": "es5",
-    "singleQuote": false,
     "printWidth": 130,
     "arrowParens": "avoid",
     "overrides": [
