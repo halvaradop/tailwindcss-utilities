@@ -5,39 +5,37 @@ import plugin from "../src"
 const generateClasses = extractClasses(plugin)
 
 describe("scroll utilities", () => {
-    test.concurrent("generate the css for scroll utilities", async ({ expect }) => {
-        const html = `<div class="scroll:w-2"></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch(".scroll\\:w-2::-webkit-scrollbar{width:0.5rem}")
-    })
-
-    test.concurrent("generate the css for scroll utilities with custom width", async ({ expect }) => {
-        const html = `<div class="scroll:w-[10px]"></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch(".scroll\\:w-\\[10px\\]::-webkit-scrollbar{width:10px}")
-    })
-
-    test.concurrent("generate the css for scroll thumb utilities", async ({ expect }) => {
-        const html = `<div class="thumb:my-4"></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch(".thumb\\:my-4::-webkit-scrollbar-thumb{margin-top:1rem;margin-bottom:1rem}")
-    })
-
-    test.concurrent("generate the css for scroll thumb utilities with custom margin", async ({ expect }) => {
-        const html = `<div class="thumb:my-[8px]"></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch(".thumb\\:my-\\[8px\\]::-webkit-scrollbar-thumb{margin-top:8px;margin-bottom:8px}")
-    })
-
-    test.concurrent("generate the css for scroll track utilities", async ({ expect }) => {
-        const html = `<div class="track:border"></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch(".track\\:border::-webkit-scrollbar-track{border-width:1px}")
-    })
-
-    test.concurrent("generate the css for scroll track utilities with custom border width", async ({ expect }) => {
-        const html = `<div class="track:border-[3px]"></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch(".track\\:border-\\[3px\\]::-webkit-scrollbar-track{border-width:3px}")
+    const testCases = [
+        {
+            input: `<div class="scroll:w-2"></div>`,
+            output: ".scroll\\:w-2::-webkit-scrollbar{width:0.5rem}",
+        },
+        {
+            input: `<div class="scroll:w-[10px]"></div>`,
+            output: ".scroll\\:w-\\[10px\\]::-webkit-scrollbar{width:10px}",
+        },
+        {
+            input: `<div class="thumb:my-4"></div>`,
+            output: ".thumb\\:my-4::-webkit-scrollbar-thumb{margin-top:1rem;margin-bottom:1rem}",
+        },
+        {
+            input: `<div class="thumb:my-[8px]"></div>`,
+            output: ".thumb\\:my-\\[8px\\]::-webkit-scrollbar-thumb{margin-top:8px;margin-bottom:8px}",
+        },
+        {
+            input: `<div class="track:border"></div>`,
+            output: ".track\\:border::-webkit-scrollbar-track{border-width:1px}",
+        },
+        {
+            input: `<div class="track:border-[3px]"></div>`,
+            output: ".track\\:border-\\[3px\\]::-webkit-scrollbar-track{border-width:3px}",
+        },
+    ]
+    testCases.forEach(({ input, output }) => {
+        const extract = input.match(/class="([^"]*)"/)?.[1]
+        test.concurrent(`generate the css for ${extract}`, async ({ expect }) => {
+            const css = await generateClasses(input)
+            expect(css).toMatch(output)
+        })
     })
 })
