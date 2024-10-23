@@ -39,3 +39,35 @@ describe("scroll utilities", () => {
         })
     })
 })
+
+describe("min-width utilities", () => {
+    const testCases = [
+        {
+            input: `<div class="min-w-sm"></div>`,
+            output: ".min-w-sm{min-width:640px}",
+        },
+        {
+            input: `<div class="min-w-md"></div>`,
+            output: ".min-w-md{min-width:768px}",
+        },
+        {
+            input: `<div class="min-w-lg"></div>`,
+            output: ".min-w-lg{min-width:1024px}",
+        },
+        {
+            input: `<div class="min-w-xl"></div>`,
+            output: ".min-w-xl{min-width:1280px}",
+        },
+        {
+            input: `<div class="min-w-2xl"></div>`,
+            output: ".min-w-2xl{min-width:1526px}",
+        },
+    ]
+    testCases.forEach(({ input, output }) => {
+        const extract = input.match(/class="([^"]*)"/)?.[1]
+        test.concurrent(`generate the css for ${extract}`, async ({ expect }) => {
+            const css = await generateClasses(input)
+            expect(css).toMatch(output)
+        })
+    })
+})
