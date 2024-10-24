@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest"
+import { describe, test } from "vitest"
 import { extractClasses } from "../src/generate-classes"
 import { merge } from "../src/merge"
 
@@ -13,65 +13,80 @@ const generateClasses = extractClasses({
 })
 
 describe("Extract classes from tailwindcss", () => {
-    test("Extract classes without provided HTML content", async () => {
-        const html = ``
-        const css = await generateClasses(html)
-        expect(css).toMatch("")
-    })
+    const testCases = [
+        {
+            input: ``,
+            expected: "",
+        },
+        {
+            input: `<div class=""></div>`,
+            expected: "",
+        },
+        {
+            input: `<div class="text-lg"></div>`,
+            expected: ".text-lg{font-size:1.125rem;line-height:1.75rem}",
+        },
+    ]
 
-    test("Extract classes with provided empty HTML content", async () => {
-        const html = `<div class=""></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch("")
-    })
-
-    test("Extract classes with provided HTML content and Tailwindcss class", async () => {
-        const html = `<div class="text-lg"></div>`
-        const css = await generateClasses(html)
-        expect(css).toMatch(".text-lg{font-size:1.125rem;line-height:1.75rem}")
+    testCases.forEach(({ input, expected }) => {
+        const extract = input.match(/class="([^"]*)"/)?.[1]
+        test(`Extract classes from HTML content: ${extract}`, async ({ expect }) => {
+            const css = await generateClasses(input)
+            expect(css).toMatch(expected)
+        })
     })
 })
 
 describe("Merge objects", () => {
-    test("Merge two objects", () => {
-        const source = { a: 1, b: 2 }
-        const target = { b: 3, c: 4 }
-        expect(merge(source, target)).toEqual({ a: 1, b: 3, c: 4 })
-    })
+    const testCases = [
+        {
+            description: "Merge two objects",
+            source: { a: 1, b: 2 },
+            target: { b: 3, c: 4 },
+            expected: { a: 1, b: 3, c: 4 },
+        },
+        {
+            description: "Merge two objects with nested objects",
+            source: { a: 1, b: { c: 2 } },
+            target: { b: 3, c: 4 },
+            expected: { a: 1, b: { c: 2 }, c: 4 },
+        },
+        {
+            description: "Merge two objects with nested objects and nested objects",
+            source: { a: 1, b: { c: 2 } },
+            target: { b: { c: 3 }, c: 4 },
+            expected: { a: 1, b: { c: 3 }, c: 4 },
+        },
+        {
+            description: "Merge two objects with nested objects and nested objects with different keys",
+            source: { a: 1, b: { c: 2 } },
+            target: { b: { d: 3 }, c: 4 },
+            expected: { a: 1, b: { c: 2, d: 3 }, c: 4 },
+        },
+        {
+            description: "Merge two objects with nested objects and nested objects with different keys and nested objects",
+            source: { a: 1, b: { c: 2, d: { e: 3 } } },
+            target: { b: { d: 4 }, c: 5 },
+            expected: { a: 1, b: { c: 2, d: { e: 3 } }, c: 5 },
+        },
+        {
+            description: "Merge two objects with nested objects and nested objects with different keys and nested objects with different keys",
+            source: { a: 1, b: { c: 2, d: { e: 3 } } },
+            target: { b: { d: { f: 4 } }, c: 5 },
+            expected: { a: 1, b: { c: 2, d: { e: 3, f: 4 } }, c: 5 },
+        },
+        {
+            description: "Merge two object with nested object and nested object without priority",
+            source: { a: 1, b: { c: 2, d: { e: 3 } } },
+            target: { b: { d: 4 }, c: 5 },
+            expected: { a: 1, b: { c: 2, d: 4 }, c: 5 },
+            priority: false,
+        },
+    ]
 
-    test("Merge two objects with nested objects", () => {
-        const source = { a: 1, b: { c: 2 } }
-        const target = { b: 3, c: 4 }
-        expect(merge(source, target)).toEqual({ a: 1, b: { c: 2 }, c: 4 })
-    })
-
-    test("Merge two objects with nested objects and nested objects", () => {
-        const source = { a: 1, b: { c: 2 } }
-        const target = { b: { c: 3 }, c: 4 }
-        expect(merge(source, target)).toEqual({ a: 1, b: { c: 3 }, c: 4 })
-    })
-
-    test("Merge two objects with nested objects and nested objects with different keys", () => {
-        const source = { a: 1, b: { c: 2 } }
-        const target = { b: { d: 3 }, c: 4 }
-        expect(merge(source, target)).toEqual({ a: 1, b: { c: 2, d: 3 }, c: 4 })
-    })
-
-    test("Merge two objects with nested objects and nested objects with different keys and nested objects", () => {
-        const source = { a: 1, b: { c: 2, d: { e: 3 } } }
-        const target = { b: { d: 4 }, c: 5 }
-        expect(merge(source, target)).toEqual({ a: 1, b: { c: 2, d: { e: 3 } }, c: 5 })
-    })
-
-    test("Merge two objects with nested objects and nested objects with different keys and nested objects with different keys", () => {
-        const source = { a: 1, b: { c: 2, d: { e: 3 } } }
-        const target = { b: { d: { f: 4 } }, c: 5 }
-        expect(merge(source, target)).toEqual({ a: 1, b: { c: 2, d: { e: 3, f: 4 } }, c: 5 })
-    })
-
-    test("Merge two object with nested object and nested object without priority", () => {
-        const source = { a: 1, b: { c: 2, d: { e: 3 } } }
-        const target = { b: { d: 4 }, c: 5 }
-        expect(merge(source, target, false)).toEqual({ a: 1, b: { c: 2, d: 4 }, c: 5 })
+    testCases.forEach(({ description, source, target, expected, priority = true }) => {
+        test.concurrent(description, ({ expect }) => {
+            expect(merge(source, target, priority)).toEqual(expected)
+        })
     })
 })
