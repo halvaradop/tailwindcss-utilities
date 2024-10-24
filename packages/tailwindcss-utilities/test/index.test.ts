@@ -71,3 +71,28 @@ describe("min-width utilities", () => {
         })
     })
 })
+
+describe("psuedo classes utilities", () => {
+    const testCases = [
+        {
+            input: `<div class="where-[div]:w-10"></div>`,
+            output: ".where-\\[div\\]\\:w-10:where(div){width:2.5rem}",
+        },
+        {
+            input: `<div class="is-[div]:w-10"></div>`,
+            output: ".is-\\[div\\]\\:w-10:is(div){width:2.5rem}",
+        },
+        {
+            input: `<div class="w-10 not-[ul]:w-1.5"></div>`,
+            output: "w-10{width:2.5rem}.not-\\[ul\\]\\:w-1\\.5:not(ul){width:0.375rem}",
+        },
+    ]
+    testCases.forEach(({ input, output }) => {
+        const extract = input.match(/class="([^"]*)"/)?.[1]
+        test.concurrent(`generate the css for ${extract}`, async ({ expect }) => {
+            const css = await generateClasses(input)
+            console.log(css)
+            expect(css).toMatch(output)
+        })
+    })
+})
