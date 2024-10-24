@@ -3,10 +3,22 @@ import { toSlashCase, matchUtilitiesRegex } from "../src/utils.js"
 
 describe("toSlashCase", () => {
     const testCases = [
-        { input: "animation", expected: "animation" },
-        { input: "animationDelay", expected: "animation-delay" },
-        { input: "animationDuration", expected: "animation-duration" },
-        { input: "animationIterationCount", expected: "animation-iteration-count" },
+        {
+            input: "animation",
+            expected: "animation",
+        },
+        {
+            input: "animationDelay",
+            expected: "animation-delay",
+        },
+        {
+            input: "animationDuration",
+            expected: "animation-duration",
+        },
+        {
+            input: "animationIterationCount",
+            expected: "animation-iteration-count",
+        },
     ]
 
     testCases.forEach(({ input, expected }) => {
@@ -17,10 +29,28 @@ describe("toSlashCase", () => {
 })
 
 describe("matchUtilitiesRegex", () => {
-    test("matches animation utilities", () => {
-        expect(matchUtilitiesRegex.test("animationDelay")).toBe(true)
-        expect(matchUtilitiesRegex.test("animationDuration")).toBe(true)
-        expect(matchUtilitiesRegex.test("animation")).toBe(false)
-        expect(matchUtilitiesRegex.test("keyframes")).toBe(false)
+    const testCases = [
+        {
+            input: "animationDelay",
+            expected: true,
+        },
+        {
+            input: "animationDuration",
+            expected: true,
+        },
+        {
+            input: "animation",
+            expected: false,
+        },
+        {
+            input: "keyframes",
+            expected: false,
+        },
+    ]
+
+    testCases.forEach(({ input, expected }) => {
+        test.concurrent(`matches ${input} as ${expected}`, ({ expect }) => {
+            expect(matchUtilitiesRegex.test(input)).toBe(expected)
+        })
     })
 })

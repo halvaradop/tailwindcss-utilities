@@ -6,26 +6,22 @@ import { theme } from "../src/theme.js"
 export const generateClasses = extractClasses(plugin)
 
 describe("Plugin", () => {
-    describe("Loading plugin", () => {
-        test.concurrent("should load utility classes from theme", async () => {
-            const html = `<div class="animation-delay-100"></div>`
-            const css = await generateClasses(html)
-            expect(css).toMatch(".animation-delay-100{animation-delay:100ms}")
-            expect(css).not.toMatch(".animation-delay-200{animation-delay:200ms}")
-        })
+    test.concurrent("should load utility classes from theme", async () => {
+        const html = `<div class="animation-delay-100"></div>`
+        const css = await generateClasses(html)
+        expect(css).toMatch(".animation-delay-100{animation-delay:100ms}")
+        expect(css).not.toMatch(".animation-delay-200{animation-delay:200ms}")
     })
 
-    test("Loaded keyframes utility classes", async () => {
+    test.concurrent("should load keyframes utility classes from theme", async () => {
         expect(plugin.config?.theme?.keyframes).toEqual(theme.keyframes)
         expect(plugin.config?.theme?.keyframes).not.toEqual({})
     })
 
-    describe("Conflict prevention", () => {
-        test.concurrent("should not create conflicting classes", async () => {
-            const html = `<div class="w-full px-2 flex items-center"></div>`
-            const css = await generateClasses(html)
-            expect(css).toMatch(".flex{display:flex}.w-full{width:100%}.items-center{align-items:center}.px-2{padding-left:0.5rem;padding-right:0.5rem}")
-        })
+    test.concurrent("should not create conflicting classes", async () => {
+        const html = `<div class="w-full px-2 flex items-center"></div>`
+        const css = await generateClasses(html)
+        expect(css).toMatch(".flex{display:flex}.w-full{width:100%}.items-center{align-items:center}.px-2{padding-left:0.5rem;padding-right:0.5rem}")
     })
 })
 
