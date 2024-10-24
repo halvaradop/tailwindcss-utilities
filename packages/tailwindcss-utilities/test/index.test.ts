@@ -1,6 +1,6 @@
 import { describe, test } from "vitest"
-import { extractClasses } from "@halvaradop/tailwindcss-core/utils"
-import plugin from "../src"
+import { extractClasses } from "@halvaradop/tailwindcss-core/css"
+import plugin from "../src/index.js"
 
 const generateClasses = extractClasses(plugin)
 

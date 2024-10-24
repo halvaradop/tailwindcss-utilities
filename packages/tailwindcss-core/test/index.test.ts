@@ -73,5 +73,4 @@ describe("Merge objects", () => {
         const target = { b: { d: 4 }, c: 5 }
         expect(merge(source, target, false)).toEqual({ a: 1, b: { c: 2, d: 4 }, c: 5 })
     })
-
 })
