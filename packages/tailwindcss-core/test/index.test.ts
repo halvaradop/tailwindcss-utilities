@@ -1,5 +1,6 @@
 import { describe, test, expect } from "vitest"
-import { extractClasses, merge } from "../src/generate-classes"
+import { extractClasses } from "../src/generate-classes"
+import { merge } from "../src/merge"
 
 /**
  * Provide a mock implementation of the extractClasses function with an
