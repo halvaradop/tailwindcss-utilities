@@ -1,5 +1,6 @@
 import { describe, test, expect } from "vitest"
-import { extractClasses, merge } from "../src/generate-classes"
+import { extractClasses } from "../src/generate-classes"
+import { merge } from "../src/merge"
 
 /**
  * Provide a mock implementation of the extractClasses function with an
@@ -73,5 +74,4 @@ describe("Merge objects", () => {
         const target = { b: { d: 4 }, c: 5 }
         expect(merge(source, target, false)).toEqual({ a: 1, b: { c: 2, d: 4 }, c: 5 })
     })
-
 })

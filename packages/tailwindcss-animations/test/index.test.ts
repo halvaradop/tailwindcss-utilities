@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest"
-import { extractClasses } from "@halvaradop/tailwindcss-core/utils"
+import { extractClasses } from "@halvaradop/tailwindcss-core/css"
 import { plugin } from "../src/index.js"
 import { theme } from "../src/theme.js"
 
