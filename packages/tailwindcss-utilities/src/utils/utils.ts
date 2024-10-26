@@ -1,4 +1,5 @@
 import { InvalidSelectorError } from "./errors.js"
+import { isObject, isNullish, isArray } from "@halvaradop/ts-utility-types/utils"
 
 export const tagRegex = /^([a-z]{1,}\-?){1,}$/
 
@@ -12,8 +13,8 @@ export const tagRegex = /^([a-z]{1,}\-?){1,}$/
  * @throws {InvalidSelectorError} If any selector is invalid
  */
 export const verifySelectorsTheme = (selectors: string[] = []): string[] => {
-    const haveInvalid = selectors.some(selector => !tagRegex.test(selector))
-    if (haveInvalid) {
+    const hasInvalidSelector = selectors.some(selector => !tagRegex.test(selector))
+    if (hasInvalidSelector) {
         throw new InvalidSelectorError("Invalid HTML tag. Please verify the tags.")
     }
     return selectors
@@ -33,10 +34,10 @@ export const verifySelectorsTheme = (selectors: string[] = []): string[] => {
  */
 export const removeEmptyProperties = <T extends Record<string, any>>(entry: T) => {
     for (const key in entry) {
-        const pairValue = entry[key]
-        const isArray = Array.isArray(pairValue)
-        const isObject = pairValue && typeof pairValue === "object" && !isArray
-        if (!pairValue || pairValue === "" || (isArray && !pairValue.length) || (isObject && !Object.keys(pairValue).length)) {
+        const value = entry[key]
+        const isArray = Array.isArray(value)
+        const isObject = value && typeof value === "object" && !isArray
+        if (!value || value === "" || (isArray && !value.length) || (isObject && !Object.keys(value).length)) {
             delete entry[key]
         }
     }
