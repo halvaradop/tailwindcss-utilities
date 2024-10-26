@@ -15,6 +15,7 @@ export const merge = <S extends Record<string, unknown>, T extends Record<string
 ) => {
     if (priority && isPrimitive(source) && isObject(target)) return target
     if (priority && isPrimitive(target) && isObject(source)) return source
+    if (isPrimitive(source) && isPrimitive(target)) return target
     const merged: Record<string, unknown> = { ...source }
     for (const key in target) {
         if (!isObject(target[key])) {

@@ -1,6 +1,6 @@
 import { describe, test } from "vitest"
-import { extractClasses } from "../src/generate-classes"
-import { merge } from "../src/merge"
+import { extractClasses } from "../src/generate-classes.js"
+import { merge } from "../src/merge.js"
 
 /**
  * Provide a mock implementation of the extractClasses function with an
@@ -87,6 +87,39 @@ describe("Merge objects", () => {
     testCases.forEach(({ description, source, target, expected, priority = true }) => {
         test.concurrent(description, ({ expect }) => {
             expect(merge(source, target, priority)).toEqual(expected)
+        })
+    })
+})
+
+describe("Merge objects with primitive values and expected errors", () => {
+    const testCases = [
+        {
+            description: "Merge with primitive values",
+            source: 1,
+            target: 2,
+            expected: 2,
+        },
+        {
+            description: "Merge with primitive values and one object",
+            source: {
+                a: 1,
+            },
+            target: 2,
+            expected: { a: 1 },
+        },
+        {
+            description: "Merge with primitive values and one object",
+            source: 2,
+            target: {
+                a: 1,
+            },
+            expected: { a: 1 },
+        },
+    ]
+    testCases.forEach(({ description, source, target, expected }) => {
+        test.concurrent(description, ({ expect }) => {
+            // @ts-ignore
+            expect(merge(source, target)).toEqual(expected)
         })
     })
 })
