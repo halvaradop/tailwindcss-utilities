@@ -6,12 +6,15 @@
   "description": "A monorepo project for managing multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
     "dev": "turbo dev --parallel",
-    "build": "turbo build --filter @halvaradop/*core && turbo build --filter=!@halvaradop/*core --parallel",
+    "build": "turbo build --filter *core && turbo build --filter=!*core --parallel",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
     "test": "turbo test --parallel",
     "test:watch": "turbo test:watch --parallel",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "clean": "turbo clean --parallel",
+    "clean:dist": "turbo clean:dist --parallel",
+    "clean:modules": "turbo clean:modules --parallel"
   },
   "publishConfig": {
     "access": "public",
