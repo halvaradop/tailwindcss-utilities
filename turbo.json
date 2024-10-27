@@ -17,6 +17,15 @@
     "test:watch": {
       "cache": false,
       "inputs": ["test"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "clean:dist": {
+      "cache": false
+    },
+    "clean:modules": {
+      "cache": false
     }
   },
   "cacheDir": ".turbo/cache"
