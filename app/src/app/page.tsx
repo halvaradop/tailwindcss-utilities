@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/ui/custom/button"
+import { Button } from "@halvaradop/ui-button"
 import { UtilitiesSection } from "@/ui/utilities-section"
 import hero from "@/assets/hero-mobile.svg"
 
@@ -16,7 +16,7 @@ const Index = () => {
                         It is a dependency that extends the utilities offered by TailwindCSS, 
                         complementing the selector and text styles, as well as other utilities.
                     </p>
-                    <Button className="mx-auto" fullWidth={false}>
+                    <Button className="mx-auto border-gray-200 bg-gray-200" variant="base" fullWidth={false}>
                         <Link href="/">Get Started</Link>
                     </Button>
                 </div>

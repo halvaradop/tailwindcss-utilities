@@ -24,7 +24,7 @@ export const Footer = () => {
                         <Image src={github} alt="github icon" />
                     </Link>
                 </figure>
-                <p className="mt-8 col-span-2 text-center lg:col-span-1 lg:m-0">&#169;​ 2024, TailwindCSS Utilities</p>
+                <p className="mt-8 col-span-2 text-center lg:col-span-1 lg:m-0">&#169;​ 2024 halvaradop</p>
             </section>
         </footer>
     )
