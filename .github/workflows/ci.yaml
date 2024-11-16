@@ -32,8 +32,6 @@ jobs:
           node-version: "18.x"
       - uses: pnpm/action-setup@v4
       - run: pnpm install
-      # rebuild the project to ensure that the test files are available
-      # - run: pnpm build
       - run: pnpm test
 
   deploy-to-development:
