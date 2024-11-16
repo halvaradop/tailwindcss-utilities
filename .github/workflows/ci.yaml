@@ -27,11 +27,17 @@ jobs:
     needs: [build]
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
       - uses: actions/setup-node@v4
         with:
           node-version: "18.x"
+
       - uses: pnpm/action-setup@v4
+
       - run: pnpm install
+      - run: pnpm build
       - run: pnpm test
 
   deploy-to-development:
