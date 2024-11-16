@@ -46,6 +46,12 @@ importers:
 
   app:
     dependencies:
+      "@halvaradop/ui-button":
+        specifier: ^0.3.1
+        version: 0.3.1
+      "@halvaradop/ui-core":
+        specifier: ^0.2.0
+        version: 0.2.0
       framer-motion:
         specifier: ^11.2.13
         version: 11.11.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -59,6 +65,9 @@ importers:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      "@halvaradop/tailwindcss-core":
+        specifier: workspace:*
+        version: link:../packages/tailwindcss-core
       "@halvaradop/tailwindcss-utilities":
         specifier: ^0.2.3
         version: 0.2.3
@@ -473,6 +482,18 @@ packages:
   "@halvaradop/ts-utility-types@0.10.0":
     resolution:
       { integrity: sha512-U0j+zJJYC4d81JRQH57rvvjgVgArHkfPA3MA6qCHNX8aD1O+Pn6ZCYekBICz6wpzkJDnE5lrfWDnkd4G3/63RA== }
+
+  "@halvaradop/ts-utility-types@0.11.1":
+    resolution:
+      { integrity: sha512-7t86TIg5cKxPweNMR6olMtZkeTJ6uoXN+hjTu+A9t1nvWh5bS0LtWO3yjOZ1hobjcgH+uy6gM7ApoIkpx/6BeA== }
+
+  "@halvaradop/ui-button@0.3.1":
+    resolution:
+      { integrity: sha512-Xm3VaomefyZyiBDfdiYTliyfKW4ivIue0PaYtez5/27ZX8/vFGjIUvnTs9JR2IRmBwKs4b5BDiPAub0l8Qr0pg== }
+
+  "@halvaradop/ui-core@0.2.0":
+    resolution:
+      { integrity: sha512-v677p9fPHsgy46QTvbNZJKrlpNhRJIikV1pa/m7CnoOYULbKRSk6ODOYP5xIrU61N4PXSdlR1VQeZRPWzuJJLg== }
 
   "@isaacs/cliui@8.0.2":
     resolution:
@@ -2016,6 +2037,16 @@ snapshots:
   "@halvaradop/tailwindcss-utilities@0.2.3": {}
 
   "@halvaradop/ts-utility-types@0.10.0": {}
+
+  "@halvaradop/ts-utility-types@0.11.1": {}
+
+  "@halvaradop/ui-button@0.3.1":
+    dependencies:
+      "@halvaradop/ts-utility-types": 0.11.1
+      "@halvaradop/ui-core": 0.2.0
+      class-variance-authority: 0.7.0
+
+  "@halvaradop/ui-core@0.2.0": {}
 
   "@isaacs/cliui@8.0.2":
     dependencies:
