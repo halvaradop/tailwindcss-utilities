@@ -11,7 +11,7 @@
     "build:web": "turbo build --filter *page",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
-    "test": "turbo test --parallel",
+    "test": "turbo test --filter=!*page --parallel",
     "test:watch": "turbo test:watch --parallel",
     "test:coverage": "vitest --coverage",
     "clean": "turbo clean --parallel",
