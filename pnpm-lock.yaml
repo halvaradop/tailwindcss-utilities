@@ -6,10 +6,6 @@ settings:
 
 importers:
   .:
-    dependencies:
-      tailwindcss:
-        specifier: ^3.4.15
-        version: 3.4.15
     devDependencies:
       "@csstools/postcss-minify":
         specifier: ^2.0.1
@@ -32,6 +28,9 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
+      tailwindcss:
+        specifier: ^3.4.15
+        version: 3.4.15
       tsup:
         specifier: ^8.2.4
         version: 8.3.5(jiti@1.21.6)(postcss@8.4.49)(typescript@5.6.3)(yaml@2.6.0)
@@ -60,6 +59,9 @@ importers:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      "@halvaradop/tailwindcss-utilities":
+        specifier: ^0.2.3
+        version: 0.2.3
       "@types/node":
         specifier: ^20
         version: 20.17.6
@@ -463,6 +465,10 @@ packages:
     engines: { node: ">=18" }
     cpu: [x64]
     os: [win32]
+
+  "@halvaradop/tailwindcss-utilities@0.2.3":
+    resolution:
+      { integrity: sha512-z8e3hdNLpgV7Pv46VL0zboLAhxC63xUt/8iYqiYO3TJxBlcWQZkAuyN7LZVH1x/FfqVCxo0YgMLYZ3HlRQ0IHw== }
 
   "@halvaradop/ts-utility-types@0.10.0":
     resolution:
@@ -2006,6 +2012,8 @@ snapshots:
 
   "@esbuild/win32-x64@0.24.0":
     optional: true
+
+  "@halvaradop/tailwindcss-utilities@0.2.3": {}
 
   "@halvaradop/ts-utility-types@0.10.0": {}
 
