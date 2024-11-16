@@ -49,6 +49,9 @@ importers:
       "@halvaradop/ui-button":
         specifier: ^0.3.1
         version: 0.3.1
+      "@halvaradop/ui-core":
+        specifier: ^0.2.0
+        version: 0.2.0
       framer-motion:
         specifier: ^11.2.13
         version: 11.11.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -62,6 +65,9 @@ importers:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      "@halvaradop/tailwindcss-core":
+        specifier: workspace:*
+        version: link:../packages/tailwindcss-core
       "@halvaradop/tailwindcss-utilities":
         specifier: ^0.2.3
         version: 0.2.3

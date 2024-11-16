@@ -14,7 +14,7 @@ export const menuVariants: Variants = {
             bounce: 0.8,
             delayChildren: 0.2,
             staggerChildren: 0.05,
-        }
+        },
     },
     exit: {
         x: "var(--nav-menu)",
@@ -23,23 +23,22 @@ export const menuVariants: Variants = {
             stiffness: 100,
             mass: 4,
             damping: 25,
-        }
-    }
+        },
+    },
 }
-
 
 export const itemVariants: Variants = {
     hidden: {
         x: "var(--nav-li)",
-        opacity: 0
+        opacity: 0,
     },
     visible: {
         x: 0,
         opacity: 1,
         transition: {
             type: "tween",
-            ease: "easeOut"
-        }
+            ease: "easeOut",
+        },
     },
     exit: {
         x: 50,
@@ -47,6 +46,6 @@ export const itemVariants: Variants = {
         transition: {
             type: "tween",
             ease: "circIn",
-        }
-    }
+        },
+    },
 }

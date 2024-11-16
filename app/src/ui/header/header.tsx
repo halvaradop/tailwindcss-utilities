@@ -8,7 +8,6 @@ import Link from "next/link"
 import npm from "@/assets/npm.svg"
 import github from "@/assets/github.svg"
 
-
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
 
@@ -16,14 +15,13 @@ export const Header = () => {
         setIsOpen(!isOpen)
     }
 
-
     useEffect(() => {
         const matchScreen = matchMedia("(min-width: 900px)")
 
         const handleSetMatchMedia = () => {
             setIsOpen(matchScreen.matches)
         }
-                        
+
         setIsOpen(matchScreen.matches)
         matchScreen.addEventListener("change", handleSetMatchMedia)
         return () => matchScreen.removeEventListener("change", handleSetMatchMedia)
@@ -36,9 +34,7 @@ export const Header = () => {
                     <h2 className="base:text-lg">Utilities</h2>
                     <Image className="hover:cursor-pointer base:hidden" src={menu} alt="menu icon" onClick={handleToggleMenu} />
                 </div>
-                <AnimatePresence mode="wait">
-                    { isOpen && <HeaderMenu /> }                   
-                </AnimatePresence>
+                <AnimatePresence mode="wait">{isOpen && <HeaderMenu />}</AnimatePresence>
                 <figure className="hidden base:flex base:gap-x-5">
                     <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
                         <Image width={32} src={npm} alt="npm icon" />
