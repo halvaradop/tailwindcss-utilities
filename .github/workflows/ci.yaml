@@ -16,21 +16,29 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "18.x"
-      - run: npm install
-      - run: npm run build
+
+      - uses: pnpm/action-setup@v4
+
+      - run: pnpm install
+      - run: pnpm build
 
   test:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
       - uses: actions/setup-node@v4
         with:
           node-version: "18.x"
-      - run: npm install
-      # rebuild the project to ensure that the test files are available
-      - run: npm run build
-      - run: npm test
+
+      - uses: pnpm/action-setup@v4
+
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm test
 
   deploy-to-development:
     if: github.event.pull_request.merged == true && github.base_ref == 'master'
