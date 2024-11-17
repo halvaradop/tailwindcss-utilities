@@ -25,4 +25,5 @@ export interface CodeProps {
     lang?: BundledLanguage
     theme?: BundledTheme
     fileName?: string
+    className?: string
 }

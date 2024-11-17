@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    main#layout-docs {
+    main {
         @apply text-white;
 
         h1 {
@@ -15,11 +15,16 @@
         }
 
         .code pre {
-            @apply whitespace-pre-wrap break-all;
+            @apply bg-gray-200 !important;
+            @apply p-4 rounded-md whitespace-pre-wrap break-all border-2 border-gray-100;
         }
 
         .code span + div > pre {
-            @apply pt-8;
+            @apply pt-16;
+        }
+
+        .code.secondary > div > pre {
+            @apply bg-gray-100 !important;
         }
     }
 }

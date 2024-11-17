@@ -1,9 +1,10 @@
 import Link from "next/link"
 import { Code } from "@/ui/code"
+import { features, installation, setupPlugins } from "@/ui/shiki-code"
 
 const DocsPage = () => {
     return (
-        <main className="w-11/12 mt-10 mx-auto space-y-16 base:w-10/12" id="layout-docs">
+        <main className="w-11/12 mt-10 mb-28 mx-auto space-y-16 base:w-10/12">
             <div>
                 <h1>Documentation</h1>
                 <p className="mt-2 text-gray">
@@ -44,14 +45,7 @@ const DocsPage = () => {
             <div>
                 <h2>Installation</h2>
                 <p className="text-gray">Run the following commands to install the packages</p>
-                <Code
-                    code={`
-npm install -D @halvaradop/tailwindcss-utilities
-# or
-pnpm add -D @halvaradop/tailwindcss-utilities                        
-                        `}
-                    lang="bash"
-                />
+                <Code code={installation} lang="bash" />
             </div>
             <div>
                 <h2>Configuration</h2>
@@ -59,42 +53,12 @@ pnpm add -D @halvaradop/tailwindcss-utilities
                     Each plugin is designed to be easily configurable and flexible, allowing you to create powerful utility
                     classes for your application development needs.
                 </p>
-                <Code
-                    fileName="tailwind.config.ts"
-                    lang="ts"
-                    code={`
-import type { Config } from "tailwindcss"
-import utilities from "@halvaradop/tailwindcss-utilities"
-import animations from "@halvaradop/tailwindcss-animations"
-
-const config: Config = {
-    content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
-    theme: {},
-    plugins: [
-        utilities,
-        animations,
-    ],
-}
-
-export default config
-                        `}
-                />
+                <Code fileName="tailwind.config.ts" lang="ts" code={setupPlugins} />
             </div>
             <div>
                 <h2>Features</h2>
                 <p className="mt-2 text-gray">Some of the key features offered by these plugins include</p>
-                <Code
-                    lang="html"
-                    code={`
-<h2 class="fluency-2xl">Subtitle</h2>
-<ul class="li:text-slate-500">
-    <li>...</li>
-    <li>...</li>
-</ul> 
-<div class="size-20 rounded fade-in-up" />
-
-                `}
-                />
+                <Code lang="html" code={features} />
             </div>
         </main>
     )
