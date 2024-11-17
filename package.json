@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "turbo dev --parallel",
     "dev:web": "pnpm dev --filter *page",
-    "build": "turbo build --filter *core && turbo build --filter=!*core --parallel",
-    "build:web": "turbo build --filter *page",
+    "build": "pnpm build:core && turbo run build --filter=!*core --parallel",
+    "build:core": "turbo build --filter=@halvaradop/tailwindcss-core",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "turbo test --filter=!*page --parallel",
