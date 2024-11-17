@@ -4,7 +4,12 @@
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
+<<<<<<< HEAD
       "outputs": [".next/**", "!.next/cache/**"]
+=======
+      "inputs": ["src"],
+      "outputs": ["dist", ".next", "!.next/cache"]
+>>>>>>> 822e804 (chore: update `outputs` in `turbo.json`)
     },
     "dev": {
       "cache": false
