@@ -35,7 +35,7 @@ export const Header = () => {
                     <Image className="hover:cursor-pointer base:hidden" src={menu} alt="menu icon" onClick={handleToggleMenu} />
                 </div>
                 <AnimatePresence mode="wait">{isOpen && <HeaderMenu />}</AnimatePresence>
-                <figure className="hidden base:flex base:gap-x-5">
+                <figure className="hidden base:flex base:items-center base:gap-x-5">
                     <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
                         <Image width={32} src={npm} alt="npm icon" />
                     </Link>
