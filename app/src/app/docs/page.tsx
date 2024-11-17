@@ -1,6 +1,12 @@
 import Link from "next/link"
+import { Metadata } from "next"
 import { Code } from "@/ui/code"
 import { features, installation, setupPlugins } from "@/ui/shiki-code"
+
+export const metadata: Metadata = {
+    title: "Docs",
+    description: "Documentation for the plugins in the @halvaradop/tailwindcss utilities ecosystem.",
+}
 
 const DocsPage = () => {
     return (
