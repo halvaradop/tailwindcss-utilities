@@ -18,10 +18,7 @@ export const HeaderMenu = () => {
                         <Link href="/">Home</Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/">Installation</Link>
-                    </motion.li>
-                    <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/">Docs</Link>
+                        <Link href="/docs">Docs</Link>
                     </motion.li>
                 </ul>
                 <ul className="mt-10 flex items-center justify-around base:hidden">

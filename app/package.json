@@ -19,11 +19,13 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@halvaradop/tailwindcss-animations": "^0.1.0",
     "@halvaradop/tailwindcss-core": "workspace:*",
-    "@halvaradop/tailwindcss-utilities": "^0.2.3",
+    "@halvaradop/tailwindcss-utilities": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "class-variance-authority": "^0.7.0"
+    "class-variance-authority": "^0.7.0",
+    "shiki": "^1.23.0"
   }
 }

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 import utilities from "@halvaradop/tailwindcss-utilities"
+import animations from "@halvaradop/tailwindcss-animations"
 
 const config: Config = {
     content: [
@@ -32,6 +33,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [utilities],
+    plugins: [utilities, animations],
 }
 export default config

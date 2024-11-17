@@ -21,7 +21,7 @@ export const HeroSection = () => {
                 </p>
                 <div className="mt-2 flex items-center justify-center gap-x-10">
                     <Button className="border-gray-200 bg-gray-200">
-                        <Link href="/">Get Started</Link>
+                        <Link href="/docs">Get Started</Link>
                     </Button>
                     <Button className="border-white bg-white" variant="outline">
                         <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank">

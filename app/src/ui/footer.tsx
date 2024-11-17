@@ -14,10 +14,7 @@ export const Footer = () => {
                             <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <Link href="/">Installation</Link>
-                        </li>
-                        <li>
-                            <Link href="/">Docs</Link>
+                            <Link href="/docs">Docs</Link>
                         </li>
                     </ul>
                     <ul className="space-y-4 base:text-start">

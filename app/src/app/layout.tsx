@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import { LayoutProps } from "@/lib/@types/props"
 import { Header } from "@/ui/header/header"
-import "@/ui/globals.css"
 import { Footer } from "@/ui/footer"
+import "@/ui/globals.css"
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: LayoutProps) {
     return (
         <html lang="en">
             <body
-                className={`${poppins.className} antialiased relative overflow-x-hidden bg-black scroll-smooth scroll:w-2 track:my-2 thumb:rounded thumb:bg-gray-100 has-[header.open]:scroll:bg-gray-300`}
+                className={`${poppins.className} min-h-screen grid grid-rows-[auto,1fr_auto] antialiased relative overflow-x-hidden bg-black scroll-smooth scroll:w-2 track:my-2 thumb:rounded thumb:bg-gray-100 has-[header.open]:scroll:bg-gray-300`}
             >
                 <Header />
                 {children}
