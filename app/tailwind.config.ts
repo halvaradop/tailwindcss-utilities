@@ -7,6 +7,7 @@ const config: Config = {
         "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
         "node_modules/@halvaradop/**/*.{js,ts,jsx,tsx,mdx}",
+        "./mdx-components.tsx",
     ],
     theme: {
         extend: {
