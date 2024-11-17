@@ -4,8 +4,7 @@
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
-      "inputs": ["src"],
-      "outputs": ["dist", ".next", "!.next/cache"]
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "dev": {
       "cache": false
