@@ -13,7 +13,7 @@ export const HeaderMenu = () => {
         >
             <aside className="min-h-dvh p-10 flex flex-col justify-evenly base:min-h-fit base:p-0 base:flex-row base:items-center base:justify-around">
                 <p className="pb-1 border-b border-gray base:hidden">Navigation</p>
-                <ul className="fluency-3xl font-medium flex flex-col gap-y-8 base:text-lg base:flex-row base:gap-x-5">
+                <ul className="fluency-3xl font-medium flex flex-col gap-y-8 base:text-lg base:flex-row base:gap-x-10">
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
                         <Link href="/">Home</Link>
                     </motion.li>
