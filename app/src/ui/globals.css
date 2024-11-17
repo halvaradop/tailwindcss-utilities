@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    main#layout-docs {
+        @apply text-white;
+
+        h1 {
+            @apply text-4xl font-bold;
+        }
+
+        h2 {
+            @apply text-3xl font-bold;
+        }
+    }
+}
