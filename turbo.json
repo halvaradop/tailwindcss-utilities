@@ -5,7 +5,7 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["src"],
-      "outputs": ["dist"]
+      "outputs": ["dist", ".next", "!.next/cache"]
     },
     "dev": {
       "cache": false

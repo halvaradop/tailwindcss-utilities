@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "turbo dev --parallel",
     "dev:web": "pnpm dev --filter *page",
-    "build": "turbo build --filter *core && turbo build --filter=!*core --parallel",
+    "build": "turbo build --filter *core && turbo build --filter=!*core --parallel --filter=!*page",
     "build:web": "turbo build --filter *page",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
