@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 import utilities from "@halvaradop/tailwindcss-utilities"
+import animations from "@halvaradop/tailwindcss-animations"
 
 const config: Config = {
     content: [
@@ -7,7 +8,6 @@ const config: Config = {
         "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
         "node_modules/@halvaradop/**/*.{js,ts,jsx,tsx,mdx}",
-        "./mdx-components.tsx",
     ],
     theme: {
         extend: {
@@ -33,6 +33,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [utilities],
+    plugins: [utilities, animations],
 }
 export default config

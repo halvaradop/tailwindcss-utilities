@@ -19,6 +19,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@halvaradop/tailwindcss-animations": "^0.1.0",
     "@halvaradop/tailwindcss-core": "workspace:*",
     "@halvaradop/tailwindcss-utilities": "workspace:*",
     "@types/node": "^20",

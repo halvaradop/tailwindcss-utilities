@@ -2,7 +2,7 @@ import { ArgsFunction } from "./types"
 import { ButtonHTMLAttributes } from "react"
 import { VariantProps } from "class-variance-authority"
 import { SlotProps } from "@halvaradop/ui-core"
-import { BundledTheme } from "shiki"
+import { BundledLanguage, BundledTheme } from "shiki"
 
 export interface LayoutProps {
     children: React.ReactNode
@@ -22,6 +22,7 @@ export interface TitleProps {
 
 export interface CodeProps {
     code: string
-    lang?: string
+    lang?: BundledLanguage
     theme?: BundledTheme
+    fileName?: string
 }
