@@ -4,23 +4,17 @@
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
-<<<<<<< HEAD
       "outputs": [".next/**", "!.next/cache/**"]
-=======
-      "inputs": ["src"],
-      "outputs": ["dist", ".next", "!.next/cache"]
->>>>>>> 822e804 (chore: update `outputs` in `turbo.json`)
     },
     "dev": {
       "cache": false
     },
     "test": {
-      "cache": false,
-      "persistent": false
+      "cache": false
     },
     "test:watch": {
       "cache": false,
-      "inputs": ["test"]
+      "persistent": false
     },
     "clean": {
       "cache": false
@@ -32,5 +26,6 @@
       "cache": false
     }
   },
+  "ui": "tui",
   "cacheDir": ".turbo/cache"
 }

@@ -1,6 +1,6 @@
 import { describe, test } from "vitest"
 import { extractClasses } from "../src/generate-classes.js"
-import { merge } from "../src/merge.js"
+import { merge, keysToTransform, toSlashCase } from "../src/index.js"
 
 /**
  * Provide a mock implementation of the extractClasses function with an
@@ -115,11 +115,112 @@ describe("Merge objects with primitive values and expected errors", () => {
             },
             expected: { a: 1 },
         },
+        {
+            description: "Merge two objects with nested objects",
+            source: {
+                a: 1,
+                b: {
+                    c: 2,
+                },
+                e: 5,
+            },
+            target: {
+                b: {
+                    d: 3,
+                },
+                c: 4,
+                e: 7,
+            },
+            expected: {
+                a: 1,
+                b: {
+                    c: 2,
+                    d: 3,
+                },
+                c: 4,
+                e: 7,
+            },
+        },
+        {
+            description: "Merge two empty objects",
+            source: {},
+            target: {},
+            expected: {},
+        },
+        {
+            description: "Merge one empty object and one nullish value",
+            source: {},
+            target: null,
+            expected: {},
+        },
+        {
+            description: "Merge two nullish values",
+            source: null,
+            target: null,
+            expected: null,
+        },
+        {
+            description: "Merge two objects and remove nullish values",
+            source: {
+                a: null,
+                b: null,
+            },
+            target: {
+                a: undefined,
+                b: undefined,
+                c: null,
+            },
+            expected: {},
+            nullishValues: false,
+        },
+        {
+            description: "Merge two objects and remove nullish values",
+            source: {
+                a: 1,
+                b: {
+                    c: null,
+                },
+            },
+            target: {
+                a: undefined,
+                b: {
+                    c: 2,
+                },
+                d: 3,
+            },
+            expected: {
+                b: {
+                    c: 2,
+                },
+                d: 3,
+            },
+        },
     ]
-    testCases.forEach(({ description, source, target, expected }) => {
+    testCases.forEach(({ description, source, target, expected, nullishValues }) => {
         test.concurrent(description, ({ expect }) => {
             // @ts-ignore
-            expect(merge(source, target)).toEqual(expected)
+            expect(merge(source, target, false, nullishValues)).toEqual(expected)
+        })
+    })
+})
+
+describe("Transform keys", () => {
+    const testCases = [
+        {
+            description: "",
+            input: {
+                fontSize: 1,
+                UpperCase: 2,
+            },
+            expected: {
+                "font-size": 1,
+                "upper-case": 2,
+            },
+        },
+    ]
+    testCases.forEach(({ description, input, expected }) => {
+        test.concurrent(description, ({ expect }) => {
+            expect(keysToTransform(input, toSlashCase)).toEqual(expected)
         })
     })
 })

@@ -2,7 +2,7 @@ import plugin from "tailwindcss/plugin.js"
 import { PluginCreator } from "tailwindcss/types/config.js"
 import { scrollUtilities } from "./utilities/scroll-utility.js"
 import { fluencyUtilities } from "./utilities/fluency-utility.js"
-import { selectorUtilities } from "./utilities/selector-utility.js"
+import { unstable_selector_utilities } from "./utilities/selector-utility.js"
 import { pseudoClassesUtilities } from "./utilities/pseudo-classes-utility.js"
 import { minWidthUtilities } from "./utilities/min-width-utility.js"
 
@@ -13,7 +13,7 @@ import { minWidthUtilities } from "./utilities/min-width-utility.js"
  * @param configApi The configuration API object obtained from tailwindcss.config.ts
  */
 export const creator: PluginCreator = configApi => {
-    selectorUtilities(configApi)
+    unstable_selector_utilities(configApi)
     fluencyUtilities(configApi)
     scrollUtilities(configApi)
     pseudoClassesUtilities(configApi)

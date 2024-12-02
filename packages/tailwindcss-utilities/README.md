@@ -19,12 +19,12 @@ To configure the plugin, add it to the plugins array in the Tailwind CSS configu
 ```ts
 // TypeScript
 import type { Config } from "tailwindcss"
-import plugin from "@halvaradop/tailwindcss-utilities"
+import utilities from "@halvaradop/tailwindcss-utilities"
 
 const config: Config = {
   content: [],
   theme: {},
-  plugins: [plugin],
+  plugins: [utilities],
 }
 
 export default config
@@ -32,13 +32,13 @@ export default config
 
 ```js
 // JavaScript
-import plugin from "@halvaradop/tailwindcss-utilities"
+import utilities from "@halvaradop/tailwindcss-utilities"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [],
   theme: {},
-  plugins: [plugin],
+  plugins: [utilities],
 }
 ```
 

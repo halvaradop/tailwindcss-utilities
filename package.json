@@ -5,15 +5,15 @@
   "type": "module",
   "description": "A monorepo project for managing multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
-    "dev": "turbo dev --parallel",
-    "dev:web": "pnpm dev --filter *page",
-    "build": "pnpm build:core && turbo run build --filter=!*core --parallel",
-    "build:core": "turbo build --filter=@halvaradop/tailwindcss-core",
+    "dev": "turbo dev --parallel --filter=!*page",
+    "dev:web": "pnpm dev --filter=*page",
+    "build": "turbo run build --parallel --filter=*core --filter=!*core",
+    "build:web": "turbo run build --filter=*page",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "turbo test --filter=!*page --parallel",
+    "test": "turbo test --parallel --filter=!*page ",
     "test:watch": "turbo test:watch --parallel",
-    "test:coverage": "vitest --coverage",
+    "test:coverage": "vitest run --coverage",
     "clean": "turbo clean --parallel",
     "clean:dist": "turbo clean:dist --parallel",
     "clean:modules": "turbo clean:modules --parallel"
@@ -43,7 +43,7 @@
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
     "@csstools/postcss-minify": "^2.0.1",
-    "@halvaradop/ts-utility-types": "^0.10.0",
+    "@halvaradop/ts-utility-types": "^0.15.0",
     "@types/node": "^22.5.4",
     "@vitest/coverage-v8": "^2.1.1",
     "autoprefixer": "^10.4.19",
@@ -70,7 +70,6 @@
           "README.md"
         ],
         "options": {
-          "printWidth": 120,
           "tabWidth": 2
         }
       },

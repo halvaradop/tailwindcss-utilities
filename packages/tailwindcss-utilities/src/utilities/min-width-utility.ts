@@ -10,4 +10,5 @@ export const minWidthUtilities: ResolvableTo<KeyValuePair<string, string>> = {
     lg: "1024px",
     xl: "1280px",
     "2xl": "1526px",
+    dvw: "100dvw",
 }

@@ -7,9 +7,9 @@ A Tailwind CSS plugin that provides a series of utility classes to add animation
 To install the plugin using npm or pnpm, ensure that Tailwind CSS and its configuration are already set up. If not, please refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation) for detailed instructions.
 
 ```bash
-npm install -D @halvaradop/tailwindcss-utilities
+npm install -D @halvaradop/tailwindcss-animations
 // or
-pnpm add -D @halvaradop/tailwindcss-utilities
+pnpm add -D @halvaradop/tailwindcss-animations
 ```
 
 ## Configuration
@@ -19,12 +19,12 @@ To configure the plugin, add it to the plugins array in the Tailwind CSS configu
 ```ts
 // TypeScript
 import type { Config } from "tailwindcss"
-import plugin from "@halvaradop/tailwindcss-utilities"
+import animations from "@halvaradop/tailwindcss-animations"
 
 const config: Config = {
   content: [],
   theme: {},
-  plugins: [plugin],
+  plugins: [animations],
 }
 
 export default config
@@ -32,13 +32,13 @@ export default config
 
 ```js
 // JavaScript
-import plugin from "@halvaradop/tailwindcss-utilities"
+import animations from "@halvaradop/tailwindcss-animations"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [],
   theme: {},
-  plugins: [plugin],
+  plugins: [animations],
 }
 ```
 
