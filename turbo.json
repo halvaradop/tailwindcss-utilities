@@ -10,7 +10,9 @@
       "cache": false
     },
     "test": {
-      "cache": false
+      "cache": false,
+      "inputs": ["test"],
+      "persistent": false
     },
     "test:watch": {
       "cache": false,

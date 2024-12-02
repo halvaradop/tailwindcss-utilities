@@ -1,4 +1,4 @@
-import { describe, expect, test } from "vitest"
+import { describe, test } from "vitest"
 import { extractClasses } from "@halvaradop/tailwindcss-core/css"
 import { verifySelectorsTheme } from "../src/lib/utils.js"
 import { InvalidSelectorError } from "../src/lib/errors.js"
