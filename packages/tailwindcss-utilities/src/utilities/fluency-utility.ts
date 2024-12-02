@@ -1,6 +1,6 @@
 import type { PluginAPI } from "tailwindcss/types/config.js"
-import type { EntryCSS, FontFluency } from "../types.js"
-import { removeEmptyProperties } from "../utils/utils.js"
+import type { EntryCSS, FontFluency } from "../lib/types.js"
+import { keysToTransform, merge, toSlashCase } from "@halvaradop/tailwindcss-core"
 
 /**
  * This object contains the values used for font utilities. Each property
@@ -79,23 +79,10 @@ export const fluencyUtilities = (configApi: PluginAPI) => {
     const { addUtilities, theme, e } = configApi
 
     const fluencyTheme = theme("fluency") ?? {}
-    const merge = { ...fontSizeUtilities, ...fluencyTheme }
-
-    const entries = Object.keys(merge).reduce<Record<string, EntryCSS>>((previous, size) => {
-        const hasUpdate = !!fluencyTheme[size]
-        const newValues = fluencyTheme[size]
-
-        return {
-            ...previous,
-            [`.${e(`fluency-${size}`)}`]: {
-                "font-size": (hasUpdate ? newValues["fontSize"] : undefined) ?? fontSizeUtilities[size]["fontSize"],
-                "line-height": (hasUpdate ? newValues["lineHeight"] : undefined) ?? fontSizeUtilities[size]["lineHeight"],
-                "letter-spacing":
-                    (hasUpdate ? newValues["letterSpacing"] : undefined) ?? fontSizeUtilities[size]["letterSpacing"],
-            },
-        }
-    }, {})
-
-    Object.keys(entries).forEach(key => removeEmptyProperties(entries[key]))
-    addUtilities(entries)
+    const utilities = merge(fontSizeUtilities, fluencyTheme)
+    const merged = Object.entries(utilities).reduce(
+        (prev, [key, value]) => ({ ...prev, [`.${e(`fluency-${key}`)}`]: keysToTransform(value as {}, toSlashCase) }),
+        {}
+    )
+    addUtilities(merged)
 }

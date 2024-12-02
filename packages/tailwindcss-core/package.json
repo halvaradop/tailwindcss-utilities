@@ -34,10 +34,10 @@
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "exports": {
-    "./merge": {
-      "types": "./dist/merge.d.ts",
-      "import": "./dist/merge.js",
-      "require": "./dist/merge.cjs"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./css": {
       "types": "./dist/generate-classes.d.ts",

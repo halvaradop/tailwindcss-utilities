@@ -1,7 +1,8 @@
 import pluginCSS from "tailwindcss/plugin.js"
+import { toSlashCase } from "@halvaradop/tailwindcss-core"
 import { Config, PluginCreator } from "tailwindcss/types/config.js"
 import { theme as themeDefault } from "./theme.js"
-import { matchUtilitiesRegex, toSlashCase } from "./utils.js"
+import { matchUtilitiesRegex } from "./utils.js"
 
 export const config: Partial<Config> = {
     theme: themeDefault,

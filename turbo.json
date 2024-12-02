@@ -4,18 +4,19 @@
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "./vercel/**"]
     },
     "dev": {
       "cache": false
     },
     "test": {
       "cache": false,
+      "inputs": ["test"],
       "persistent": false
     },
     "test:watch": {
       "cache": false,
-      "inputs": ["test"]
+      "persistent": false
     },
     "clean": {
       "cache": false
@@ -27,5 +28,6 @@
       "cache": false
     }
   },
+  "ui": "tui",
   "cacheDir": ".turbo/cache"
 }

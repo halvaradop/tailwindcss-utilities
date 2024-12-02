@@ -1,5 +1,5 @@
 import type { PluginAPI } from "tailwindcss/types/config.js"
-import { verifySelectorsTheme } from "../utils/utils.js"
+import { verifySelectorsTheme } from "../lib/utils.js"
 
 /**
  * This array contains the default tags supported by the selector variant
@@ -27,6 +27,8 @@ const tags: string[] = [
     "input",
     "button",
     "section",
+    "header",
+    "nav",
     "main",
     "body",
     "article",
@@ -39,6 +41,8 @@ const tags: string[] = [
 ]
 
 /**
+ * unstable
+ *
  * Defines a set of tag variant utilities that allow you to customize different
  * HTML tags within a project. This enables more specific styling of elements.
  * The plugin also allows users to extend the default set of supported tags.
@@ -48,7 +52,7 @@ const tags: string[] = [
  *
  * @param configApi The configuration API object obtained from tailwindcss.config.ts
  */
-export const selectorUtilities = (configApi: PluginAPI) => {
+export const unstable_selector_utilities = (configApi: PluginAPI) => {
     const { addVariant, theme } = configApi
 
     const selectors = verifySelectorsTheme(theme("selectors")).concat(tags)

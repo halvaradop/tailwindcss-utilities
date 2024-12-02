@@ -1,5 +1,9 @@
-app
+# Ignore artifacts:
 node_modules
+.build
+.next
+.turbo
 
-# Configuration
+# Files:
 package-lock.json
+pnpm-lock.yaml

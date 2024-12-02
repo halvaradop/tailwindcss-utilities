@@ -9,11 +9,3 @@
  * matchUtiltiesRegex.test("animation")
  */
 export const matchUtilitiesRegex = new RegExp(/^(animation(?=Delay|Duration|Steps|IterationCount|FillMode|Range))/)
-
-/**
- * Converts a camelCase string to a slash-case string.
- *
- * @param str - The camelCase string to transform.
- * @returns {string} - The transformed slash-case string.
- */
-export const toSlashCase = (str: string): string => str.replace(/([A-Z])/g, "-$1").toLowerCase()

@@ -1,8 +1,8 @@
 import { describe, test } from "vitest"
 import { extractClasses } from "@halvaradop/tailwindcss-core/css"
+import { verifySelectorsTheme } from "../src/lib/utils.js"
+import { InvalidSelectorError } from "../src/lib/errors.js"
 import plugin from "../src/index.js"
-import { removeEmptyProperties, verifySelectorsTheme } from "../src/utils/utils.js"
-import { InvalidSelectorError } from "../src/utils/errors.js"
 
 const generateClasses = extractClasses(plugin)
 
@@ -65,6 +65,10 @@ describe("min-width utilities", () => {
             input: `<div class="min-w-2xl"></div>`,
             expected: ".min-w-2xl{min-width:1526px}",
         },
+        {
+            input: `<div class="min-w-dvw"></div>`,
+            expected: ".min-w-dvw{min-width:100dvw}",
+        },
     ]
 
     testCases.forEach(({ input, expected }) => {
@@ -104,32 +108,5 @@ describe("psuedo classes utilities", () => {
 describe("Errors", () => {
     test.concurrent("throws an error when an invalid HTML tag is provided", async ({ expect }) => {
         expect(() => verifySelectorsTheme(["12"])).toThrow(new InvalidSelectorError("Invalid HTML tag. Please verify the tags."))
-    })
-})
-
-describe("removeEmptyProperties", () => {
-    test.concurrent("removes empty properties from an object", async ({ expect }) => {
-        const obj = {
-            foo: "foo",
-            bar: "",
-            foobar: null,
-            barbar: undefined,
-            foofoo: [],
-            barfoo: {},
-        }
-        expect(removeEmptyProperties(obj)).toEqual({ foo: "foo" })
-    })
-
-    test.concurrent("keeps non-empty properties including functions", async ({ expect }) => {
-        const obj = {
-            foo: "foo",
-            bar: "",
-            foobar: null,
-            barbar: undefined,
-            foofoo: [],
-            barfoo: {},
-            barbarbar: () => {},
-        }
-        expect(removeEmptyProperties(obj)).toEqual({ foo: "foo", barbarbar: expect.any(Function) })
     })
 })

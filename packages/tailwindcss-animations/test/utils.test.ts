@@ -1,5 +1,6 @@
 import { describe, test, expect } from "vitest"
-import { toSlashCase, matchUtilitiesRegex } from "../src/utils.js"
+import { matchUtilitiesRegex } from "../src/utils.js"
+import { toSlashCase } from "@halvaradop/tailwindcss-core"
 
 describe("toSlashCase", () => {
     const testCases = [
