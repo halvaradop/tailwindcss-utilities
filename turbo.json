@@ -4,7 +4,7 @@
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "./vercel/**"]
     },
     "dev": {
       "cache": false
