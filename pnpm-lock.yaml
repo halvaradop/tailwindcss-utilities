@@ -99,6 +99,12 @@ importers:
 
   packages/tailwindcss-core: {}
 
+  packages/tailwindcss-merge:
+    devDependencies:
+      '@halvaradop/tailwindcss-core':
+        specifier: workspace:*
+        version: link:../tailwindcss-core
+
   packages/tailwindcss-utilities:
     devDependencies:
       '@halvaradop/tailwindcss-core':

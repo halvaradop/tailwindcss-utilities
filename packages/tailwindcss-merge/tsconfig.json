@@ -1,0 +1,8 @@
+{
+  "extends": "@halvaradop/tailwindcss-core/tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "exclude": ["dist"]
+}
