@@ -14,9 +14,11 @@
     "@halvaradop/ui-button": "^0.3.1",
     "@halvaradop/ui-core": "^0.2.0",
     "framer-motion": "^11.2.13",
-    "next": "14.2.3",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "15.1.0",
+    "react": "19.0.0-rc.1",
+    "react-dom": "19.0.0-rc.1",
+    "@types/react": "npm:types-react@alpha",
+    "@types/react-dom": "npm:types-react-dom@alpha"
   },
   "devDependencies": {
     "@halvaradop/tailwindcss-animations": "workspace:*",
@@ -27,5 +29,9 @@
     "@types/react-dom": "^18",
     "class-variance-authority": "^0.7.0",
     "shiki": "^1.23.0"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@alpha",
+    "@types/react-dom": "npm:types-react-dom@alpha"
   }
 }
