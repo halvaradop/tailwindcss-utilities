@@ -1,6 +1,6 @@
 import postcss from "postcss"
 import tailwindcss from "tailwindcss"
-import minify from "@csstools/postcss-minify"
+import minifyCSS from "@csstools/postcss-minify"
 import { PluginsConfig } from "tailwindcss/types/config.js"
 import { FlattenArrayType } from "@halvaradop/ts-utility-types"
 
@@ -18,10 +18,10 @@ const TAILWIND_UTILITIES_DIRECTIVE = "@tailwind utilities;"
  * const generateClasses = extractClasses(plugin);
  * const css = await generateClasses(html);
  */
-export const extractClasses = (plugin: FlattenArrayType<PluginsConfig>) => {
+export const extractClasses = (plugin: FlattenArrayType<PluginsConfig>, minify: boolean = true) => {
     const generateCSS = async (htmlContent: string) => {
         const classes = await postcss([
-            minify(),
+            minify ? minifyCSS() : () => {},
             tailwindcss({
                 plugins: [plugin],
                 content: [{ raw: htmlContent }],
