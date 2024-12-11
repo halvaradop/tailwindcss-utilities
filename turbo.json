@@ -4,7 +4,8 @@
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "./vercel/**"]
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", ".vercel/**"]
     },
     "dev": {
       "cache": false
