@@ -14,7 +14,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/@halvaradop/tailwindcss-utilities"
+    "registry": "https://registry.npmjs.org/@halvaradop/tailwindcss-merge"
   },
   "repository": {
     "type": "git",
