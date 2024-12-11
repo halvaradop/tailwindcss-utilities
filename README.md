@@ -4,7 +4,7 @@ Open source TailwindCSS utilities that offer a series of tools and plugins to en
 
 ## Installation
 
-To install one of the plugins or tools, use the prefix `@halvaradop/tailwindcss-*` and check the [available packages](https://github.com/halvaradop/tailwindcss-utilities/tree/master/packages). Execute one of the following commands:
+To install one of the plugins or tools, use the prefix `@halvaradop/tailwindcss` and check the [available packages](https://github.com/halvaradop/tailwindcss-utilities/tree/master/packages). Execute one of the following commands:
 
 ```bash
 npm install -D @halvaradop/tailwindcss-*

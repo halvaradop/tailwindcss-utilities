@@ -11,21 +11,21 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@halvaradop/ui-button": "^0.3.1",
-    "@halvaradop/ui-core": "^0.2.0",
-    "framer-motion": "^11.2.13",
-    "next": "14.2.3",
-    "react": "^18",
-    "react-dom": "^18"
+    "@halvaradop/ui-button": "^0.3.2",
+    "@halvaradop/ui-core": "^0.2.1",
+    "framer-motion": "12.0.0-alpha.2",
+    "next": "15.1.0",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
     "@halvaradop/tailwindcss-animations": "workspace:*",
     "@halvaradop/tailwindcss-core": "workspace:*",
     "@halvaradop/tailwindcss-utilities": "workspace:*",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "class-variance-authority": "^0.7.0",
-    "shiki": "^1.23.0"
+    "@types/node": "^20.17.9",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "class-variance-authority": "^0.7.1",
+    "shiki": "^1.24.2"
   }
 }
