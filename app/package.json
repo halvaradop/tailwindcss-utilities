@@ -11,27 +11,27 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@halvaradop/ui-button": "^0.3.1",
-    "@halvaradop/ui-core": "^0.2.0",
-    "framer-motion": "^11.2.13",
+    "@halvaradop/ui-button": "^0.3.2",
+    "@halvaradop/ui-core": "^0.2.1",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "framer-motion": "12.0.0-alpha.2",
     "next": "15.1.0",
     "react": "19.0.0-rc.1",
-    "react-dom": "19.0.0-rc.1",
-    "@types/react": "npm:types-react@alpha",
-    "@types/react-dom": "npm:types-react-dom@alpha"
+    "react-dom": "19.0.0-rc.1"
   },
   "devDependencies": {
     "@halvaradop/tailwindcss-animations": "workspace:*",
     "@halvaradop/tailwindcss-core": "workspace:*",
     "@halvaradop/tailwindcss-utilities": "workspace:*",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "class-variance-authority": "^0.7.0",
-    "shiki": "^1.23.0"
+    "@types/node": "^20.17.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "class-variance-authority": "^0.7.1",
+    "shiki": "^1.24.2"
   },
   "overrides": {
-    "@types/react": "npm:types-react@alpha",
-    "@types/react-dom": "npm:types-react-dom@alpha"
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
   }
 }
