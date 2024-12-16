@@ -1,5 +1,5 @@
 import { describe, test } from "vitest"
-import { merge } from "../src/index"
+import { merge } from "../src/index.js"
 
 describe("tailwindcss-merge", () => {
     const testCases = [
@@ -34,10 +34,43 @@ describe("tailwindcss-merge", () => {
             expected: "px-2 text-center font-bold text-red-200 py-2 bg-blue-100",
         },
     ]
-
     testCases.forEach(({ message, input, expected }) => {
         test.concurrent(message, async ({ expect }) => {
             expect(await merge(input)).toBe(expected)
+        })
+    })
+})
+
+describe("Multiple classes", () => {
+    const testCases = [
+        {
+            message: "should merge padding and background color classes correctly",
+            input1: "pt-2 px-2 pb-4 text-red-200 text-2xl bg-blue-500",
+            input2: "pb-2 text-blue-100 bg-red-200",
+            expected: "pt-2 px-2 text-2xl pb-2 text-blue-100 bg-red-200",
+        },
+        {
+            message: "should merge layout and positioning classes correctly",
+            input1: "flex items-center justify-center absolute",
+            input2: "grid grid-cols-2 gap-x-4 relative",
+            expected: "items-center justify-center grid grid-cols-2 gap-x-4 relative",
+        },
+        {
+            message: "should merge border and shadow classes correctly",
+            input1: "border border-red-500 shadow-md",
+            input2: "border-2 border-blue-500 shadow-lg",
+            expected: "border-2 border-blue-500 shadow-lg",
+        },
+        {
+            message: "should merge width and height classes correctly",
+            input1: "w-1/2 h-64",
+            input2: "w-full h-auto",
+            expected: "w-full h-auto",
+        },
+    ]
+    testCases.forEach(({ message, input1, input2, expected }) => {
+        test.concurrent(message, async ({ expect }) => {
+            expect(await merge(input1, input2)).toBe(expected)
         })
     })
 })

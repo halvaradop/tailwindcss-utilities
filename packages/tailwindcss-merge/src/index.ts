@@ -43,11 +43,12 @@ const parseCSSClasses = (css: string): Entry[] => {
  * // Expected: "px-4 py-2 text-center font-bold text-blue-400"
  * const merged = await merge("px-2 text-center font-bold text-red-200 py-2 bg-blue-100")
  */
-export const merge = async (classes: string): Promise<string> => {
-    const classNames = await generateClasses(`<div class="${classes}"></div>`)
+export const merge = async (...classes: string[]): Promise<string> => {
+    const unionClasses = classes.join(" ")
+    const classNames = await generateClasses(`<div class="${unionClasses}"></div>`)
     const cssClasses = parseCSSClasses(classNames)
     const indexes = new Map<string, number>()
-    classes.split(" ").forEach((substring, key) => indexes.set(substring, key))
+    unionClasses.split(" ").forEach((substring, key) => indexes.set(substring, key))
     const priority = new Map<string, string>()
     for (const { name, property } of cssClasses) {
         if (!priority.has(property) || indexes.get(name)! > indexes.get(priority.get(property)!)!) {
