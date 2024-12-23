@@ -5,7 +5,7 @@ import { Button } from "@halvaradop/ui-button"
 
 export const HeroSection = () => {
     return (
-        <section className="py-24 text-center relative overflow-x-hidden bg-hero bg-no-repeat bg-center base:h-[calc(100vh-5rem)] base:py-4 base:flex base:items-center base:justify-center base:bg-none">
+        <section className="py-24 text-center relative overflow-x-hidden bg-hero bg-[size:100%] bg-no-repeat bg-center base:h-[calc(100vh-5rem)] base:py-4 base:flex base:items-center base:justify-center base:bg-none">
             <Image
                 className="hidden base:mx-auto base:block"
                 width={1300}

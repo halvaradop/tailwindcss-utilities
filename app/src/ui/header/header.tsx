@@ -31,7 +31,9 @@ export const Header = () => {
         <header className={isOpen ? "open" : ""}>
             <nav className="w-11/12 h-20 mx-auto text-white base:w-10/12 base:flex base:items-center base:justify-between base:relative lg:max-w-screen-xl">
                 <div className="w-full h-full flex items-center justify-between relative z-20 base:w-fit">
-                    <h2 className="base:text-lg">Utilities</h2>
+                    <h2 className="base:text-lg">
+                        <Link href="/">Utilities</Link>
+                    </h2>
                     <Image className="hover:cursor-pointer base:hidden" src={menu} alt="menu icon" onClick={handleToggleMenu} />
                 </div>
                 <AnimatePresence mode="wait">{isOpen && <HeaderMenu />}</AnimatePresence>

@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss"
 import utilities from "@halvaradop/tailwindcss-utilities"
-import animations from "@halvaradop/tailwindcss-animations"
 
 const config: Config = {
     content: [
@@ -27,12 +26,17 @@ const config: Config = {
                 orange: {
                     DEFAULT: "#F78C6C",
                 },
+                purple: {
+                    100: "#B985EE",
+                    200: "#9761F4",
+                    300: "#2C2933",
+                },
             },
             backgroundImage: {
                 hero: "url(/assets/hero-mobile.svg)",
             },
         },
     },
-    plugins: [utilities, animations],
+    plugins: [utilities],
 }
 export default config
