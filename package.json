@@ -6,7 +6,7 @@
   "description": "A monorepo project for managing multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
     "dev": "turbo dev --parallel --filter=!*page",
-    "dev:web": "pnpm dev --filter=*page",
+    "dev:web": "turbo dev --filter=*page",
     "build": "pnpm build:core && turbo run build --parallel --filter=!*core",
     "build:web": "turbo run build --filter=*page",
     "build:core": "turbo run build --filter=*core",

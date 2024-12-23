@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { itemVariants, menuVariants } from "../motion/menu.motion"
+import { itemVariants, menuVariants } from "@/ui/motion/menu.motion"
 
 export const HeaderMenu = () => {
     return (
