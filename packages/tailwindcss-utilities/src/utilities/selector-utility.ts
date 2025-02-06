@@ -1,11 +1,11 @@
 import type { PluginAPI } from "tailwindcss/types/config.js"
-import { verifySelectorsTheme } from "../lib/utils.js"
+import { Tag } from "../lib/types.js"
 
 /**
  * This array contains the default tags supported by the selector variant
  * utilities. It provides a list of commonly used tags.
  */
-const tags: string[] = [
+const tags: Tag[] = [
     "div",
     "span",
     "a",
@@ -55,6 +55,6 @@ const tags: string[] = [
 export const unstable_selector_utilities = (configApi: PluginAPI) => {
     const { addVariant, theme } = configApi
 
-    const selectors = verifySelectorsTheme(theme("selectors")).concat(tags)
+    const selectors = tags.concat(theme("selectors") ?? [])
     selectors.forEach(tag => addVariant(tag, `:where(&:is(${tag}), & > ${tag})`))
 }
