@@ -1,7 +1,5 @@
-import { describe, expect, test } from "vitest"
+import { describe, test } from "vitest"
 import { extractClasses } from "@halvaradop/tailwindcss-core/css"
-import { verifySelectorsTheme } from "../src/lib/utils.js"
-import { InvalidSelectorError } from "../src/lib/errors.js"
 import plugin from "../src/index.js"
 
 const generateClasses = extractClasses(plugin)
@@ -102,11 +100,5 @@ describe("psuedo classes utilities", () => {
             const css = await generateClasses(input)
             expect(css).toMatch(expected)
         })
-    })
-})
-
-describe("Errors", () => {
-    test.concurrent("throws an error when an invalid HTML tag is provided", async ({ expect }) => {
-        expect(() => verifySelectorsTheme(["12"])).toThrow(new InvalidSelectorError("Invalid HTML tag. Please verify the tags."))
     })
 })

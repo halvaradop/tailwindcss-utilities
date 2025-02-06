@@ -1,12 +1,12 @@
 import type { PluginAPI } from "tailwindcss/types/config.js"
-import type { EntryCSS, FontFluency } from "../lib/types.js"
+import type { FontFluency } from "../lib/types.js"
 import { keysToTransform, merge, toSlashCase } from "@halvaradop/tailwindcss-core"
 
 /**
  * This object contains the values used for font utilities. Each property
  * defines the styles for a particular font size utility.
  */
-const fontSizeUtilities: Record<string, EntryCSS<FontFluency>> = {
+const fontSizeUtilities: Record<string, FontFluency> = {
     xs: {
         fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
         lineHeight: "1.25rem",
