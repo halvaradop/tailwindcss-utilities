@@ -42,6 +42,14 @@ module.exports = {
 }
 ```
 
+## Usage
+
+```html
+<div>
+  <span class="bouncing" />
+</div>
+```
+
 ## Contributing
 
 Here, you will find a guide on how to contribute to the project and the necessary steps to do so. Please read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).

@@ -3,10 +3,10 @@ import { isNullish, isObject, isPrimitive } from "@halvaradop/ts-utility-types/v
 /**
  * Merges two objects, with an option to prioritize non-object types.
  *
- * @param source - The first object to merge.
- * @param target - The second object to merge.
- * @param priority - If true, prioritize non-object types; otherwise, merge deeply.
- * @param nullishValues - If true, include empty fields in the merged object.
+ * @param {object} source - The first object to merge.
+ * @param {object} target - The second object to merge.
+ * @param {boolean} priority - If true, prioritize non-object types; otherwise, merge deeply.
+ * @param {boolean} nullishValues - If true, include empty fields in the merged object.
  * @returns The merged object.
  *
  * @example

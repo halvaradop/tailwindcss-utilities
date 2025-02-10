@@ -38,7 +38,7 @@ const parseCSSClasses = (css: string): Entry[] => {
  * @returns {Promise<string>} - Merged classes
  * @example
  * // Expected: "bg-blue-700"
- * const merged = await merge("red-500 blue-500 bg-green-500 bg-blue-700")
+ * const merged = await merge("red-500 blue-500 bg-green-500", "bg-blue-700")
  *
  * // Expected: "px-4 py-2 text-center font-bold text-blue-400"
  * const merged = await merge("px-2 text-center font-bold text-red-200 py-2 bg-blue-100")
