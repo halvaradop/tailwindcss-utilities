@@ -8,7 +8,7 @@ To install the plugin using npm or pnpm, ensure that Tailwind CSS and its config
 
 ```bash
 npm install -D @halvaradop/tailwindcss-utilities
-// or
+# or
 pnpm add --save-dev @halvaradop/tailwindcss-utilities
 ```
 
@@ -44,7 +44,17 @@ module.exports = {
 
 ## Utilities
 
-Set of utilites offer by the dependency.
+### TypeScript
+
+This package is created using TypeScript, so you can use custom types provided by the plugin to enable autocomplete and improve the experience of setting values in the different utilities provided. You don't need to import the `Config` type from `tailwindcss` as our type overrides it with new parameters. We recommend using our package's type instead of the one from `tailwindcss`.
+
+```ts
+import { Config } from "@halvaradop/tailwindcss-utilities"
+
+const config: Config = {
+  ...
+}
+```
 
 ### Selectors
 
@@ -52,7 +62,7 @@ The selectors utility offers a set of selectors that provide improved access to 
 
 #### Supported Tags
 
-#### Structural Elements
+Here are some of the supported tags by the plugin. For a complete list, please refer to the [selectors documentation](https://github.com/halvaradop/tailwindcss-utilities/blob/master/packages/tailwindcss-utilities/src/utilities/selector-utility.ts).
 
 - `head`
 - `body`
@@ -63,40 +73,25 @@ The selectors utility offers a set of selectors that provide improved access to 
 - `label`
 - `nav`
 - `div`
-
-#### Text Content
-
 - `p`
 - `span`
 - `h1` to `h6`
 - `a`
 
-#### List
+### Override and Add New Values
 
-- `ul`
-- `ol`
-- `li`
+You can add new HTML tags by declaring a list of new tags using the `selectors` field within the `theme` property in the Tailwind CSS configuration file. If you import the `Config` type from our package, you will have autocomplete for the HTML tags.
 
-#### Forms
+```ts
+import { Config } from "@halvaradop/tailwindcss-utilities"
 
-- `button`
-- `form`
-- `input`
-- `label`
-
-#### Tables
-
-- `table`
-- `tr`
-- `td`
-
-#### Media
-
-- `img`
-- `figure`
-- `picture`
-- `caption`
-- `figcaption`
+const config: Config = {
+  content: ["app"],
+  theme: {
+    selectors: ["ul", "li"],
+  },
+}
+```
 
 #### Usage
 
@@ -107,13 +102,34 @@ The selectors utility offers a set of selectors that provide improved access to 
 </section>
 ```
 
-### Font size dynamic
+### Font Size Dynamic
 
 The font size dynamic utility enables modern scale typographic support using the `clamp` function. This function dynamically adjusts the font size based on the viewport of the device, ensuring clear and responsive text in a linear manner.
 
 #### Supported Utilities
 
 - `fluency-{ xs | sm | base | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl }`
+
+### Override and Add New Values
+
+You can override and add new utility classes through the `fluency` field within the `theme` property in the Tailwind CSS configuration file. If you import the `Config` type from our package, you will have autocomplete for the possible values when declaring new fluency texts.
+
+```ts
+import { Config } from "@halvaradop/tailwindcss-utilities"
+
+const config: Config = {
+  content: ["app"],
+  theme: {
+    fluency: {
+      xl: {
+        fontSize: "2rem",
+        lineHeight: "0.2rem",
+        letterSpacing: "0.012rem",
+      },
+    },
+  },
+}
+```
 
 #### Usage
 
@@ -126,15 +142,18 @@ The font size dynamic utility enables modern scale typographic support using the
 
 ### Scrollbar
 
-The scrollbar utility provides variants for customizing the scrollbar of a component, particularly useful when a component presents overflow. These utilities work with the `::-webkit-` prefix.
+> [!WARNING]
+> These utility classes aren't supported by all browsers. They use the `::-webkit` prefix but are supported by the majority of modern browsers.
 
-### utilities supported
+The scrollbar utility provides variants for customizing the scrollbar of a component, particularly useful when a component has overflow. These utilities work with the `::-webkit` prefix.
 
-- `scroll`: for styling the ::-webkit-scrollbar
-- `thumb`: for styling the ::-webkit-scrollbar-thumb
-- `track`: for styling the ::-webkit-scrollbar-track
+#### Supported Utilities
 
-## Usage
+- `scroll`: for styling the `::-webkit-scrollbar`
+- `thumb`: for styling the `::-webkit-scrollbar-thumb`
+- `track`: for styling the `::-webkit-scrollbar-track`
+
+#### Usage
 
 ```html
 <section class="overflow-y-hidden scroll:w-1 thumb:rounded-full thumb:bg-slate-400 track:my-1">
@@ -144,7 +163,7 @@ The scrollbar utility provides variants for customizing the scrollbar of a compo
 
 ## Contributing
 
-Here, you will find a guide on how to contribute to the project and the necessary steps to do so. Please read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to `@halvaradop/tailwindcss` ecosystem! If you have an idea for a new type or find an improvement to an existing one, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Here's how you can contribute, Read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
