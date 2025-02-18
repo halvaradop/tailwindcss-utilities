@@ -22,7 +22,11 @@ import type { Config } from "tailwindcss"
 import animations from "@halvaradop/tailwindcss-animations"
 
 const config: Config = {
-  content: [],
+  content: ["./index.html"],
+  darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {},
   plugins: [animations],
 }
@@ -36,7 +40,11 @@ import animations from "@halvaradop/tailwindcss-animations"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["./index.html"],
+  darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {},
   plugins: [animations],
 }
@@ -44,15 +52,27 @@ module.exports = {
 
 ## Usage
 
+This package provides a set of utility classes to work with animations. These classes use the following prefixes:
+
+- `animate-{animation-name}`
+- `animation-delay-{milliseconds}`
+- `animation-duration-{milliseconds}`
+- `animation-steps-{steps}`
+- `animation-iteration-count-{count}`
+- `animation-fill-mode-{mode}`
+- `animation-range-{range}`
+
+Example usage:
+
 ```html
 <div>
-  <span class="bouncing" />
+  <span class="size-10 block rounded hover:animate-slide-in-top"></span>
 </div>
 ```
 
 ## Contributing
 
-Here, you will find a guide on how to contribute to the project and the necessary steps to do so. Please read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to `@halvaradop/tailwindcss` ecosystem! If you have an idea for a new type or find an improvement to an existing one, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Here's how you can contribute, Read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 

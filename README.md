@@ -12,6 +12,8 @@ npm install -D @halvaradop/tailwindcss-utilities
 pnpm add -D @halvaradop/tailwindcss-utilities
 ```
 
+### Packages Available
+
 | Package                            | Description                                                                |
 | ---------------------------------- | -------------------------------------------------------------------------- |
 | @halvaradop/tailwindcss-core       | Configurations and utilities used by the @halvaradop/tailwindcss ecosystem |
@@ -21,7 +23,7 @@ pnpm add -D @halvaradop/tailwindcss-utilities
 
 ## Contributing
 
-Find a guide on how to contribute to the project and the necessary steps to do so in our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to `@halvaradop/tailwindcss` ecosystem! If you have an idea for a new type or find an improvement to an existing one, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Here's how you can contribute, Read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 

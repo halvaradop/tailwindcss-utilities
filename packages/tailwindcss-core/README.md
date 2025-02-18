@@ -2,6 +2,9 @@
 
 This is the core package of the `@halvaradop/tailwindcss` ecosystem, containing essential plugins and utilities for TailwindCSS. It includes core configurations and files that can be shared across projects, ensuring consistency and reusability.
 
+> [!NOTE]
+> This package is not published on npm as it is intended solely for internal use within the `@halvaradop/tailwindcss` ecosystem. It provides shared configurations and utilities necessary for building and maintaining the internal packages.
+
 ## Installation
 
 To install the package using either npm or pnpm, execute one of the following commands:
@@ -82,7 +85,7 @@ export default defineConfig(tsupConfig)
 
 ## Contributing
 
-For guidelines on how to contribute to the project, please read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to `@halvaradop/tailwindcss` ecosystem! If you have an idea for a new type or find an improvement to an existing one, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Here's how you can contribute, Read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 

@@ -163,7 +163,7 @@ The scrollbar utility provides variants for customizing the scrollbar of a compo
 
 ## Contributing
 
-For guidelines on how to contribute to the project, please read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to `@halvaradop/tailwindcss` ecosystem! If you have an idea for a new type or find an improvement to an existing one, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Here's how you can contribute, Read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 

@@ -1,6 +1,6 @@
 # @halvaradop/tailwindcss-merge
 
-> [!WARNING]
+> [!ERROR]
 > This package is currently unstable. We recommend waiting for a more stable release before using it in production.
 
 This package provides utilities for merging TailwindCSS classes, ensuring that the resulting classes are optimized and conflict-free. It includes functions for parsing and merging CSS classes, making it easier to manage TailwindCSS classes in your projects.
@@ -28,7 +28,7 @@ const mergedClasses = merge("red-500 blue-500 bg-green-500", "bg-blue-700")
 
 ## Contributing
 
-For guidelines on how to contribute to the project, please read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to `@halvaradop/tailwindcss` ecosystem! If you have an idea for a new type or find an improvement to an existing one, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Here's how you can contribute, Read our [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
