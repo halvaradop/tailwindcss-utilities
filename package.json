@@ -44,9 +44,9 @@
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
     "@csstools/postcss-minify": "^2.0.3",
-    "@halvaradop/ts-utility-types": "^0.15.0",
+    "@halvaradop/ts-utility-types": "^0.19.0",
     "@types/node": "^22.14.0",
-    "@vitest/coverage-v8": "^2.1.9",
+    "@vitest/coverage-v8": "^3.1.1",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
@@ -54,7 +54,7 @@
     "tsup": "^8.4.0",
     "turbo": "^2.5.0",
     "typescript": "^5.8.3",
-    "vitest": "^2.1.9"
+    "vitest": "^3.1.1"
   },
   "prettier": {
     "semi": false,
