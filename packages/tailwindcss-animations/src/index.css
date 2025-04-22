@@ -1,32 +1,70 @@
 @theme {
+    /**
+        Animation Fill Mode
+    */
+    --animation-fill-mode-none: none;
+    --animation-fill-mode-both: both;
+    --animation-fill-mode-forwards: forwards;
+    --animation-fill-mode-alternate: alternate;
+
+    /**
+        Animation Iteration Count
+    */
+    ---animation-count-none: 0;
+    ---animation-count-once: 1;
+    ---animation-count-twice: 2;
+    ---animation-count-thrice: 3;
+    ---animation-count-infinite: infinite;
+
+    /**
+        Animation Range
+    */
+    --animation-range-normal: normal;
+    --animation-range-cover: cover;
+    --animation-range-contain: contain;
+    --animation-range-entry: entry;
+    --animation-range-exit: exit;
+    --animation-range-gradual: 10% 90%;
+    --animation-range-moderate: 20% 80%;
+    --animation-range-brisk: 30% 70%;
+    --animation-range-rapid: 40% 60%;
+
+    /**
+        Animation Timeline
+    */
+    --animation-timeline-none: none;
+    --animation-timeline-auto: auto;
+    --animation-timeline-single: --single-timeline;
+    --animation-timeline-scroll: scroll();
+    --animation-timeline-view: view();
 
     /**
         Timing Functions
     */
-    --ease-in-sine-in: cubic-bezier(0.12,0,0.39,0);
-    --ease-in-sine-out: cubic-bezier(0.39,0.575,0.565,1);
-    --ease-in-sine-in-out: cubic-bezier(0.445,0.05,0.55,0.95);
-    --ease-in-quad-in: cubic-bezier(0.55,0.085,0.68,0.53);
-    --ease-in-quad-out: cubic-bezier(0.25,0.46,0.45,0.94);
-    --ease-in-quad-in-out: cubic-bezier(0.455,0.03,0.515,0.955);
-    --ease-in-cubic-in: cubic-bezier(0.55,0.055,0.675,0.19);
-    --ease-in-cubic-out: cubic-bezier(0.215,0.61,0.355,1);
-    --ease-in-cubic-in-out: cubic-bezier(0.645,0.045,0.355,1);
-    --ease-in-quart-in: cubic-bezier(0.895,0.03,0.685,0.22);
-    --ease-in-quart-out: cubic-bezier(0.165,0.84,0.44,1);
-    --ease-in-quart-in-out: cubic-bezier(0.77,0,0.175,1);
-    --ease-in-quint-in: cubic-bezier(0.755,0.05,0.855,0.06);
-    --ease-in-quint-out: cubic-bezier(0.23,1,0.32,1);
-    --ease-in-quint-in-out: cubic-bezier(0.86,0,0.07,1);
-    --ease-in-expo-in: cubic-bezier(0.95,0.05,0.795,0.035);
-    --ease-in-expo-out: cubic-bezier(0.19,1,0.22,1);
-    --ease-in-expo-in-out: cubic-bezier(1,0,0,1);
-    --ease-in-circ-in: cubic-bezier(0.6,0.04,0.98,0.335);
-    --ease-in-circ-out: cubic-bezier(0.075,0.82,0.165,1);
-    --ease-in-circ-in-out: cubic-bezier(0.785,0.135,0.15,0.86);
-    --ease-in-back-in: cubic-bezier(0.6,-0.28,0.735,0.045);
-    --ease-in-back-out: cubic-bezier(0.175,0.885,0.32,1.275);
-    --ease-in-back-in-out: cubic-bezier(0.68,-0.55,0.265,1.55);
+    --ease-sine-in: cubic-bezier(0.12, 0, 0.39, 0);
+    --ease-sine-out: cubic-bezier(0.39, 0.575, 0.565, 1);
+    --ease-sine-in-out: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    --ease-quad-in: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    --ease-quad-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-quad-in-out: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --ease-cubic-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --ease-cubic-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-cubic-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --ease-quart-in: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    --ease-quart-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-quart-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-quint-in: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    --ease-quint-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-quint-in-out: cubic-bezier(0.86, 0, 0.07, 1);
+    --ease-expo-in: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-expo-in-out: cubic-bezier(1, 0, 0, 1);
+    --ease-circ-in: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    --ease-circ-out: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --ease-circ-in-out: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    --ease-back-in: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    --ease-back-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --ease-back-in-out: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /**
         Animations
@@ -109,7 +147,6 @@
     --animate-impulse-rotation-left: impulse-rotation-left 1s ease-in-out both;
     --animate-dancing: dancing 1s ease-in-out both;
     --animate-jelly: jelly 1s ease-out forwards;
-
 
     /**
         Keyframes for animations
@@ -1034,4 +1071,20 @@
             }
         }
     }
+}
+
+@utility animation-count-* {
+    animation-iteration-count: --value(--animation-count- *);
+}
+
+@utility animation-fill-mode-* {
+    animation-fill-mode: --value(--animation-fill-mode- *);
+}
+
+@utility animation-range-* {
+    animation-range: --value(--animation-range- *);
+}
+
+@utility animation-timeline-* {
+    animation-timeline: --value(--animation-timeline- *);
 }
