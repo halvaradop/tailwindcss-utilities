@@ -1,5 +1,4 @@
 import { describe, test } from "vitest"
-import { extractClasses } from "@halvaradop/tailwindcss-core/css"
 
 /**
  * This function doesn't do anything, it's just a placeholder for the actual implementation.

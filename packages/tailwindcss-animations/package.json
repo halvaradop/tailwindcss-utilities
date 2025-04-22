@@ -4,8 +4,8 @@
   "description": "A collection of utility classes and utilities for animations using Tailwind CSS",
   "type": "module",
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --minify",
+    "dev": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
     "clean": "npm run clean:dist && npm run clean:modules",

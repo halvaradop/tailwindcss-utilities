@@ -14,6 +14,9 @@ importers:
       '@halvaradop/ts-utility-types':
         specifier: ^0.19.0
         version: 0.19.0
+      '@tailwindcss/cli':
+        specifier: ^4.1.4
+        version: 4.1.4
       '@types/node':
         specifier: ^22.14.0
         version: 22.14.0
@@ -110,9 +113,6 @@ importers:
       '@halvaradop/tailwindcss-core':
         specifier: workspace:*
         version: link:../tailwindcss-core
-      '@tailwindcss/cli':
-        specifier: ^4.1.4
-        version: 4.1.4
 
 packages:
 

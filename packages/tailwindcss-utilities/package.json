@@ -4,8 +4,8 @@
   "description": "A TailwindCSS plugin that provides a set of utilities to enhance the default functionalities and offer additional customization options.",
   "type": "module",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --minify",
-    "dev": "npx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --watch",
+    "build": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --minify",
+    "dev": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
     "clean": "npm run clean:dist && npm run clean:modules",
@@ -36,8 +36,7 @@
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
-    "@halvaradop/tailwindcss-core": "workspace:*",
-    "@tailwindcss/cli": "^4.1.4"
+    "@halvaradop/tailwindcss-core": "workspace:*"
   },
   "exports": {
     ".": "./dist/plugin.css"
