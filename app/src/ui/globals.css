@@ -4,6 +4,16 @@
 @reference "../../../packages/tailwindcss-utilities/dist/plugin.css";
 @source "../../node_modules/@halvaradop/ui-button/dist/index.js";
 
+@theme {
+    --color-black: #08090a;
+    --color-black-header: hsla(0, 0%, 4%, 0.8);
+    --color-header-border: hsla(0, 0%, 100%, 0.08);
+
+    --color-primary: #f7f8f8;
+    --color-secondary: rgba(255, 255, 255, 0.7);
+    --color-tertiary: #8a8f98;
+}
+
 @layer base {
     main {
         @apply text-white;

@@ -54,8 +54,8 @@ importers:
         specifier: 0.4.0-beta.1
         version: 0.4.0-beta.1
       '@halvaradop/ui-core':
-        specifier: 0.3.0-beta.1
-        version: 0.3.0-beta.1
+        specifier: ^0.5.0
+        version: 0.5.0
       framer-motion:
         specifier: 12.0.0-alpha.2
         version: 12.0.0-alpha.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -449,6 +449,9 @@ packages:
 
   '@halvaradop/ui-core@0.3.0-beta.1':
     resolution: {integrity: sha512-lz0GIg7tt4EJy24iWj78aoLuSZYXZ1Y78Csm0+CvdzHnABfC5uAbhx076WEoiaqPQxkXU+65tnaRl6c9ZHclSA==}
+
+  '@halvaradop/ui-core@0.5.0':
+    resolution: {integrity: sha512-r0vNex3PTD6OUlmXGMA8sXrkdKAVV0wbZ7uMpzhJ/moy3OHNt3tQdgsbTHLdN3fWTaagxLvu+FuYw1edeXNh6Q==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2130,6 +2133,10 @@ snapshots:
       class-variance-authority: 0.7.0
 
   '@halvaradop/ui-core@0.3.0-beta.1':
+    dependencies:
+      tailwind-merge: 2.6.0
+
+  '@halvaradop/ui-core@0.5.0':
     dependencies:
       tailwind-merge: 2.6.0
 
