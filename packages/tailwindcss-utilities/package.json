@@ -33,9 +33,6 @@
     "url": "https://github.com/halvaradop/tailwindcss-utilities/issues"
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
-  "devDependencies": {
-    "@halvaradop/tailwindcss-core": "workspace:*"
-  },
   "exports": {
     ".": "./dist/plugin.css"
   },

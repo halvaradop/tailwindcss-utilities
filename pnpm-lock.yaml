@@ -97,11 +97,7 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
 
-  packages/tailwindcss-animations:
-    devDependencies:
-      '@halvaradop/tailwindcss-core':
-        specifier: workspace:*
-        version: link:../tailwindcss-core
+  packages/tailwindcss-animations: {}
 
   packages/tailwindcss-core: {}
 
@@ -111,11 +107,7 @@ importers:
         specifier: workspace:*
         version: link:../tailwindcss-core
 
-  packages/tailwindcss-utilities:
-    devDependencies:
-      '@halvaradop/tailwindcss-core':
-        specifier: workspace:*
-        version: link:../tailwindcss-core
+  packages/tailwindcss-utilities: {}
 
 packages:
 

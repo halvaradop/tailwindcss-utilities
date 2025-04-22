@@ -1,70 +1,44 @@
 # @halvaradop/tailwindcss-utilities
 
-@halvaradop/tailwindcss-utilities is a Tailwind CSS plugin designed to enhance productivity in application development by providing additional utilities. These utilities optimize the workflow, making it easier and more efficient for users to access and manipulate data.
+A utility package for TailwindCSS that provides predefined utilities designed to enhance productivity in application development. These utilities streamline workflows, making it easier and more efficient for developers to access and manipulate data.
 
 ## Installation
 
-To install the plugin using npm or pnpm, ensure that Tailwind CSS and its configuration are already set up. If not, please refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation) for detailed instructions.
+Ensure you have `TailwindCSS@v4` installed and configured. If not, refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation). Once ready, install the package:
 
 ```bash
 npm install -D @halvaradop/tailwindcss-utilities
 # or
-pnpm add --save-dev @halvaradop/tailwindcss-utilities
+pnpm add -D @halvaradop/tailwindcss-utilities
 ```
 
 ## Configuration
 
-To configure the plugin, add it to the plugins array in the Tailwind CSS configuration file.
+To enable the utility classes, integrate the package into your Tailwind CSS setup. Follow these steps:
 
-```ts
-// TypeScript
-import type { Config } from "tailwindcss"
-import utilities from "@halvaradop/tailwindcss-utilities"
+1. Ensure Tailwind CSS is imported in your global `.css` file using the `@import` directive.
+2. Include the utilities CSS file provided by the package.
 
-const config: Config = {
-  content: [],
-  theme: {},
-  plugins: [utilities],
-}
+Example configuration:
 
-export default config
+```css
+@import "tailwindcss";
+@import "../node_modules/@halvaradop/tailwindcss-utilities/dist/plugin.css";
 ```
 
-```js
-// JavaScript
-import utilities from "@halvaradop/tailwindcss-utilities"
+This setup ensures that the utility classes are available throughout your project.
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [],
-  theme: {},
-  plugins: [utilities],
-}
-```
+## Usage
 
-## Utilities
-
-### TypeScript
-
-This package is created using TypeScript, so you can use custom types provided by the plugin to enable autocomplete and improve the experience of setting values in the different utilities provided. You don't need to import the `Config` type from `tailwindcss` as our type overrides it with new parameters. We recommend using our package's type instead of the one from `tailwindcss`.
-
-```ts
-import { Config } from "@halvaradop/tailwindcss-utilities"
-
-const config: Config = {
-  ...
-}
-```
+This package provides utility classes for enhanced access to HTML elements, fluid typography, minimum widths, and custom scrollbars.
 
 ### Selectors
 
-The selectors utility offers a set of selectors that provide improved access to HTML elements. Below is an example of usage:
+The selectors utility offers a set of predefined selectors for improved access to HTML elements. Below is an example of usage:
 
-#### Supported Tags
+Supported tags include, but are not limited to:
 
-Here are some of the supported tags by the plugin. For a complete list, please refer to the [selectors documentation](https://github.com/halvaradop/tailwindcss-utilities/blob/master/packages/tailwindcss-utilities/src/utilities/selector-utility.ts).
-
-- `head`
+- `header`
 - `body`
 - `main`
 - `footer`
@@ -78,88 +52,80 @@ Here are some of the supported tags by the plugin. For a complete list, please r
 - `h1` to `h6`
 - `a`
 
-### Override and Add New Values
+> **Note:** Currently, it is not possible to extend or add new selectors using CSS variables. This feature is planned for future releases.
 
-You can add new HTML tags by declaring a list of new tags using the `selectors` field within the `theme` property in the Tailwind CSS configuration file. If you import the `Config` type from our package, you will have autocomplete for the HTML tags.
+#### Example Usage
 
-```ts
-import { Config } from "@halvaradop/tailwindcss-utilities"
-
-const config: Config = {
-  content: ["app"],
-  theme: {
-    selectors: ["ul", "li"],
-  },
-}
-```
-
-#### Usage
+The `w-full` class is applied only to `li` elements within the `section` element:
 
 ```html
-<section class="li:mb-5">
-  <article class="my-5"></article>
+<section class="li:w-full">
+  <article></article>
   <li></li>
 </section>
 ```
 
-### Font Size Dynamic
+### Fluid Typography
 
-The font size dynamic utility enables modern scale typographic support using the `clamp` function. This function dynamically adjusts the font size based on the viewport of the device, ensuring clear and responsive text in a linear manner.
+The fluid typography utility enables modern, responsive typography using the `clamp` function. This ensures text scales dynamically based on the viewport size.
 
 #### Supported Utilities
 
-- `fluency-{ xs | sm | base | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl }`
+- `text-fluid-{ xs | sm | base | lg | xl | 2xl | 3xl | 4xl | 5xl | 6xl }`
 
-### Override and Add New Values
+### Customizing Values
 
-You can override and add new utility classes through the `fluency` field within the `theme` property in the Tailwind CSS configuration file. If you import the `Config` type from our package, you will have autocomplete for the possible values when declaring new fluency texts.
+You can override or add new utility classes using CSS variables prefixed with `--text-fluid-`. Additionally, you can define `line-height` and `letter-spacing` for new or existing utilities.
 
-```ts
-import { Config } from "@halvaradop/tailwindcss-utilities"
+```css
+@theme {
+  /* Override the `font-size` */
+  --text-fluid-3xl: clamp(2.25rem, 6vw, 3rem);
+  /* Override the `line-height` */
+  --text-fluid-3xl--line-height: 2.6rem;
+  /* Override the `letter-spacing` */
+  --text-fluid-3xl--letter-spacing: -0.03em;
 
-const config: Config = {
-  content: ["app"],
-  theme: {
-    fluency: {
-      xl: {
-        fontSize: "2rem",
-        lineHeight: "0.2rem",
-        letterSpacing: "0.012rem",
-      },
-    },
-  },
+  /* Add a new utility */
+  --text-fluid-8xl: clamp(5.15rem, 10vw, 5.1rem);
 }
 ```
 
-#### Usage
+#### Example Usage
 
 ```html
 <div>
-  <h1 class="fluency-lg"></h1>
-  <p class="fluency-sm"></p>
+  <h1 class="text-fluid-lg"></h1>
+  <p class="text-fluid-sm"></p>
 </div>
 ```
 
-### Scrollbar
+### Scrollbar Customization
 
-> [!WARNING]
-> These utility classes aren't supported by all browsers. They use the `::-webkit` prefix but are supported by the majority of modern browsers.
+> **Warning:** These utility classes rely on the `::-webkit` prefix and may not be supported by all browsers. They are compatible with most modern browsers.
 
-The scrollbar utility provides variants for customizing the scrollbar of a component, particularly useful when a component has overflow. These utilities work with the `::-webkit` prefix.
+The scrollbar utility provides variants for customizing scrollbars, particularly useful for components with overflow.
 
 #### Supported Utilities
 
-- `scroll`: for styling the `::-webkit-scrollbar`
-- `thumb`: for styling the `::-webkit-scrollbar-thumb`
-- `track`: for styling the `::-webkit-scrollbar-track`
+- `scroll`: Styles the `::-webkit-scrollbar`
+- `thumb`: Styles the `::-webkit-scrollbar-thumb`
+- `track`: Styles the `::-webkit-scrollbar-track`
 
-#### Usage
+#### Example Usage
 
 ```html
 <section class="overflow-y-hidden scroll:w-1 thumb:rounded-full thumb:bg-slate-400 track:my-1">
   <p></p>
 </section>
 ```
+
+## Breaking Changes
+
+The latest version of the package introduces the following changes:
+
+- The plugin is no longer exported. Instead, a CSS file containing utility classes is provided for direct use in your project.
+- The `fluency` utility classes have been renamed to `text-fluid-` for better clarity and alignment with TailwindCSS v4.
 
 ## Contributing
 

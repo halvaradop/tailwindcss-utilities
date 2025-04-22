@@ -84,6 +84,7 @@
 @custom-variant section (&>section);
 @custom-variant article (&>article);
 @custom-variant header (&>header);
+@custom-variant body (&>body);
 @custom-variant footer (&>footer);
 @custom-variant nav (&>nav);
 @custom-variant main (&>main);
@@ -101,4 +102,5 @@
 @custom-variant td (&>td);
 @custom-variant form (&>form);
 @custom-variant input (&>input);
+@custom-variant label (&>label);
 @custom-variant button (&>button);
