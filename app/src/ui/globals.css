@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+@reference "../../../packages/tailwindcss-animations/dist/plugin.css";
+@reference "../../../packages/tailwindcss-utilities/dist/plugin.css";
+@source "../../node_modules/@halvaradop/ui-button/dist/index.js";
 
 @layer base {
     main {
@@ -15,7 +17,7 @@
         }
 
         .code pre {
-            @apply bg-gray-200 !important;
+            @apply bg-gray-200;
             @apply p-4 rounded-md whitespace-pre-wrap break-all border-2 border-gray-100;
         }
 
@@ -24,7 +26,7 @@
         }
 
         .code.secondary > div > pre {
-            @apply bg-gray-100 !important;
+            @apply bg-gray-100;
         }
     }
 }

@@ -1,74 +1,74 @@
 # @halvaradop/tailwindcss-animations
 
-A Tailwind CSS plugin that provides a series of utility classes to add animations to your application.
+A utility package for TailwindCSS that provides predefined animation classes and keyframes, enabling you to easily animate your application with minimal effort.
 
 ## Installation
 
-To install the plugin using npm or pnpm, ensure that Tailwind CSS and its configuration are already set up. If not, please refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation) for detailed instructions.
+Ensure you have `TailwindCSS@v4` installed and configured. If not, refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation). Once ready, install the package:
 
 ```bash
 npm install -D @halvaradop/tailwindcss-animations
-// or
+# or
 pnpm add -D @halvaradop/tailwindcss-animations
 ```
 
 ## Configuration
 
-To configure the plugin, add it to the plugins array in the Tailwind CSS configuration file.
+To enable the utility classes, integrate the package into your Tailwind CSS setup. Follow these steps:
 
-```ts
-// TypeScript
-import type { Config } from "tailwindcss"
-import animations from "@halvaradop/tailwindcss-animations"
+1. Ensure Tailwind CSS is imported in your global `.css` file using the `@import` directive.
+2. Include the utilities CSS file provided by the package.
 
-const config: Config = {
-  content: ["./index.html"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  theme: {},
-  plugins: [animations],
-}
+Example configuration:
 
-export default config
+```css
+@import "tailwindcss";
+@import "../node_modules/@halvaradop/tailwindcss-animations/dist/plugin.css";
 ```
 
-```js
-// JavaScript
-import animations from "@halvaradop/tailwindcss-animations"
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./index.html"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  theme: {},
-  plugins: [animations],
-}
-```
+This setup ensures that the animation utilities are available throughout your project.
 
 ## Usage
 
-This package provides a set of utility classes to work with animations. These classes use the following prefixes:
+This package provides utility classes for animations with the following prefixes:
 
 - `animate-{animation-name}`
-- `animation-delay-{milliseconds}`
-- `animation-duration-{milliseconds}`
-- `animation-steps-{steps}`
-- `animation-iteration-count-{count}`
+- `animation-count-{count}`
 - `animation-fill-mode-{mode}`
 - `animation-range-{range}`
+- `animation-timeline-{timeline}`
+- `ease-{timing-function-name}`
 
-Example usage:
+### Example
 
 ```html
 <div>
-  <span class="size-10 block rounded hover:animate-slide-in-top"></span>
+  <span class="size-10 block rounded hover:animate-pulse"></span>
 </div>
 ```
+
+### Adding Custom Values
+
+To define custom animation values, use the `@theme` directive in your `.css` file. Add CSS variables following the required prefixes. For example:
+
+```css
+@theme {
+  --animation-count-5: 5;
+  --animation-range-xs: normal 25%;
+  --animation-timeline-axis: scroll(scroller axis);
+  --animation-fill-mode-revert: revert;
+  --ease-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+```
+
+With these configurations, you can extend and customize animations to suit your application's needs.
+
+## Breaking Changes
+
+The latest version of the package introduces the following changes:
+
+- The plugin is no longer exported. Instead, a CSS file containing utility classes is provided for direct use in your project.
 
 ## Contributing
 

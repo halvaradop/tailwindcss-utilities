@@ -1,3 +1,4 @@
+"use client"
 import { HeroSection } from "@/ui/hero"
 import { UtilitiesSection } from "@/ui/utilities"
 import { DeveloperExperienceSection } from "@/ui/developer-experience"
