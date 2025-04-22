@@ -1,11 +1,11 @@
 {
   "name": "@halvaradop/tailwindcss-utilities",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "A TailwindCSS plugin that provides a set of utilities to enhance the default functionalities and offer additional customization options.",
   "type": "module",
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "npx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --minify",
+    "dev": "npx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
     "clean": "npm run clean:dist && npm run clean:modules",
@@ -36,17 +36,11 @@
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
-    "@halvaradop/tailwindcss-core": "workspace:*"
+    "@halvaradop/tailwindcss-core": "workspace:*",
+    "@tailwindcss/cli": "^4.1.4"
   },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./types": {
-      "types": "./dist/types.d.ts"
-    }
+    ".": "./dist/plugin.css"
   },
   "files": [
     "dist"
