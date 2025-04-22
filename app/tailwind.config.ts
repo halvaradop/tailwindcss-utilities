@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss"
-import utilities from "@halvaradop/tailwindcss-utilities"
 
+/**
+ * @deprecated
+ */
 const config: Config = {
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -37,6 +39,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [utilities],
+    plugins: [],
 }
 export default config

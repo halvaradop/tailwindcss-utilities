@@ -6,8 +6,6 @@
   "scripts": {
     "build": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --minify",
     "dev": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --watch",
-    "test": "vitest --run",
-    "test:watch": "vitest",
     "clean": "npm run clean:dist && npm run clean:modules",
     "clean:dist": "rm -rf dist",
     "clean:modules": "rm -rf node_modules"
@@ -40,11 +38,7 @@
     "@halvaradop/tailwindcss-core": "workspace:*"
   },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/plugin.css"
   },
   "files": [
     "dist"

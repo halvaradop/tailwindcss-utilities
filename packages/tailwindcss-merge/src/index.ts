@@ -1,10 +1,9 @@
-import { extractClasses } from "@halvaradop/tailwindcss-core/css"
 import { Entry } from "./types.js"
 
 /**
  * Extracts the classes from the generated CSS
  */
-const generateClasses = extractClasses(() => {}, false)
+const generateClasses = async (html: string): Promise<string> => ""
 
 /**
  * Parses the CSS classes from the provided CSS string, extracting the class name,

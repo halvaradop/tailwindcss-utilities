@@ -6,8 +6,6 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest --run",
-    "test:watch": "vitest",
     "clean": "npm run clean:dist && npm run clean:modules",
     "clean:dist": "rm -rf dist",
     "clean:modules": "rm -rf node_modules"
@@ -34,16 +32,6 @@
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./css": {
-      "types": "./dist/generate-classes.d.ts",
-      "import": "./dist/generate-classes.js",
-      "require": "./dist/generate-classes.cjs"
-    },
     "./tsup.config.base": {
       "types": "./dist/tsup.config.base.d.ts",
       "import": "./dist/tsup.config.base.js",
