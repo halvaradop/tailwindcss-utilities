@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const DocsPage = () => {
     return (
-        <main className="w-11/12 mt-10 mb-28 mx-auto space-y-16 base:w-10/12">
+        <main>
             <div>
                 <h1>Documentation</h1>
                 <p className="mt-2 text-gray">
