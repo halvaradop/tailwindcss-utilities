@@ -4,10 +4,8 @@
   "description": "A collection of utility classes and utilities for animations using Tailwind CSS",
   "type": "module",
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "vitest --run",
-    "test:watch": "vitest",
+    "build": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --minify",
+    "dev": "pnpm dlx @tailwindcss/cli -i ./src/index.css -o ./dist/plugin.css --watch",
     "clean": "npm run clean:dist && npm run clean:modules",
     "clean:dist": "rm -rf dist",
     "clean:modules": "rm -rf node_modules"
@@ -36,15 +34,8 @@
     "url": "https://github.com/halvaradop/tailwindcss-utilities/issues"
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
-  "devDependencies": {
-    "@halvaradop/tailwindcss-core": "workspace:*"
-  },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/plugin.css"
   },
   "files": [
     "dist"

@@ -1,0 +1,80 @@
+# @halvaradop/tailwindcss-animations
+
+It is a utility package for TailwindCSS v4 that provides predefined utility classes for animation, including keyframes to animate the properties and more css properties that currently aren't supported native by Tailwindcss which includes `animation-iteration-count`, `animatin-fill-mode`, `animation-range` and `animatin-timeline`. These new properties are not supported by all of the browser and are experimental. Additionally is provided a seria of timing function with that starts with the `ease` prefix. It enables developers to easily add animations to their applications with minimal effort.
+
+> The utilities offered by the packages are created with the latest standards of tailwindcss via `@custom-variant` and `@utility` variants introduced in tailwindcss@v4
+
+## Installation
+
+To use this package, ensure you have TailwindCSS v4 installed and configured. If not, refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation). Once ready, install the package using one of the following commands:
+
+```bash
+npm install -D @halvaradop/tailwindcss-animations
+# or
+pnpm add -D @halvaradop/tailwindcss-animations
+```
+
+## Configuration
+
+To enable the utility classes provided by this package, integrate it into your TailwindCSS setup. Follow these steps:
+
+1. Ensure TailwindCSS is imported in your global `.css` file using the `@import` directive.
+2. Include the utilities CSS file provided by the package.
+
+Example configuration:
+
+```css
+@import "tailwindcss";
+@import "../node_modules/@halvaradop/tailwindcss-animations/dist/plugin.css";
+```
+
+This setup ensures that the animation utilities are available throughout your project.
+
+## Usage
+
+This package provides utility classes for animations with the following prefixes:
+
+- `animate-{animation-name}`
+- `animation-count-{count}`
+- `animation-fill-mode-{mode}`
+- `animation-range-{range}`
+- `animation-timeline-{timeline}`
+- `ease-{timing-function-name}`
+
+### Example
+
+```html
+<div>
+    <span class="size-10 block rounded hover:animate-pulse"></span>
+</div>
+```
+
+### Adding Custom Values
+
+To define custom animation values, use the `@theme` directive in your `.css` file. Add CSS variables following the required prefixes. For example:
+
+```css
+@theme {
+    --animation-count-5: 5;
+    --animation-range-xs: normal 25%;
+    --animation-timeline-axis: scroll(scroller axis);
+    --animation-fill-mode-revert: revert;
+    --ease-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+```
+
+With these configurations, you can extend and customize animations to suit your application's needs.
+
+## Key Features
+
+- Predefined animation classes for common use cases.
+- Customizable animation values using the `@theme` directive.
+- Support for advanced animation properties like `animation-timeline` and `animation-range`.
+- Integration with TailwindCSS v4 for seamless usage.
+
+## Breaking Changes
+
+The latest version of the package introduces the following changes:
+
+- The plugin is no longer exported. Instead, a CSS file containing utility classes is provided for direct use in your project.

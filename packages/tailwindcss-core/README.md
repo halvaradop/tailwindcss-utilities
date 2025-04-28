@@ -2,8 +2,8 @@
 
 This is the core package of the `@halvaradop/tailwindcss` ecosystem, containing essential plugins and utilities for TailwindCSS. It includes core configurations and files that can be shared across projects, ensuring consistency and reusability.
 
-> [!NOTE]
-> This package is not published on npm as it is intended solely for internal use within the `@halvaradop/tailwindcss` ecosystem. It provides shared configurations and utilities necessary for building and maintaining the internal packages.
+> [!WARNING]
+> This package is not published on npm as it is intended solely for internal use within the `@halvaradop/tailwindcss` ecosystem in the `0.x.y` old versions. It provides shared configurations for internal packages. With the introduction of TailwindCSS v4, the way to create and define variants has changed, and the plugin API has been removed. As a result, this package may be deprecated in the future.
 
 ## Installation
 
@@ -17,64 +17,9 @@ pnpm add -D @halvaradop/tailwindcss-core
 
 ## Usage
 
-### Merge Function
-
-The `merge` function allows you to combine two objects, merging their properties and ensuring that the resulting object contains all unique keys from both input objects.
-
-```ts
-import { merge } from "@halvaradop/tailwindcss-core"
-
-const obj1 = {
-  foo: "foobar",
-  bar: {
-    foobar: {
-      barfoo: 2,
-    },
-  },
-}
-
-const obj2 = {
-  barfoo: false,
-}
-
-/**
- * Expected result:
- * {
- *   foo: "foobar",
- *   bar: {
- *     foobar: {
- *       barfoo: 2
- *     }
- *   },
- *   barfoo: false
- * }
- */
-const deepMerge = merge(obj1, obj2)
-```
-
-### ExtractClasses Function
-
-The `extractClasses` function retrieves the classes within the provided HTML, returning a list of the values by the classes. This function is useful for testing the generated classes by the plugins in the `@halvaradop/tailwindcss` ecosystem.
-
-```ts
-import { describe, test, expect } from "vitest"
-import { extractClasses } from "@halvaradop/tailwindcss-core"
-import plugin from "path-to-your-plugin"
-
-const generateClasses = extractClasses(plugin)
-
-describe("scroll utilities", () => {
-  test.concurrent("generate the CSS for scroll utilities", async ({ expect }) => {
-    const html = `<div class="scroll:w-2"></div>`
-    const css = await generateClasses(html)
-    expect(css).toContain(".scroll\\:w-2::-webkit-scrollbar{width:0.5rem}")
-  })
-})
-```
-
 ### Tsup Configuration
 
-The `tsupConfig` object contains the basic configuration for building a package using the `tsup` dependency. It is exported from the index entry point or the `/tsup.config.base` dedicated export. The following code shows how components use this configuration in their `tsup.config.ts` file:
+The `tsupConfig` object provides the base configuration for building a package using the `tsup` dependency. It is exported from the index entry point or the `/tsup.config.base` dedicated export. Below is an example of how to use this configuration in a `tsup.config.ts` file:
 
 ```ts
 import { tsupConfig } from "@halvaradop/tailwindcss-core/tsup.config.base"
@@ -82,6 +27,13 @@ import { defineConfig } from "tsup"
 
 export default defineConfig(tsupConfig)
 ```
+
+## Breaking Changes
+
+The latest version of the package introduces the following breaking changes:
+
+- The `merge` function is no longer exported.
+- The `extractClasses` function is no longer exported.
 
 ## Contributing
 

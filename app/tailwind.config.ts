@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss"
-import utilities from "@halvaradop/tailwindcss-utilities"
 
+/**
+ * @deprecated
+ */
 const config: Config = {
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -36,7 +38,10 @@ const config: Config = {
                 hero: "url(/assets/hero-mobile.svg)",
             },
         },
+        hljs: {
+            //theme: "github-dark",
+        },
     },
-    plugins: [utilities],
+    plugins: [],
 }
 export default config

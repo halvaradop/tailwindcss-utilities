@@ -1,6 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+@reference "../../../packages/tailwindcss-animations/dist/plugin.css";
+@reference "../../../packages/tailwindcss-utilities/dist/plugin.css";
+@source "../../node_modules/@halvaradop/ui-button/dist/index.js";
+
+@theme {
+    --color-black: #08090a;
+    --color-black-header: hsla(0, 0%, 4%, 0.8);
+    --color-header-border: hsla(0, 0%, 100%, 0.08);
+
+    --color-primary: #f7f8f8;
+    --color-secondary: rgba(255, 255, 255, 0.7);
+    --color-tertiary: #8a8f98;
+
+    --color-hljs-background: hsla(0, 0%, 4%, 0.8);
+    --color-hljs-token-keyword: hsl(341, 90%, 67%);
+    --color-hljs-token-comment: hsl(0, 0%, 63%);
+    --color-hljs-token-string: hsl(131, 43%, 57%);
+    --color-hljs-token-function: hsl(275, 80%, 71%);
+    --color-hljs-token-constant: hsl(210, 100%, 66%);
+    --color-hljs-foreground: #eeeeee;
+    --color-hljs-built_in: oklch(0.8 0.14 60.09);
+}
 
 @layer base {
     main {
@@ -14,17 +35,47 @@
             @apply text-3xl font-bold;
         }
 
-        .code pre {
-            @apply bg-gray-200 !important;
-            @apply p-4 rounded-md whitespace-pre-wrap break-all border-2 border-gray-100;
+        pre {
+            @apply w-0 min-w-full p-4 rounded-md border border-solid border-header-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-header-border;
         }
 
-        .code span + div > pre {
-            @apply pt-16;
+        code.language-bash {
+            color: var(--color-hljs-token-string);
         }
 
-        .code.secondary > div > pre {
-            @apply bg-gray-100 !important;
+        .hljs-keyword {
+            color: var(--color-hljs-token-keyword);
+        }
+
+        .hljs-comment {
+            color: var(--color-hljs-token-comment);
+        }
+
+        .hljs-string,
+        .hljs-name .language-bash {
+            color: var(--color-hljs-token-string);
+        }
+
+        .hljs-title {
+            color: var(--color-hljs-token-function);
+        }
+
+        .hljs-constant,
+        .hljs-number {
+            color: var(--color-hljs-token-constant);
+        }
+
+        .hljs-attr,
+        .hljs-tag {
+            color: var(--color-hljs-foreground);
+        }
+
+        .hljs-built_in {
+            color: var(--color-hljs-built_in);
+        }
+
+        .hljs-tag {
+            color: var(--color-hljs-foreground);
         }
     }
 }
