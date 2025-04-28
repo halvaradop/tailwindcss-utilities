@@ -38,6 +38,9 @@ const config: Config = {
                 hero: "url(/assets/hero-mobile.svg)",
             },
         },
+        hljs: {
+            //theme: "github-dark",
+        },
     },
     plugins: [],
 }

@@ -2,36 +2,45 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <footer className="pt-10 pb-28 bg-footer bg-no-repeat bg-contain">
-            <section className="w-11/12 mx-auto text-white text-center text-lg base:w-10/12 base:py-20 base:pb-24 base:border-2 base:border-gray-100 base:rounded-xl base:bg-gray-200 lg:max-w-screen-xl">
-                <p className="text-gray text-sm">&#169;​ 2024 halvaradop. ALL RIGHT RESERVED</p>
-                <h2 className="mt-8 mb-12 text-white fluency-3xl base:mt-4 base:mb-16 base:fluency-4xl">
-                    &#169; 2024 - TAILWINDCSS UTILITIES
+        <footer className="text-primary border-t border-solid border-header-border bg-black-header">
+            <section className="w-11/12 mx-auto md:py-14 md:grid md:grid-cols-2 base:w-10/12 xl:w-8/12">
+                <h2 className="mt-8 mb-12 text-primary text-fluid-3xl text-center base:m-0 base:justify-self-start">
+                    TailwindUtilities
                 </h2>
-                <div className="flex justify-evenly gap-10 base:items-start ">
-                    <ul className="flex items-center flex-col gap-y-4 font-bold base:flex-row base:gap-x-8">
+                <div className="flex justify-evenly gap-10 text-sm base:items-start base:justify-between">
+                    <ul className="text-secondary text-left space-y-4">
+                        <li className="text-primary text-lg font-medium">Product</li>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <Link href="/docs">Docs</Link>
+                            <Link href="/docs/utilities">Utilities</Link>
+                        </li>
+                        <li>
+                            <Link href="/docs/animations">Animations</Link>
+                        </li>
+                        <li>
+                            <Link href="/community">Community</Link>
                         </li>
                     </ul>
-                    <ul className="space-y-4 base:text-start">
-                        <li className="font-bold">Download</li>
-                        <li className="text-gray">
+                    <ul className="text-secondary text-left space-y-4">
+                        <li className="text-primary text-lg font-medium">Resources</li>
+                        <li>
                             <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
                                 GitHub
                             </Link>
                         </li>
-                        <li className="text-gray">
+                        <li>
                             <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank">
-                                npm
+                                Npm
                             </Link>
                         </li>
                     </ul>
                 </div>
             </section>
+            <p className="w-11/12 py-5 mx-auto text-center text-xs base:w-10/12 base:text-left xl:w-8/12">
+                &#169; 2025 halvaradop. ALL RIGHT RESERVED
+            </p>
         </footer>
     )
 }
