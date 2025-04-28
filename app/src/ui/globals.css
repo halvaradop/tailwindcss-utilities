@@ -20,6 +20,7 @@
     --color-hljs-token-function: hsl(275, 80%, 71%);
     --color-hljs-token-constant: hsl(210, 100%, 66%);
     --color-hljs-foreground: #eeeeee;
+    --color-hljs-built_in: oklch(0.8 0.14 60.09);
 }
 
 @layer base {
@@ -38,6 +39,10 @@
             @apply w-0 min-w-full p-4 rounded-md border border-solid border-header-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-header-border;
         }
 
+        code.language-bash {
+            color: var(--color-hljs-token-string);
+        }
+
         .hljs-keyword {
             color: var(--color-hljs-token-keyword);
         }
@@ -46,7 +51,8 @@
             color: var(--color-hljs-token-comment);
         }
 
-        .hljs-string {
+        .hljs-string,
+        .hljs-name .language-bash {
             color: var(--color-hljs-token-string);
         }
 
@@ -54,11 +60,21 @@
             color: var(--color-hljs-token-function);
         }
 
-        .hljs-constant {
+        .hljs-constant,
+        .hljs-number {
             color: var(--color-hljs-token-constant);
         }
 
-        .hljs-attr {
+        .hljs-attr,
+        .hljs-tag {
+            color: var(--color-hljs-foreground);
+        }
+
+        .hljs-built_in {
+            color: var(--color-hljs-built_in);
+        }
+
+        .hljs-tag {
             color: var(--color-hljs-foreground);
         }
     }
