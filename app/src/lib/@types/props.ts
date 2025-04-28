@@ -1,8 +1,7 @@
-import { StaticImageData } from "next/image"
-import { ButtonHTMLAttributes } from "react"
-import { VariantProps } from "class-variance-authority"
-import { BundledLanguage, BundledTheme } from "shiki"
-import { ArgsFunction } from "./types"
+import type { StaticImageData } from "next/image"
+import type { ButtonHTMLAttributes } from "react"
+import type { VariantProps } from "class-variance-authority"
+import type { ArgsFunction } from "./types"
 
 export interface LayoutProps {
     children: React.ReactNode
@@ -20,12 +19,4 @@ export interface ImageSetProps {
 export interface TitleProps extends ImageSetProps {
     className?: string
     title: string
-}
-
-export interface CodeProps {
-    code: string
-    lang?: BundledLanguage
-    theme?: BundledTheme
-    fileName?: string
-    className?: string
 }
