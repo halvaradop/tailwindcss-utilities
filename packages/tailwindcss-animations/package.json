@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/tailwindcss-animations",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A collection of utility classes and utilities for animations using Tailwind CSS",
   "type": "module",
   "scripts": {
