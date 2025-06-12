@@ -13,11 +13,8 @@ export const HeaderMenu = () => {
         >
             <aside className="min-h-dvh p-10 flex flex-col justify-evenly base:min-h-fit base:p-0 base:flex-row base:items-center base:justify-around">
                 <p className="pb-1 border-b border-gray base:hidden">Navigation</p>
-                <ul className="text-fluid-2xl flex flex-col gap-y-8 base:flex-row base:gap-x-10 base:text-sm">
-                    <motion.li
-                        className="text-lg text-primary [--nav-li:100%] base:[--nav-li:0%] base:hidden"
-                        variants={itemVariants}
-                    >
+                <ul className="text-fluid-2xl text-white flex flex-col gap-y-8 base:flex-row base:gap-x-10 base:text-sm">
+                    <motion.li className="text-lg [--nav-li:100%] base:[--nav-li:0%] base:hidden" variants={itemVariants}>
                         Product
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>

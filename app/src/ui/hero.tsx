@@ -1,28 +1,12 @@
-import Link from "next/link"
-import { Button } from "@halvaradop/ui-button"
-
 export const HeroSection = () => {
     return (
-        <section className="min-h-[calc(100dvh-4rem)] text-left overflow-x-hidden flex items-center justify-center">
-            <div className="base:w-3/4 base:mr-auto">
-                <h1 className="text-white text-fluid-5xl">
-                    A collection of focused utilities designed to elevate your development workflow.
-                </h1>
-                <p className="mt-6 mb-8 text-secondary md:text-fluid-base">
-                    From layout helpers to smooth animations, each utility is crafted for simplicity, consistency, and
-                    performance.
-                </p>
-                <div className="mt-2 flex items-center gap-x-10">
-                    <Button className="text-black">
-                        <Link href="/docs">Get Started</Link>
-                    </Button>
-                    <Button className="text-secondary" variant="ghost">
-                        <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank">
-                            Github
-                        </Link>
-                    </Button>
-                </div>
-            </div>
+        <section className="mx-10 min-h-[calc(100dvh-4rem)] border-x border-border base:mx-16">
+            <p className="py-10 px-10 text-white text-lg uppercase border-b border-border base:py-16">
+                Set Your Utilities in Motion
+            </p>
+            <h1 className="py-16 px-10 text-white text-xl/relaxed font-medium uppercase border-b border-border sm:text-fluid-4xl">
+                The modern way to extend Tailwind’s capabilities with a curated suite of powerful utilities.
+            </h1>
         </section>
     )
 }

@@ -6,8 +6,8 @@ import { HeaderMenu } from "./header-menu"
 import { AnimatePresence } from "framer-motion"
 import { merge } from "@halvaradop/ui-core"
 import menu from "@/assets/menu.svg"
-import npm from "@/assets/npm.svg"
-import github from "@/assets/github.svg"
+import arrow from "@/assets/arrow.svg"
+import { Button } from "@halvaradop/ui-button"
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -29,24 +29,21 @@ export const Header = () => {
     }, [])
 
     return (
-        <header className={merge("border-b border-solid border-header-border bg-black-header", isOpen ? "open" : "")}>
-            <nav className="w-11/12 h-16 mx-auto text-tertiary base:flex base:items-center base:justify-between base:relative base:w-10/12 lg:max-w-screen-xl xl:w-8/12">
+        <header className={merge("flex items-center border-b border-solid border-border", isOpen ? "open" : "")}>
+            <nav className="flex-100 h-16 ml-10 px-10 border-x border-solid border-border base:ml-16 base:flex base:items-center base:justify-between base:relative">
                 <div className="w-full h-full flex items-center justify-between relative z-20 base:w-fit">
-                    <h2 className="text-primary base:text-lg">
-                        <Link href="/">TailwindUtilities</Link>
+                    <h2 className="text-white base:text-lg">
+                        <Link href="/">@halvaradop/tailwindcss</Link>
                     </h2>
-                    <Image className="hover:cursor-pointer base:hidden" src={menu} alt="menu icon" onClick={handleToggleMenu} />
                 </div>
                 <AnimatePresence mode="wait">{isOpen && <HeaderMenu />}</AnimatePresence>
-                <figure className="hidden base:flex base:items-center base:gap-x-5">
-                    <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
-                        <Image width={32} src={npm} alt="npm icon" />
-                    </Link>
-                    <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank">
-                        <Image width={24} height={24} src={github} alt="github icon" />
-                    </Link>
-                </figure>
             </nav>
+            <Button className="w-10 h-16 p-0 hover:bg-transparent base:hidden" variant="ghost" onClick={handleToggleMenu}>
+                <Image className="hover:cursor-pointer base:hidden" src={menu} alt="menu icon" />
+            </Button>
+            <Link className="hidden size-16 base:grid base:place-content-center" href="/">
+                <Image className="-rotate-127" src={arrow} alt="Arrow Icon" priority draggable="false" />
+            </Link>
         </header>
     )
 }

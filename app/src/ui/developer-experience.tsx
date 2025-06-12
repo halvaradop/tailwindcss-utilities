@@ -1,54 +1,52 @@
-import Image from "next/image"
-import fire from "@/assets/fire.svg"
-import light from "@/assets/light.svg"
-import starts from "@/assets/starts.svg"
-import console from "@/assets/console.svg"
+import { Separator } from "./separator"
 
 export const DeveloperExperienceSection = () => {
     return (
         <section>
-            <div className="mx-auto text-left">
-                <h2 className="mb-6 text-primary text-fluid-2xl leading-6">Why choose us ?</h2>
-                <p className="text-secondary">The ultimate utility packages to work with TailwindCSS</p>
-            </div>
-            <div className="mt-20 grid grid-cols-2 gap-10 text-primary text-left base:mt-16 base:grid-cols-4 base:gap-12">
-                <article className="w-full h-full flex flex-col">
-                    <figure className="flex items-center gap-x-2">
-                        <Image width={24} src={console} alt="Icon representing faster development" />
-                        <figcaption className="text-lg font-medium">Faster</figcaption>
-                    </figure>
-                    <p className="mt-4 text-secondary text-sm">
-                        Reduce setup time and speed up your workflow with ready-to-use features.
+            <Separator index={1}>Built for real projects</Separator>
+            <section className="mx-10 border-x border-solid border-border base:mx-16">
+                <div className="py-16 px-10 grid base:items-center base:grid-cols-2">
+                    <h2 className="mb-6 text-white text-2xl md:text-fluid-3xl">Why Choose Us</h2>
+                    <p className="text-white text-fluid-base">
+                        Tailwind CSS v4 brings a modern engine — and our utilities are built for it. We’ve designed every package
+                        to integrate seamlessly using the new configuration API, variant generator, and dynamic styling support.
                     </p>
-                </article>
-                <article className="w-full h-full flex flex-col">
-                    <figure className="flex items-center gap-x-2">
-                        <Image width={24} src={light} alt="Icon representing optimized packages" />
-                        <figcaption className="text-lg font-medium">Optimized</figcaption>
-                    </figure>
-                    <p className="mt-4 text-secondary text-sm">
-                        Lightweight and fast plugins, optimized to keep your project's performance at its best.
-                    </p>
-                </article>
-                <article className="w-full h-full flex flex-col">
-                    <figure className="flex items-center gap-x-2">
-                        <Image width={24} src={starts} alt="Icon representing native plugins" />
-                        <figcaption className="text-lg font-medium">Native</figcaption>
-                    </figure>
-                    <p className="mt-4 text-secondary text-sm">
-                        Full integration with Tailwind CSS, ensuring a consistent and smooth development experience.
-                    </p>
-                </article>
-                <article className="w-full h-full flex flex-col">
-                    <figure className="flex items-center gap-x-2">
-                        <Image width={24} src={fire} alt="Icon representing configurable plugins" />
-                        <figcaption className="text-lg font-medium">Customization</figcaption>
-                    </figure>
-                    <p className="mt-4 text-secondary text-sm">
-                        Customize each plugin to your needs with flexible options for total control.
-                    </p>
-                </article>
-            </div>
+                </div>
+                <div className="grid text-white text-left article:border-t article:border-solid article:border-border lg:h-[40dvh] lg:grid-cols-4 lg:article:border-r lg:article:last:border-r-0">
+                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                        <span>/01</span>
+                        <p className="self-end">Native</p>
+                        <p className="mt-4 text-secondary text-sm hidden">
+                            Our utilities are built using Tailwind’s new API — no legacy plugins, no PostCSS. Just clean, modern
+                            extension.
+                        </p>
+                    </article>
+                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                        <span>/02</span>
+                        <p className="self-end">Dynamic Styling</p>
+                        <p className="mt-4 text-secondary text-sm hidden">
+                            Use Tailwind’s new syntax like `[margin:12px]` to update our utility styles inline, without modifying
+                            config files.
+                        </p>
+                    </article>
+                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                        <span>/03</span>
+                        <p className="self-end">Variant Support</p>
+                        <p className="mt-4 text-secondary text-sm hidden">
+                            Create custom variants easily with our utilities. Built on v4’s JIT engine, you get dynamic variant
+                            control out of the box.
+                        </p>
+                    </article>
+                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                        <span>/04</span>
+                        <p className="self-end">Clean Integration</p>
+                        <p className="mt-4 text-secondary text-sm hidden">
+                            We follow Tailwind’s core design philosophy — fast builds, atomic classes, and a unified, zero-runtime
+                            experience.
+                        </p>
+                    </article>
+                </div>
+            </section>
         </section>
     )
 }

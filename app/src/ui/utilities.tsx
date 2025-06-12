@@ -1,42 +1,43 @@
 import Link from "next/link"
+import { Separator } from "./separator"
 
 export const UtilitiesSection = () => {
     return (
-        <section className="mt-40">
-            <div className="mx-auto text-left">
-                <h2 className="mb-6 text-primary text-fluid-2xl leading-6">Explore the Tools</h2>
-                <p className="text-secondary">
-                    Discover two powerful utility packages built to enhance styling and interaction in your projects. Whether
-                    you're streamlining layouts or bringing your UI to life with animations, these tools are designed to be
-                    intuitive, flexible, and ready to use out of the box.
-                </p>
-            </div>
-            <div className="mt-20 border-y-2 border-solid border-header-border md:grid md:grid-cols-2">
-                <article className="py-10 md:pr-8 md:border-r-2 md:border-solid md:border-header-border lg:py-14 lg:pr-10">
-                    <Link
-                        href="https://github.com/halvaradop/tailwindcss-utilities/tree/master/packages/tailwindcss-animations"
-                        target="_bla"
-                    >
-                        <h3 className="text-primary text-xl font-medium">Animations</h3>
-                        <p className="mt-2 text-secondary">
-                            Easily create smooth, customizable animations with utility classes designed to integrate seamlessly
-                            into your TailwindCSS projects.
-                        </p>
-                    </Link>
-                </article>
-                <article className="py-10 border-t-2 border-solid border-header-border md:pl-8 md:border-t-0 lg:py-14 lg:pl-10">
-                    <Link
-                        href="https://github.com/halvaradop/tailwindcss-utilities/tree/master/packages/tailwindcss-utilities"
-                        target="_blank"
-                    >
-                        <h3 className="text-primary text-xl font-medium">Utilities</h3>
-                        <p className="mt-2 text-secondary">
-                            Expand your toolkit with additional utility classes that provide extended functionality and
-                            flexibility for your designs.
-                        </p>
-                    </Link>
-                </article>
-            </div>
+        <section className="">
+            <Separator index={2}>Explore our utilities</Separator>
+            <section className="mx-10 border-x border-solid border-border base:mx-16">
+                <div className="py-16 px-10 grid base:items-center base:grid-cols-2">
+                    <h2 className="mb-6 text-white text-2xl md:text-fluid-3xl">What’s Inside</h2>
+                    <p className="text-white text-fluid-base">
+                        We craft utility packages that enhance your Tailwind CSS workflow — bringing your interfaces to life with
+                        intuitive, flexible, production-ready classes.
+                    </p>
+                </div>
+                <div>
+                    <div className="grid text-white text-left article:border-t article:border-solid article:border-border lg:grid-cols-2 lg:article:border-r lg:article:last:border-r-0">
+                        <article>
+                            <Link className="py-14 px-10 block text-right" href="/docs/animations">
+                                <span className="mb-[20dvh] block text-left">/01</span>
+                                <h3 className="text-xl font-medium">Animations</h3>
+                                <p className="mt-2">
+                                    Effortlessly apply smooth, customizable animations using class-based utilities that blend
+                                    natively into Tailwind.
+                                </p>
+                            </Link>
+                        </article>
+                        <article>
+                            <Link className="py-14 px-10 block text-right" href="/docs/utilities">
+                                <span className="mb-[20dvh] block text-left">/02</span>
+                                <h3 className="text-xl font-medium">Utilities</h3>
+                                <p className="mt-2">
+                                    Extend the core of Tailwind with thoughtful, additional utilities that solve real design needs
+                                    — out of the box.
+                                </p>
+                            </Link>
+                        </article>
+                    </div>
+                </div>
+            </section>
         </section>
     )
 }

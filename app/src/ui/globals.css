@@ -1,17 +1,44 @@
 @import "tailwindcss";
-@config "../../tailwind.config.ts";
+/*
 @reference "../../../packages/tailwindcss-animations/dist/plugin.css";
+*/
 @reference "../../../packages/tailwindcss-utilities/dist/plugin.css";
-@source "../../node_modules/@halvaradop/ui-button/dist/index.js";
+@source "../../node_modules/@halvaradop/ui-button";
 
 @theme {
-    --color-black: #08090a;
-    --color-black-header: hsla(0, 0%, 4%, 0.8);
-    --color-header-border: hsla(0, 0%, 100%, 0.08);
+    --breakpoint-base: 900px;
 
-    --color-primary: #f7f8f8;
-    --color-secondary: rgba(255, 255, 255, 0.7);
-    --color-tertiary: #8a8f98;
+    --rounded: 0.375rem;
+    --opacity-cursor: 80%;
+
+    --color-muted: oklch(65% 0.01 260);
+    --color-border: hsla(0, 0%, 100%, 0.08);
+    --color-overlay: oklch(30% 0.02 260 / 0.3);
+
+    --color-success: oklch(75% 0.18 140);
+    --color-danger: oklch(65% 0.2 25);
+
+    --color-surface: oklch(98% 0 0);
+    --color-on-surface: oklch(20% 0.02 260);
+
+    --color-primary: oklch(30% 0 270);
+    --color-on-primary: oklch(95% 0 0);
+
+    --color-secondary: oklch(60% 0 270);
+    --color-on-secondary: oklch(10% 0 0);
+
+    --color-ghost: oklch(94% 0.01 260);
+
+    --color-disabled: oklch(92% 0 0);
+    --color-on-disabled: oklch(60% 0.01 260);
+
+    --size-sm: 1.75rem;
+    --size-base: 2.25rem;
+    --size-md: 2.75rem;
+    --size-lg: 3.25rem;
+
+    --text-fluid-4xl: clamp(2.8rem, 8vw, 4.2rem);
+    --text-fluid-4xl--line-height: 1.1;
 
     --color-hljs-background: hsla(0, 0%, 4%, 0.8);
     --color-hljs-token-keyword: hsl(341, 90%, 67%);
@@ -23,6 +50,7 @@
     --color-hljs-built_in: oklch(0.8 0.14 60.09);
 }
 
+/*
 @layer base {
     main {
         @apply text-white;
@@ -79,3 +107,4 @@
         }
     }
 }
+*/

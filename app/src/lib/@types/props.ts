@@ -1,5 +1,5 @@
 import type { StaticImageData } from "next/image"
-import type { ButtonHTMLAttributes } from "react"
+import type { ButtonHTMLAttributes, PropsWithChildren } from "react"
 import type { VariantProps } from "class-variance-authority"
 import type { ArgsFunction } from "./types"
 
@@ -19,4 +19,9 @@ export interface ImageSetProps {
 export interface TitleProps extends ImageSetProps {
     className?: string
     title: string
+}
+
+export interface SeparatorProps extends PropsWithChildren {
+    index: number
+    rotate?: boolean
 }

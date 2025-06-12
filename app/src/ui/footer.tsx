@@ -1,15 +1,25 @@
 import Link from "next/link"
+import Image from "next/image"
+import { Separator } from "./separator"
+import githubLogo from "@/assets/github.svg"
+import npmLogo from "@/assets/npm.svg"
+import tailwindLogo from "@/assets/tailwind.svg"
 
 export const Footer = () => {
     return (
-        <footer className="text-primary border-t border-solid border-header-border bg-black-header">
-            <section className="w-11/12 mx-auto md:py-14 md:grid md:grid-cols-2 base:w-10/12 xl:w-8/12">
-                <h2 className="mt-8 mb-12 text-primary text-fluid-3xl text-center base:m-0 base:justify-self-start">
-                    TailwindUtilities
+        <footer>
+            <Separator index={4}>Stay connected</Separator>
+            <section className="mx-10 text-white border-x border-border base:grid md:grid-cols-2 base:mx-16">
+                <h2 className="py-16 px-10 text-fluid-xl text-center border-b  border-border base:col-span-2">
+                    @halvaradop/tailwindcss
                 </h2>
-                <div className="flex justify-evenly gap-10 text-sm base:items-start base:justify-between">
-                    <ul className="text-secondary text-left space-y-4">
-                        <li className="text-primary text-lg font-medium">Product</li>
+                <p className="py-16 px-10 border-b border-border">
+                    An open-source toolkit that brings missing utility classes to Tailwind CSS. Built to simplify your setup and
+                    boost productivity — with minimal configuration.
+                </p>
+                <div className="py-16 px-10 flex justify-evenly gap-10 text-sm border-b border-border base:row-span-2 base:justify-around base:border-b-0 base:border-l">
+                    <ul className="text-left space-y-4">
+                        <li className="text-lg font-medium">Product</li>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
@@ -23,24 +33,35 @@ export const Footer = () => {
                             <Link href="/community">Community</Link>
                         </li>
                     </ul>
-                    <ul className="text-secondary text-left space-y-4">
-                        <li className="text-primary text-lg font-medium">Resources</li>
+                    <ul className="text-left space-y-4">
+                        <li className="text-lg font-medium">Resources</li>
                         <li>
                             <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
-                                GitHub
+                                Npm
                             </Link>
                         </li>
                         <li>
                             <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank">
-                                Npm
+                                Github
                             </Link>
                         </li>
                     </ul>
                 </div>
+                <div className="grid grid-cols-3">
+                    <figure className="py-10 grid place-content-center md:py-16">
+                        <Image src={githubLogo} alt="Github Logo" />
+                    </figure>
+                    <figure className="py-10 grid place-content-center border-x border-border md:py-16">
+                        <Image src={npmLogo} alt="npm Logo" />
+                    </figure>
+                    <figure className="py-10 grid place-content-center md:py-16">
+                        <Image src={tailwindLogo} alt="Tailwind Logo" />
+                    </figure>
+                </div>
             </section>
-            <p className="w-11/12 py-5 mx-auto text-center text-xs base:w-10/12 base:text-left xl:w-8/12">
-                &#169; 2025 halvaradop. ALL RIGHT RESERVED
-            </p>
+            <Separator index={5} rotate>
+                <span className="mx-auto">&#169; 2025 halvaradop</span>
+            </Separator>
         </footer>
     )
 }
