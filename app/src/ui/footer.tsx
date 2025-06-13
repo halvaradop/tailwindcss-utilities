@@ -17,9 +17,9 @@ export const Footer = () => {
                     An open-source toolkit that brings missing utility classes to Tailwind CSS. Built to simplify your setup and
                     boost productivity — with minimal configuration.
                 </p>
-                <div className="py-16 px-4 flex justify-evenly gap-10 text-muted text-sm border-b border-solid border-border sm:px-6 md:px-8 base:px-10 base:row-span-2 base:justify-around base:border-b-0 base:border-l">
-                    <ul className="text-left space-y-4">
-                        <li className="text-primary text-lg font-medium">Product</li>
+                <div className="py-16 px-4 flex justify-evenly gap-10 text-muted text-sm font-medium border-b border-solid border-border sm:px-6 md:px-8 base:px-10 base:row-span-2 base:justify-around base:border-b-0 base:border-l">
+                    <ul className="text-left space-y-4 li:hover:text-primary">
+                        <li className="text-primary text-lg font-semibold">Product</li>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
@@ -33,8 +33,8 @@ export const Footer = () => {
                             <Link href="/community">Community</Link>
                         </li>
                     </ul>
-                    <ul className="text-left space-y-4">
-                        <li className="text-primary text-lg font-medium">Resources</li>
+                    <ul className="text-left space-y-4 li:hover:text-primary">
+                        <li className="text-primary text-lg font-semibold">Resources</li>
                         <li>
                             <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
                                 Npm
@@ -51,7 +51,7 @@ export const Footer = () => {
                     <figure className="py-10 grid place-content-center md:py-16">
                         <Image src={githubLogo} alt="Github Logo" />
                     </figure>
-                    <figure className="py-10 grid place-content-center border-x border-solid border-border md:py-16">
+                    <figure className="py-10 grid place-content-center border-x border-solid border-border">
                         <Image src={npmLogo} alt="npm Logo" />
                     </figure>
                     <figure className="py-10 grid place-content-center md:py-16">

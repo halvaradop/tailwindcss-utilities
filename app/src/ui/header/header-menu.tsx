@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { motion } from "motion/react"
 import { itemVariants, menuVariants } from "@/ui/motion/menu.motion"
+import { TextScramble } from "../text-scramble"
 
 export const HeaderMenu = () => {
     return (
@@ -21,16 +22,24 @@ export const HeaderMenu = () => {
                         Product
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/">Home</Link>
+                        <Link href="/">
+                            <TextScramble>HOME</TextScramble>
+                        </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/docs/utilities">Utilities</Link>
+                        <Link href="/docs/utilities">
+                            <TextScramble>UTILITIES</TextScramble>
+                        </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/docs/animations">Animations</Link>
+                        <Link href="/docs/animations">
+                            <TextScramble>ANIMATIONS</TextScramble>
+                        </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/community">Community</Link>
+                        <Link href="/community">
+                            <TextScramble>COMMUNITY</TextScramble>
+                        </Link>
                     </motion.li>
                 </ul>
                 <ul className="mt-10 text-fluid-lg grid grid-cols-2 items-center font-medium li:hover:text-primary base:hidden">

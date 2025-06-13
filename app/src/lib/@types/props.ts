@@ -3,6 +3,7 @@ import type { ButtonHTMLAttributes, PropsWithChildren, JSX, CSSProperties } from
 import type { VariantProps } from "class-variance-authority"
 import type { ArgsFunction, PerType, PresetType } from "./types"
 import type { Transition, Variants } from "motion"
+import type { MotionProps } from "motion/react"
 
 export interface LayoutProps {
     children: React.ReactNode
@@ -54,4 +55,21 @@ export interface TextEffectProps {
     containerTransition?: Transition
     segmentTransition?: Transition
     style?: CSSProperties
+}
+
+export type TextScrambleEffectProps = {
+    children: string
+    duration?: number
+    speed?: number
+    characterSet?: string
+    as?: React.ElementType
+    className?: string
+    trigger?: boolean
+    onScrambleComplete?: () => void
+} & MotionProps
+
+export interface TextScrambleProps {
+    children: string
+    as?: React.ElementType
+    characterSet?: string
 }

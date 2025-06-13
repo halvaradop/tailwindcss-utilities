@@ -5,9 +5,9 @@ import { useEffect, useState } from "react"
 import { HeaderMenu } from "./header-menu"
 import { AnimatePresence } from "motion/react"
 import { merge } from "@halvaradop/ui-core"
+import { Button } from "@halvaradop/ui-button"
 import menu from "@/assets/menu.svg"
 import arrow from "@/assets/arrow.svg"
-import { Button } from "@halvaradop/ui-button"
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -45,9 +45,20 @@ export const Header = () => {
             >
                 <Image className="hover:cursor-pointer" src={menu} alt="menu icon" />
             </Button>
-            <Link className="hidden size-16 base:grid base:place-content-center" href="/">
-                <Image className="-rotate-127" src={arrow} alt="Arrow Icon" priority draggable="false" />
-            </Link>
+            <figure className="group w-10 h-full hidden img:transition-transform img:ease-linear img:duration-300 hover:cursor-pointer base:w-16 base:flex base:items-center base:justify-center base:relative base:overflow-hidden">
+                <Image
+                    className="-rotate-127 group-hover:-translate-y-14 group-hover:translate-x-14"
+                    src={arrow}
+                    alt="Arrow Icon"
+                    priority
+                />
+                <Image
+                    className="absolute -rotate-127 translate-y-14 -translate-x-14 group-hover:translate-0"
+                    src={arrow}
+                    alt="Arrow Icon"
+                    priority
+                />
+            </figure>
         </header>
     )
 }

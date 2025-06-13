@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@source "../../node_modules/@halvaradop/ui-button";
 /*
+It is generating errors to load animations styles
 @reference "../../../packages/tailwindcss-animations/dist/plugin.css";
 */
 @reference "../../../packages/tailwindcss-utilities/dist/plugin.css";
-@source "../../node_modules/@halvaradop/ui-button";
 
 @theme {
     --breakpoint-base: 900px;
@@ -25,7 +26,7 @@
     --color-primary: #f7f8f8;
     --color-on-primary: #08090a;
 
-    --color-secondary: #8b5cf6;
+    --color-secondary: hsl(225 10% 18%);
     --color-on-secondary: #ffffff;
 
     --color-ghost: oklch(94% 0.01 260);
