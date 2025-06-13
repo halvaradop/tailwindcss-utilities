@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion"
+import type { Variants } from "motion"
 
 export const menuVariants: Variants = {
     hidden: {
