@@ -6,13 +6,13 @@ export const DeveloperExperienceSection = () => {
             <Separator index={1}>Built for real projects</Separator>
             <section className="mx-10 border-x border-solid border-border base:mx-16">
                 <div className="py-16 px-10 grid base:items-center base:grid-cols-2">
-                    <h2 className="mb-6 text-white text-2xl md:text-fluid-3xl">Why Choose Us</h2>
-                    <p className="text-white text-fluid-base">
+                    <h2 className="mb-6 text-primary text-2xl md:text-fluid-3xl">Why Choose Us</h2>
+                    <p className="text-muted text-fluid-base">
                         Tailwind CSS v4 brings a modern engine — and our utilities are built for it. We’ve designed every package
                         to integrate seamlessly using the new configuration API, variant generator, and dynamic styling support.
                     </p>
                 </div>
-                <div className="grid text-white text-left article:border-t article:border-solid article:border-border lg:h-[40dvh] lg:grid-cols-4 lg:article:border-r lg:article:last:border-r-0">
+                <div className="grid text-primary text-left article:border-t article:border-solid article:border-border lg:h-[40dvh] lg:grid-cols-4 lg:article:border-r lg:article:last:border-r-0">
                     <article className="w-full h-full py-14 px-10 flex justify-between">
                         <span>/01</span>
                         <p className="self-end">Native</p>

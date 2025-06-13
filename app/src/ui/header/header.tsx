@@ -32,14 +32,14 @@ export const Header = () => {
         <header className={merge("flex items-center border-b border-solid border-border", isOpen ? "open" : "")}>
             <nav className="flex-100 h-16 ml-10 px-10 border-x border-solid border-border base:ml-16 base:flex base:items-center base:justify-between base:relative">
                 <div className="w-full h-full flex items-center justify-between relative z-20 base:w-fit">
-                    <h2 className="text-white base:text-lg">
+                    <h2 className="text-primary base:text-lg">
                         <Link href="/">@halvaradop/tailwindcss</Link>
                     </h2>
                 </div>
                 <AnimatePresence mode="wait">{isOpen && <HeaderMenu />}</AnimatePresence>
             </nav>
-            <Button className="w-10 h-16 p-0 hover:bg-transparent base:hidden" variant="ghost" onClick={handleToggleMenu}>
-                <Image className="hover:cursor-pointer base:hidden" src={menu} alt="menu icon" />
+            <Button className="w-10 h-16 p-0 relative z-10 hover:bg-transparent base:hidden" variant="ghost" onClick={handleToggleMenu}>
+                <Image className="hover:cursor-pointer" src={menu} alt="menu icon" />
             </Button>
             <Link className="hidden size-16 base:grid base:place-content-center" href="/">
                 <Image className="-rotate-127" src={arrow} alt="Arrow Icon" priority draggable="false" />

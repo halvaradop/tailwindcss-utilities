@@ -3,7 +3,7 @@ import { HeroSection } from "@/ui/hero"
 import { UtilitiesSection } from "@/ui/utilities"
 import { DeveloperExperienceSection } from "@/ui/developer-experience"
 import { Button } from "@halvaradop/ui-button"
-import { PowerredBySection } from "@/ui/powered-by"
+import { PoweredBySection } from "@/ui/powered-by"
 
 const Index = () => {
     return (
@@ -11,7 +11,7 @@ const Index = () => {
             <HeroSection />
             <DeveloperExperienceSection />
             <UtilitiesSection />
-            <PowerredBySection />
+            <PoweredBySection  />
             <section className="my-32 text-center hidden">
                 <h2 className="text-primary text-3xl font-bold text-center">Ready to Get Started</h2>
                 <p className="mt-2 mb-6 text-secondary">Dive into our comprehensive documentation and start building.</p>

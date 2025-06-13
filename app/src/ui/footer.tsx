@@ -9,17 +9,17 @@ export const Footer = () => {
     return (
         <footer>
             <Separator index={4}>Stay connected</Separator>
-            <section className="mx-10 text-white border-x border-border base:grid md:grid-cols-2 base:mx-16">
-                <h2 className="py-16 px-10 text-fluid-xl text-center border-b  border-border base:col-span-2">
+            <section className="mx-10 text-primary border-x border-solid border-border base:grid md:grid-cols-2 base:mx-16">
+                <h2 className="py-16 px-10 text-fluid-xl text-center border-b border-solid border-border base:col-span-2">
                     @halvaradop/tailwindcss
                 </h2>
                 <p className="py-16 px-10 border-b border-border">
                     An open-source toolkit that brings missing utility classes to Tailwind CSS. Built to simplify your setup and
                     boost productivity — with minimal configuration.
                 </p>
-                <div className="py-16 px-10 flex justify-evenly gap-10 text-sm border-b border-border base:row-span-2 base:justify-around base:border-b-0 base:border-l">
+                <div className="py-16 px-10 flex justify-evenly gap-10 text-muted text-sm border-b border-solid border-border base:row-span-2 base:justify-around base:border-b-0 base:border-l">
                     <ul className="text-left space-y-4">
-                        <li className="text-lg font-medium">Product</li>
+                        <li className="text-primary text-lg font-medium">Product</li>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
@@ -34,7 +34,7 @@ export const Footer = () => {
                         </li>
                     </ul>
                     <ul className="text-left space-y-4">
-                        <li className="text-lg font-medium">Resources</li>
+                        <li className="text-primary text-lg font-medium">Resources</li>
                         <li>
                             <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
                                 Npm
@@ -51,7 +51,7 @@ export const Footer = () => {
                     <figure className="py-10 grid place-content-center md:py-16">
                         <Image src={githubLogo} alt="Github Logo" />
                     </figure>
-                    <figure className="py-10 grid place-content-center border-x border-border md:py-16">
+                    <figure className="py-10 grid place-content-center border-x border-solid border-border md:py-16">
                         <Image src={npmLogo} alt="npm Logo" />
                     </figure>
                     <figure className="py-10 grid place-content-center md:py-16">
