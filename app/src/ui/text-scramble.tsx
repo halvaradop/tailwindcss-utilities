@@ -13,7 +13,7 @@ export const TextScramble = ({ children, as = "p", characterSet }: TextScrambleP
             duration={0.4}
             trigger={isTriggered}
             onHoverStart={() => setIsTriggered(true)}
-            onScrambleComplete={() => setIsTriggered(false)}
+            onHoverEnd={() => setIsTriggered(false)}
             characterSet={characterSet}
         >
             {children}

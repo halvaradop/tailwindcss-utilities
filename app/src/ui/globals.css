@@ -42,31 +42,57 @@ It is generating errors to load animations styles
     --text-fluid-4xl: clamp(2.8rem, 8vw, 4.2rem);
     --text-fluid-4xl--line-height: 1.1;
 
-    --color-hljs-background: hsla(0, 0%, 4%, 0.8);
-    --color-hljs-token-keyword: hsl(341, 90%, 67%);
-    --color-hljs-token-comment: hsl(0, 0%, 63%);
-    --color-hljs-token-string: hsl(131, 43%, 57%);
-    --color-hljs-token-function: hsl(275, 80%, 71%);
-    --color-hljs-token-constant: hsl(210, 100%, 66%);
-    --color-hljs-foreground: #eeeeee;
-    --color-hljs-built_in: oklch(0.8 0.14 60.09);
+    --color-hljs-background: hsla(0, 0%, 4%, 0.85);
+    --color-hljs-foreground: #f7f8f8;
+    --color-hljs-token-keyword: hsl(335, 80%, 70%);
+    --color-hljs-token-comment: hsl(0, 0%, 47%);
+    --color-hljs-token-string: hsl(145, 45%, 55%);
+    --color-hljs-token-function: hsl(268, 70%, 75%);
+    --color-hljs-token-constant: hsl(200, 100%, 65%);
+    --color-hljs-built_in: hsl(43, 100%, 63%);
+    --color-hljs-token-operator: hsl(260, 100%, 75%);
+    --color-hljs-token-variable: hsl(15, 80%, 70%);
 }
 
-/*
 @layer base {
     main {
-        @apply text-white;
+        @apply text-primary;
 
         h1 {
-            @apply text-4xl font-bold;
+            @apply mt-8 mb-4 text-4xl font-bold;
         }
 
         h2 {
-            @apply text-3xl font-bold;
+            @apply mt-16 mb-3 text-3xl font-bold;
+        }
+
+        h3 {
+            @apply mt-10 mb-2 text-2xl font-bold;
         }
 
         pre {
-            @apply w-0 min-w-full p-4 rounded-md border border-solid border-header-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-header-border;
+            @apply w-0 min-w-full p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded;
+        }
+
+        ul {
+            @apply m-4 pl-5 list-disc list-inside;
+        }
+
+        ol {
+            @apply m-4 pl-5 list-decimal list-inside;
+        }
+
+        a {
+            @apply text-primary underline underline-offset-3 transition-colors duration-200;
+        }
+
+        p,
+        li {
+            @apply m-4 text-muted;
+        }
+
+        :not(pre) > code {
+            @apply text-on-secondary bg-secondary rounded-md px-1.5 py-0.5 font-mono;
         }
 
         code.language-bash {
@@ -109,4 +135,3 @@ It is generating errors to load animations styles
         }
     }
 }
-*/
