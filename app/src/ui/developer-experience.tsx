@@ -5,7 +5,7 @@ export const DeveloperExperienceSection = () => {
         <section>
             <Separator index={1}>Built for real projects</Separator>
             <section className="mx-10 border-x border-solid border-border base:mx-16">
-                <div className="py-16 px-10 grid base:items-center base:grid-cols-2">
+                <div className="py-16 px-4 grid sm:px-6 md:px-8 base:px-10 base:items-center base:grid-cols-2">
                     <h2 className="mb-6 text-primary text-2xl md:text-fluid-3xl">Why Choose Us</h2>
                     <p className="text-muted text-fluid-base">
                         Tailwind CSS v4 brings a modern engine — and our utilities are built for it. We’ve designed every package
@@ -13,7 +13,7 @@ export const DeveloperExperienceSection = () => {
                     </p>
                 </div>
                 <div className="grid text-primary text-left article:border-t article:border-solid article:border-border lg:h-[40dvh] lg:grid-cols-4 lg:article:border-r lg:article:last:border-r-0">
-                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                    <article className="w-full h-full py-14 px-4 flex justify-between sm:px-6 md:px-8 base:px-10">
                         <span>/01</span>
                         <p className="self-end">Native</p>
                         <p className="mt-4 text-secondary text-sm hidden">
@@ -21,7 +21,7 @@ export const DeveloperExperienceSection = () => {
                             extension.
                         </p>
                     </article>
-                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                    <article className="w-full h-full py-14 px-4 flex justify-between sm:px-6 md:px-8 base:px-10">
                         <span>/02</span>
                         <p className="self-end">Dynamic Styling</p>
                         <p className="mt-4 text-secondary text-sm hidden">
@@ -29,7 +29,7 @@ export const DeveloperExperienceSection = () => {
                             config files.
                         </p>
                     </article>
-                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                    <article className="w-full h-full py-14 px-4 flex justify-between sm:px-6 md:px-8 base:px-10">
                         <span>/03</span>
                         <p className="self-end">Variant Support</p>
                         <p className="mt-4 text-secondary text-sm hidden">
@@ -37,7 +37,7 @@ export const DeveloperExperienceSection = () => {
                             control out of the box.
                         </p>
                     </article>
-                    <article className="w-full h-full py-14 px-10 flex justify-between">
+                    <article className="w-full h-full py-14 px-4 flex justify-between sm:px-6 md:px-8 base:px-10">
                         <span>/04</span>
                         <p className="self-end">Clean Integration</p>
                         <p className="mt-4 text-secondary text-sm hidden">

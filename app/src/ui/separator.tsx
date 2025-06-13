@@ -8,7 +8,7 @@ export const Separator = ({ index, rotate, children }: SeparatorProps) => {
             <figure className="w-10 grid place-content-center base:w-16">
                 <Image className={`${rotate && "-rotate-127"}`} src={arrow} alt="Arrow Icon" priority draggable="false" />
             </figure>
-            <p className="flex-100 h-full px-10 flex items-center border-x border-border">{children}</p>
+            <p className="flex-100 h-full px-4 flex items-center border-x border-border sm:px-6 md:px-8 base:px-10">{children}</p>
             <p className="w-10 grid place-content-center base:w-16">#{index}</p>
         </div>
     )

@@ -11,7 +11,7 @@ const Index = () => {
             <HeroSection />
             <DeveloperExperienceSection />
             <UtilitiesSection />
-            <PoweredBySection  />
+            <PoweredBySection />
             <section className="my-32 text-center hidden">
                 <h2 className="text-primary text-3xl font-bold text-center">Ready to Get Started</h2>
                 <p className="mt-2 mb-6 text-secondary">Dive into our comprehensive documentation and start building.</p>
