@@ -87,3 +87,7 @@ export interface CallToActionProps {
     index: number
     separator: string
 }
+
+export interface SectionLayoutProps extends PropsWithChildren {
+    className?: string
+}

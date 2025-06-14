@@ -1,12 +1,28 @@
-# @halvaradop/tailwindcss-utilities
+import { Separator } from "@/ui/separator"
+import { TextEffect } from "@/ui/motion/text-effect"
+import { SectionLayout } from "@/ui/layout/section"
+import { CallToAction } from "@/ui/call-to-action"
 
-It is a utility package for TailwindCSS v4 that provides predefined utility classes for customization elements and pseudoelement more css properties that currently aren't supported native by Tailwindcss which includes `::-webkit-scrollbar`, `::-webkit-scrollbar-track`, `::-webkit-scrollbar-thumb` or extends the `min-width` classes provided by Tailwindcss. and adding new html selector to customize them of easy way. Additionally is provided a seria of dynamic texts with that starts with the `--text-fluid` prefix.. These new properties are not supported by all of the browser and are experimental. It enables developers to easily customization to their applications with minimal effort.
+<SectionLayout>
+    <TextEffect className="mb-4 text-3xl/relaxed font-medium" as="h1" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.5}>
+        {`@halvaradop/tailwindcss-utilities`}
+    </TextEffect>
+    <TextEffect className="text-muted text-lg" preset="fade-in-blur" speedReveal={1} speedSegment={0.2}>
+        {`A modern utility package for Tailwind CSS v4, providing missing utility classes, advanced selectors, and dynamic CSS variables for rapid, scalable UI development.`}
+    </TextEffect>
+    <TextEffect className="mt-6 text-muted text-lg" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.5}>
+        {`> Built with the latest Tailwind standards using @custom-variant and @utility from tailwindcss@v4.`}
+    </TextEffect>
+</SectionLayout>
 
-> The utilities offered by the packages are created with the latest standards of tailwindcss via `@custom-variant` and `@utility` variants introduced in tailwindcss@v4
+<Separator index={1}>Installation</Separator>
+<SectionLayout>
 
 ## Installation
 
-To use this package, ensure you have TailwindCSS v4 installed and configured. If not, refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation). Once ready, install the package using one of the following commands:
+Before using this package, ensure Tailwind CSS v4 is installed and configured. If needed, refer to the [official Tailwind installation guide](https://tailwindcss.com/docs/installation).
+
+Once ready, install the package:
 
 ```bash
 npm install -D @halvaradop/tailwindcss-utilities
@@ -14,14 +30,19 @@ npm install -D @halvaradop/tailwindcss-utilities
 pnpm add -D @halvaradop/tailwindcss-utilities
 ```
 
+</SectionLayout>
+
+<Separator index={2}>Configuration</Separator>
+<SectionLayout>
+
 ## Configuration
 
-To enable the utility classes provided by this package, integrate it into your TailwindCSS setup. Follow these steps:
+To use the utility classes from this package, add them to your Tailwind CSS setup as follows:
 
-1. Ensure TailwindCSS is imported in your global `.css` file using the `@import` directive.
-2. Include the utilities CSS file provided by the package.
+1. Make sure Tailwind CSS is imported in your main `.css` file using the `@import` directive.
+2. Import the utility CSS file from this package after Tailwind.
 
-Example configuration:
+Example:
 
 ```css
 @import "tailwindcss";
@@ -30,16 +51,19 @@ Example configuration:
 
 This setup ensures that the utility classes are available throughout your project.
 
+</SectionLayout>
+
+<Separator index={3}>Usage</Separator>
+<SectionLayout>
+
 ## Usage
 
-This package provides utility classes for various purposes, including but not limited to:
+This utility package offers a variety of class enhancements, such as:
 
 - `text-fluid-{size}`
 - `min-width-{screen}`
 - `{html-selector}`
-- `scrollbar`
-- `thumb`
-- `track`
+- `scrollbar`, `thumb`, `track`
 
 ### Example
 
@@ -50,21 +74,32 @@ This package provides utility classes for various purposes, including but not li
 </div>
 ```
 
+</SectionLayout>
+
+<Separator index={4}>Customization</Separator>
+<SectionLayout>
+
 ### Adding Custom Values
 
-The unique utility type that currently supports extension and update it defined values is `text-fluid`. In future versions more utilities be able to customize for its requirements
-To define custom utility values, use the `@theme` directive in your `.css` file. Add CSS variables following the required prefixes. For example:
+Currently, the only utility type that supports extension and custom values is `text-fluid`. Future releases will allow more utilities to be customized as needed.
+
+To define your own utility values, use the `@theme` directive in your `.css` file and add CSS variables with the appropriate prefixes. For example:
 
 ```css
 @theme {
-    /* We recommend use `clamp` function to create dynamic sizes based on the viewport of the screen */
+    /* Recommended: Use `clamp()` for responsive fluid sizes */
     --text-fluid-7xl: clamp(4.5rem, 9.2vw, 6.8rem);
     --text-fluid--line-height: 1.2;
     --text-fluid--letter-spacing: -0.038em;
 }
 ```
 
-With these configurations, you can extend and customize utilities to suit your application's needs.
+Future versions will extend this customization to additional utilities.
+
+</SectionLayout>
+
+<Separator index={5}>Key Features</Separator>
+<SectionLayout>
 
 ## Key Features
 
@@ -73,8 +108,25 @@ With these configurations, you can extend and customize utilities to suit your a
 - Seamless integration with TailwindCSS v4.
 - Support for advanced features like animations, spacing, and typography.
 
+</SectionLayout>
+
+<Separator index={6}>Breaking Changes</Separator>
+<SectionLayout>
+
 ## Breaking Changes
 
-The latest version of the package introduces the following changes:
+As of the latest release:
 
-- The plugin is no longer exported. Instead, a CSS file containing utility classes is provided for direct use in your project.
+- The plugin export has been removed.
+- Utilities are now provided directly through a compiled CSS file for simpler integration.
+
+</SectionLayout>
+
+<CallToAction
+    index={7}
+    separator="Contribute"
+    title="Get Involved"
+    description="Have questions or ideas? Visit our community to connect, share, or contribute."
+    button="Join the Community →"
+    href="/community"
+/>

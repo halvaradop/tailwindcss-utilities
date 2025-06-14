@@ -1,58 +1,89 @@
-# Documentation
+import { Separator } from "@/ui/separator"
+import { TextEffect } from "@/ui/motion/text-effect"
+import { SectionLayout } from "@/ui/layout/section"
+import { CallToAction } from "@/ui/call-to-action"
 
-Welcome to the official documentation of @halvaradop/tailwindcss — your modern utility toolkit for Tailwind CSS v4.
+<SectionLayout>
+    <TextEffect className="mb-4 text-3xl/relaxed font-medium" as="h1" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.5}>
+        {`Documentation`}
+    </TextEffect>
+    <TextEffect className="text-muted text-lg" preset="fade-in-blur" speedReveal={1} speedSegment={0.2}>
+        {`Welcome to the official documentation of @halvaradop/tailwindcss — your modern utility toolkit for Tailwind CSS v4.`}
+    </TextEffect>
+    <TextEffect className="text-muted text-lg" preset="fade-in-blur" speedReveal={1} speedSegment={0.2}>
+        {`Unlock intuitive utilities, enhanced variants, and seamless extensions to elevate your workflow.`}
+    </TextEffect>
+</SectionLayout>
 
-Unlock intuitive utilities, enhanced variants, and seamless extensions to elevate your workflow.
+<Separator index={1}>Getting Started</Separator>
+<SectionLayout>
 
 ## Getting Started
 
-Set up in seconds:
+Kickstart your journey in just a few steps:
 
-- Installation — Add the package with your favorite manager.
-- Configuration — Extend Tailwind with the new plugin API, variants, and theme modifiers.
-- Usage — See real-world examples and best practices.
+- **Installation** — Add the package using your preferred package manager (`npm`, `yarn`, or `pnpm`).
+- **Configuration** — Seamlessly extend Tailwind with our plugin API, custom variants, and theme modifiers. Follow our step-by-step setup guide for smooth integration.
+- **Usage** — Explore practical examples, recommended patterns, and best practices to maximize productivity from day one.
+- **Migration** — Upgrading from a previous version or another toolkit? Check our migration tips for a hassle-free transition.
 
+Ready to unlock the full power of Tailwind CSS v4?  
+Dive into the docs below and start building with confidence.
+
+</SectionLayout>
+
+<Separator index={2}>Packages</Separator>
+
+<SectionLayout>
 ## Packages
 
-Our toolkit includes:
+Discover a suite of purpose-built packages designed to supercharge your Tailwind CSS workflow:
 
-- Animations — Elegant, composable animation utilities.
-- Helpers & Modifiers — Extend Tailwind’s base with extra power.
-- Custom Styles — Prebuilt styles and variants, native to Tailwind’s syntax.
+- **Animations** — Elegant, composable animation utilities for effortless motion and interaction.
+- **Helpers & Modifiers** — Powerful extensions to Tailwind’s core, enabling advanced patterns and rapid prototyping.
+- **Custom Styles** — Prebuilt styles and variants that feel native to Tailwind, letting you stay productive without reinventing the wheel.
 
-[Browse Utilities →](/docs/utilities)
+Explore detailed documentation, usage examples, and best practices for each package:
 
-[Browse Animations →](/docs/animations)
+- [Browse Utilities →](/docs/utilities)
+- [Browse Animations →](/docs/animations)
 
+Stay tuned for more packages and continuous updates as the toolkit evolves!
+
+</SectionLayout>
+
+<Separator index={3}>Guides & Best Practices</Separator>
+<SectionLayout>
 ## Guides & Best Practices
 
-Curated articles to help you:
+Explore curated guides to help you:
 
-- Use modifiers effectively
-- Design scalable utilities
-- Combine with official Tailwind plugins
+- Master advanced modifiers and variants
+- Design scalable, maintainable utility systems
+- Integrate seamlessly with official Tailwind plugins and third-party tools
+- Adopt best practices for performance and accessibility
 
 ## Quick Reference
 
-Use the sidebar or search to find:
+Easily find what you need:
 
-- Utility names & usage
-- Default configs
-- Customization tips
+- Comprehensive utility class list with usage examples
+- Default configuration values and theme options
+- Customization strategies and extension tips
+- Searchable sidebar for fast navigation
 
 ## Powered by Tailwind CSS v4
 
-Built on the latest Tailwind plugin API, variant system, and class-based customization. 100% compatible with v4.
+Built on the latest Tailwind CSS v4 plugin API, variant system, and class-based customization.  
+Enjoy full compatibility with v4, future-proof patterns, and a modern developer experience.
 
-## Need Help?
+</SectionLayout>
 
-Visit our [Community Page](/community) to ask questions, report issues, or contribute.
-
-## Explore
-
-Jump to a popular section:
-
-- [Animations](/docs/utilities)
-- [Modifiers](/docs/animations)
-
-> Built for performance, clarity, and developer happiness. Start building modern UIs — the Tailwind way.
+<CallToAction
+    index={4}
+    separator="Contribute"
+    title="Get Involved"
+    description="Have questions or ideas? Visit our community to connect, share, or contribute."
+    button="Join the Community →"
+    href="/community"
+/>

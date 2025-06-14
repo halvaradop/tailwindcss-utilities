@@ -4,7 +4,7 @@ import type { SeparatorProps } from "@/lib/@types/props"
 
 export const Separator = ({ index, rotate = false, children }: SeparatorProps) => {
     return (
-        <div className="h-16 flex items-center text-primary border-y border-solid border-border">
+        <div className="h-16 flex items-center text-primary border-y border-solid border-border separator">
             <figure className="group w-10 h-full flex items-center justify-center relative overflow-hidden img:transition-transform img:ease-linear img:duration-300 hover:cursor-pointer base:w-16">
                 <Image
                     className={`${rotate ? "-rotate-127 group-hover:-translate-y-14 group-hover:translate-x-14" : "group-hover:translate-y-18"}`}

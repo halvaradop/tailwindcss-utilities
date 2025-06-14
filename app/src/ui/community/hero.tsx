@@ -5,10 +5,10 @@ export const HeroSection = () => {
         <section className="mx-10 py-16 text-primary border-x border-solid border-border base:mx-16">
             <TextEffect
                 className="mb-4 px-4 text-3xl/relaxed font-medium uppercase sm:px-6 md:px-8 base:px-10"
+                as="h1"
                 preset="fade-in-blur"
                 speedReveal={1.1}
                 speedSegment={0.5}
-                as="h1"
             >
                 Join Our Community
             </TextEffect>
