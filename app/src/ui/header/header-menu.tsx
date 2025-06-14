@@ -27,6 +27,11 @@ export const HeaderMenu = () => {
                         </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
+                        <Link href="/docs">
+                            <TextScramble>DOCS</TextScramble>
+                        </Link>
+                    </motion.li>
+                    <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
                         <Link href="/docs/utilities">
                             <TextScramble>UTILITIES</TextScramble>
                         </Link>
