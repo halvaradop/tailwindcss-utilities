@@ -4,7 +4,13 @@ import { SectionLayout } from "@/ui/layout/section"
 import { CallToAction } from "@/ui/call-to-action"
 
 <SectionLayout>
-    <TextEffect className="mb-4 text-3xl/relaxed font-medium" as="h1" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.5}>
+    <TextEffect
+        className="mb-4 text-xl/relaxed truncate font-medium base:text-3xl/relaxed"
+        as="h1"
+        preset="fade-in-blur"
+        speedReveal={1.1}
+        speedSegment={0.5}
+    >
         {`@halvaradop/tailwindcss-utilities`}
     </TextEffect>
     <TextEffect className="text-muted text-lg" preset="fade-in-blur" speedReveal={1} speedSegment={0.2}>

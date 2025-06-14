@@ -15,7 +15,7 @@ export const CommunitySection = () => {
             <section className="mx-10 border-x border-solid border-border base:mx-16 lg:min-h-[calc(100dvh-4rem)] lg:flex lg:flex-col">
                 <SegmentAnimation
                     title="Ways to Contribute"
-                    description="Tailwind CSS v4 brings a modern engine — and our utilities are built for it. We’ve designed every package to integrate seamlessly using the new configuration API, variant generator, and dynamic styling support."
+                    description="Join the @halvaradop/tailwindcss community! Explore ways to contribute, collaborate, and connect with others to help shape the future of our utilities and ecosystem."
                 />
                 <div className="grid text-primary text-left a:border-t a:border-solid a:border-border lg:flex-100 lg:grid-cols-3 lg:a:border-r lg:a:nth-[3]:border-r-0 lg:a:nth-[5]:border-r-0 lg:a:nth-[4]:col-span-2 xl:min-h-[30dvw] xl:a:nth-[2]:border-r">
                     {communityCards.map((item, idx) => (

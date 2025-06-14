@@ -3,10 +3,10 @@ import { motion } from "motion/react"
 import { itemVariants, menuVariants } from "@/ui/motion-config/menu.motion"
 import { TextScramble } from "@/ui/motion/text-scramble"
 
-export const HeaderMenu = () => {
+export const HeaderMenu = ({ onLinkClick }: { onLinkClick?: () => void } = {}) => {
     return (
         <motion.div
-            className="w-10/12 max-w-md absolute inset-y-0 right-0 z-10 border border-solid border-border bg-black [--nav-menu:100%] base:w-auto base:max-w-none base:inset-0 base:relative base:bg-transparent base:border-0 base:[--nav-menu:0%]"
+            className="w-10/12 max-w-md absolute inset-y-0 right-0 z-20 border border-solid border-border bg-black [--nav-menu:100%] base:w-auto base:max-w-none base:inset-0 base:relative base:bg-transparent base:border-0 base:[--nav-menu:0%]"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
@@ -22,27 +22,27 @@ export const HeaderMenu = () => {
                         Product
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/">
+                        <Link href="/" onClick={onLinkClick}>
                             <TextScramble>HOME</TextScramble>
                         </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/docs">
+                        <Link href="/docs" onClick={onLinkClick}>
                             <TextScramble>DOCS</TextScramble>
                         </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/docs/utilities">
+                        <Link href="/docs/utilities" onClick={onLinkClick}>
                             <TextScramble>UTILITIES</TextScramble>
                         </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/docs/animations">
+                        <Link href="/docs/animations" onClick={onLinkClick}>
                             <TextScramble>ANIMATIONS</TextScramble>
                         </Link>
                     </motion.li>
                     <motion.li className="[--nav-li:100%] base:[--nav-li:0%]" variants={itemVariants}>
-                        <Link href="/community">
+                        <Link href="/community" onClick={onLinkClick}>
                             <TextScramble>COMMUNITY</TextScramble>
                         </Link>
                     </motion.li>
@@ -50,12 +50,16 @@ export const HeaderMenu = () => {
                 <ul className="mt-10 text-fluid-lg grid grid-cols-2 items-center font-medium li:hover:text-primary base:hidden">
                     <li className="mb-5 text-primary text-xl font-semibold col-span-2">Resources</li>
                     <li>
-                        <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank">
+                        <Link href="https://github.com/halvaradop/tailwindcss-utilities" target="_blank" onClick={onLinkClick}>
                             Github
                         </Link>
                     </li>
                     <li>
-                        <Link href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities" target="_blank">
+                        <Link
+                            href="https://www.npmjs.com/package/@halvaradop/tailwindcss-utilities"
+                            target="_blank"
+                            onClick={onLinkClick}
+                        >
                             NPM
                         </Link>
                     </li>

@@ -67,6 +67,10 @@ It is generating errors to load animations styles
             @apply text-primary;
         }
 
+        body:has(> header.open) {
+            overflow-y: hidden;
+        }
+
         main {
             &#docs-layout {
                 @apply text-primary;
@@ -145,6 +149,12 @@ It is generating errors to load animations styles
                 .hljs-tag {
                     color: var(--color-hljs-foreground);
                 }
+            }
+        }
+
+        @media (min-width: 900px) {
+            body:has(> header.open) {
+                overflow-y: auto;
             }
         }
     }
