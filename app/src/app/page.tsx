@@ -1,23 +1,17 @@
-"use client"
-import Link from "next/link"
-import { HeroSection } from "@/ui/hero"
-import { UtilitiesSection } from "@/ui/utilities"
-import { DeveloperExperienceSection } from "@/ui/developer-experience"
-import { Button } from "@halvaradop/ui-button"
+import { HeroSection } from "@/ui/home/hero"
+import { FeatureListSection } from "@/ui/home/feature-list"
+import { BenefitsSection } from "@/ui/home/benefits"
+import { PoweredBySection } from "@/ui/home/powered-by"
+import { DocsSection } from "@/ui/home/docs"
 
 const Index = () => {
     return (
-        <main className="w-11/12 mx-auto base:w-10/12 lg:max-w-screen-xl xl:w-8/12">
+        <main>
             <HeroSection />
-            <DeveloperExperienceSection />
-            <UtilitiesSection />
-            <section className="my-32 text-center">
-                <h2 className="text-primary text-3xl font-bold text-center">Ready to Get Started</h2>
-                <p className="mt-2 mb-6 text-secondary">Dive into our comprehensive documentation and start building.</p>
-                <Button className="mx-auto text-black" asChild>
-                    <Link href="/docs">View Documentation</Link>
-                </Button>
-            </section>
+            <BenefitsSection />
+            <FeatureListSection />
+            <PoweredBySection />
+            <DocsSection />
         </main>
     )
 }

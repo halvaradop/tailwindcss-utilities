@@ -1,12 +1,34 @@
-# @halvaradop/tailwindcss-animations
+import { Separator } from "@/ui/separator"
+import { TextEffect } from "@/ui/motion/text-effect"
+import { SectionLayout } from "@/ui/layout/section"
+import { CallToAction } from "@/ui/call-to-action"
 
-It is a utility package for TailwindCSS v4 that provides predefined utility classes for animation, including keyframes to animate the properties and more css properties that currently aren't supported native by Tailwindcss which includes `animation-iteration-count`, `animatin-fill-mode`, `animation-range` and `animatin-timeline`. These new properties are not supported by all of the browser and are experimental. Additionally is provided a seria of timing function with that starts with the `ease` prefix. It enables developers to easily add animations to their applications with minimal effort.
+<SectionLayout>
+    <TextEffect
+        className="mb-4 text-xl/relaxed truncate font-medium base:text-3xl/relaxed"
+        as="h1"
+        preset="fade-in-blur"
+        speedReveal={1.1}
+        speedSegment={0.5}
+    >
+        {`@halvaradop/tailwindcss-animations`}
+    </TextEffect>
+    <TextEffect className="text-muted text-lg" preset="fade-in-blur" speedReveal={1} speedSegment={0.2}>
+        {`A utility package for Tailwind CSS v4 providing predefined animation classes, keyframes, and advanced properties not natively supported by Tailwind. Includes experimental features like "animation-iteration-count", "animation-fill-mode", "animation-range", and "animation-timeline", plus a suite of timing functions with the "ease" prefix.`}
+    </TextEffect>
+    <TextEffect className="mt-6 text-muted text-lg" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.5}>
+        {`> Built with the latest Tailwind standards using @custom-variant and @utility from tailwindcss@v4.`}
+    </TextEffect>
+</SectionLayout>
 
-> The utilities offered by the packages are created with the latest standards of tailwindcss via `@custom-variant` and `@utility` variants introduced in tailwindcss@v4
+<Separator>Installation</Separator>
+<SectionLayout>
 
 ## Installation
 
-To use this package, ensure you have TailwindCSS v4 installed and configured. If not, refer to the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation). Once ready, install the package using one of the following commands:
+Before using this package, ensure Tailwind CSS v4 is installed and configured. If needed, refer to the [official Tailwind installation guide](https://tailwindcss.com/docs/installation).
+
+Once ready, install the package:
 
 ```bash
 npm install -D @halvaradop/tailwindcss-animations
@@ -14,25 +36,35 @@ npm install -D @halvaradop/tailwindcss-animations
 pnpm add -D @halvaradop/tailwindcss-animations
 ```
 
+</SectionLayout>
+
+<Separator>Configuration</Separator>
+<SectionLayout>
+
 ## Configuration
 
-To enable the utility classes provided by this package, integrate it into your TailwindCSS setup. Follow these steps:
+To use the utility classes from this package, add them to your Tailwind CSS setup as follows:
 
-1. Ensure TailwindCSS is imported in your global `.css` file using the `@import` directive.
-2. Include the utilities CSS file provided by the package.
+1. Make sure Tailwind CSS is imported in your main `.css` file using the `@import` directive.
+2. Import the utility CSS file from this package after Tailwind.
 
-Example configuration:
+Example:
 
 ```css
 @import "tailwindcss";
 @import "../node_modules/@halvaradop/tailwindcss-animations/dist/plugin.css";
 ```
 
-This setup ensures that the animation utilities are available throughout your project.
+This setup ensures that the utility classes are available throughout your project.
+
+</SectionLayout>
+
+<Separator>Usage</Separator>
+<SectionLayout>
 
 ## Usage
 
-This package provides utility classes for animations with the following prefixes:
+This utility package offers a variety of class enhancements, such as:
 
 - `animate-{animation-name}`
 - `animation-count-{count}`
@@ -49,32 +81,52 @@ This package provides utility classes for animations with the following prefixes
 </div>
 ```
 
-### Adding Custom Values
+</SectionLayout>
 
-To define custom animation values, use the `@theme` directive in your `.css` file. Add CSS variables following the required prefixes. For example:
-
-```css
-@theme {
+<Separator>Customization</Separator>
+<SectionLayout>
+  ### Custom Values
+  Extend animation utilities using the `@theme` directive in your CSS:
+  ```css
+  @theme {
     --animation-count-5: 5;
     --animation-range-xs: normal 25%;
     --animation-timeline-axis: scroll(scroller axis);
     --animation-fill-mode-revert: revert;
     --ease-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-```
+  }
+  ```
+  Use these variables to extend and customize your animation utilities.
+</SectionLayout>
 
-With these configurations, you can extend and customize animations to suit your application's needs.
+<Separator>Key Features</Separator>
+<SectionLayout>
 
 ## Key Features
 
-- Predefined animation classes for common use cases.
-- Customizable animation values using the `@theme` directive.
-- Support for advanced animation properties like `animation-timeline` and `animation-range`.
-- Integration with TailwindCSS v4 for seamless usage.
+- Predefined animation classes for common use cases
+- Customizable animation values via `@theme`
+- Support for advanced properties like `animation-timeline` and `animation-range` - Seamless Tailwind v4 integration
+
+</SectionLayout>
+
+<Separator>Breaking Changes</Separator>
+<SectionLayout>
 
 ## Breaking Changes
 
-The latest version of the package introduces the following changes:
+As of the latest release:
 
-- The plugin is no longer exported. Instead, a CSS file containing utility classes is provided for direct use in your project.
+- The plugin export has been removed.
+- Utilities are now provided directly through a compiled CSS file for simpler integration.
+
+</SectionLayout>
+
+<CallToAction
+    separator="Contribute"
+    title="Get Involved"
+    description="Have questions or ideas? Visit our community to connect, share, or contribute."
+    button="Join the Community →"
+    href="/community"
+/>

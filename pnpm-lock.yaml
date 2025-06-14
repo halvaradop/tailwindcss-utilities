@@ -51,11 +51,14 @@ importers:
   app:
     dependencies:
       '@halvaradop/ui-button':
-        specifier: 0.4.0-beta.1
-        version: 0.4.0-beta.1
+        specifier: ^1.0.0
+        version: 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@halvaradop/ui-core':
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: ^1.0.0
+        version: 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@halvaradop/ui-slot':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@mdx-js/loader':
         specifier: ^3.1.0
         version: 3.1.0(acorn@8.14.1)
@@ -65,12 +68,12 @@ importers:
       '@next/mdx':
         specifier: ^15.3.1
         version: 15.3.1(@mdx-js/loader@3.1.0(acorn@8.14.1))(@mdx-js/react@3.1.0(@types/react@19.1.0)(react@19.1.0))
-      framer-motion:
-        specifier: 12.0.0-alpha.2
-        version: 12.0.0-alpha.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       highlight.js:
         specifier: ^11.11.1
         version: 11.11.1
+      motion:
+        specifier: ^12.18.1
+        version: 12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next:
         specifier: 15.2.4
         version: 15.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -459,14 +462,20 @@ packages:
   '@halvaradop/ts-utility-types@0.19.0':
     resolution: {integrity: sha512-F8Sf5XVK/JN9MPIu6oK+rgGLSbtddw+rWcvhPzo3hNq+Se7l6XR2JfZXnUOYtGpHwTjwVuLXjs4OUJkw2fKWMw==}
 
-  '@halvaradop/ui-button@0.4.0-beta.1':
-    resolution: {integrity: sha512-ZymK9i1tikcVY2/N20g7KIu45o6h+Si5x8i0Ak0GnYWr85zYMC5P4WLSWex8drNH8Wdy/yxqFjfK5hS059UNLg==}
+  '@halvaradop/ui-button@1.0.0':
+    resolution: {integrity: sha512-UHaYnwLyh4u2vH7y1YIlMOIMOr69rC0NZuQ/0Qt4U6VvZ0ENeWXUkzfOf1jyOqp2ydId9UQbr6I1q36q9ZNTbQ==}
+    peerDependencies:
+      react: ^19.0.0
+      react-dom: ^19.0.0
 
-  '@halvaradop/ui-core@0.3.0-beta.1':
-    resolution: {integrity: sha512-lz0GIg7tt4EJy24iWj78aoLuSZYXZ1Y78Csm0+CvdzHnABfC5uAbhx076WEoiaqPQxkXU+65tnaRl6c9ZHclSA==}
+  '@halvaradop/ui-core@1.0.0':
+    resolution: {integrity: sha512-LOmO+2cv8OMAkcqKo0U9A9N2gnoCQ48gOkDBtspCym7ewnuNHLVmTpdQiOeO3KQL03m35pIOxSbjNcd0hLyiuQ==}
+    peerDependencies:
+      react: ^19.0.0
+      react-dom: ^19.0.0
 
-  '@halvaradop/ui-core@0.5.0':
-    resolution: {integrity: sha512-r0vNex3PTD6OUlmXGMA8sXrkdKAVV0wbZ7uMpzhJ/moy3OHNt3tQdgsbTHLdN3fWTaagxLvu+FuYw1edeXNh6Q==}
+  '@halvaradop/ui-slot@1.0.0':
+    resolution: {integrity: sha512-tiYo4XIoF6R2LJT+5FiUhEoUU5SUaRH0GlwN6cljYAC3KF9cjTsj0iua7KGPmfVH1NVV4jvERJ4FDQm5PwxN5g==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -1317,12 +1326,12 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@12.0.0-alpha.2:
-    resolution: {integrity: sha512-s603YLhCoX3GKaPDZnywwoFdd1T6gDFCfevVRek+TCpbvazUkITh+YZ3a6kqTvn4Aj7qQWT3vAmzWIjl/LsCFA==}
+  framer-motion@12.18.1:
+    resolution: {integrity: sha512-6o4EDuRPLk4LSZ1kRnnEOurbQ86MklVk+Y1rFBUKiF+d2pCdvMjWVu0ZkyMVCTwl5UyTH2n/zJEJx+jvTYuxow==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
-      react: ^19.0.0-rc.1
-      react-dom: ^19.0.0-rc.1
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@emotion/is-prop-valid':
         optional: true
@@ -1663,6 +1672,26 @@ packages:
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
+
+  motion-dom@12.18.1:
+    resolution: {integrity: sha512-dR/4EYT23Snd+eUSLrde63Ws3oXQtJNw/krgautvTfwrN/2cHfCZMdu6CeTxVfRRWREW3Fy1f5vobRDiBb/q+w==}
+
+  motion-utils@12.18.1:
+    resolution: {integrity: sha512-az26YDU4WoDP0ueAkUtABLk2BIxe28d8NH1qWT8jPGhPyf44XTdDUh8pDk9OPphaSrR9McgpcJlgwSOIw/sfkA==}
+
+  motion@12.18.1:
+    resolution: {integrity: sha512-w1ns2hWQ4COhOvnZf4rg4mW0Pl36mzcShpgt0fSfI6qJxKUbi3kHho/HSKeJFRoY0TO1m5/7C8lG1+Li0uC9Fw==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -2383,18 +2412,21 @@ snapshots:
 
   '@halvaradop/ts-utility-types@0.19.0': {}
 
-  '@halvaradop/ui-button@0.4.0-beta.1':
+  '@halvaradop/ui-button@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@halvaradop/ui-core': 0.3.0-beta.1
+      '@halvaradop/ui-core': 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@halvaradop/ui-slot': 1.0.0
       class-variance-authority: 0.7.0
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
-  '@halvaradop/ui-core@0.3.0-beta.1':
+  '@halvaradop/ui-core@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
       tailwind-merge: 2.6.0
 
-  '@halvaradop/ui-core@0.5.0':
-    dependencies:
-      tailwind-merge: 2.6.0
+  '@halvaradop/ui-slot@1.0.0': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -3172,8 +3204,10 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@12.0.0-alpha.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
+      motion-dom: 12.18.1
+      motion-utils: 12.18.1
       tslib: 2.8.1
     optionalDependencies:
       react: 19.1.0
@@ -3712,6 +3746,20 @@ snapshots:
       brace-expansion: 2.0.1
 
   minipass@7.1.2: {}
+
+  motion-dom@12.18.1:
+    dependencies:
+      motion-utils: 12.18.1
+
+  motion-utils@12.18.1: {}
+
+  motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      framer-motion: 12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   mri@1.2.0: {}
 
