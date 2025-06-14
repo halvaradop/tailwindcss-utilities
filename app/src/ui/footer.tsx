@@ -59,7 +59,7 @@ export const Footer = () => {
                     </figure>
                 </div>
             </section>
-            <Separator index={5} rotate>
+            <Separator index={6} rotate>
                 <span className="mx-auto">&#169; 2025 halvaradop.</span>
             </Separator>
         </footer>

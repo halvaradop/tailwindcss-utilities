@@ -78,3 +78,12 @@ export interface SegmentAnimationProps {
     title: string
     description: string
 }
+
+export interface CallToActionProps {
+    title: string
+    description: string
+    button: string
+    href: string
+    index: number
+    separator: string
+}

@@ -20,3 +20,36 @@ export const benefitsContent = [
         desc: `We follow Tailwind’s core design philosophy — fast builds, atomic classes, and a unified, zero-runtime experience.`,
     },
 ]
+
+export const communityCards = [
+    {
+        number: "/01",
+        title: "Improve Documentation",
+        desc: "Suggest edits, add examples, or clarify guides to help others get started faster.",
+        href: "https://github.com/halvaradop/tailwindcss-utilities/tree/master/app/src/app/docs",
+    },
+    {
+        number: "/02",
+        title: "Join the Discussion",
+        desc: "Share your ideas, ask questions, or give feedback in our GitHub Discussions.",
+        href: "https://github.com/halvaradop/tailwindcss-utilities/discussions",
+    },
+    {
+        number: "/03",
+        title: "Report Issues",
+        desc: "Found a bug or have a feature request? Open an issue and help us improve.",
+        href: "https://github.com/halvaradop/tailwindcss-utilities/issues",
+    },
+    {
+        number: "/04",
+        title: "Contribute Code",
+        desc: "Help us build new features, fix bugs, or refactor the codebase. Every PR is welcome!",
+        href: "https://github.com/halvaradop/tailwindcss-utilities/pulls",
+    },
+    {
+        number: "/05",
+        title: "Star the Project",
+        desc: "Show your support by starring us on GitHub. It helps others discover the toolkit!",
+        href: "https://github.com/halvaradop/tailwindcss-utilities",
+    },
+]
