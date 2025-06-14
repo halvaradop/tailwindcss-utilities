@@ -3,7 +3,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { motion } from "motion/react"
 import { Separator } from "@/ui/separator"
-import { cardVariants } from "@/ui/motion-config/card.motion"
+import { cardVariants } from "@/ui/motion-config/benefit.motion"
 import { SegmentAnimation } from "@/ui/motion/segment"
 import { communityCards } from "@/lib/content"
 

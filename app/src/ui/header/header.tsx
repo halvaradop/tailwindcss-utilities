@@ -29,7 +29,10 @@ export const Header = () => {
     }, [])
 
     return (
-        <header className={merge("flex items-center border-b border-solid border-border", isOpen ? "open" : "")}>
+        <header
+            className={merge("flex items-center border-b border-solid border-border", isOpen ? "open" : "")}
+            id="halvaradop-tailwindcss-utilities"
+        >
             <nav className="flex-100 h-16 ml-10 px-4 border-x border-solid border-border sm:px-6 md:px-8 base:ml-16 base:px-10 base:flex base:items-center base:justify-between base:relative">
                 <div className="w-full h-full flex items-center justify-between relative z-20 base:w-fit">
                     <h2 className="text-primary base:text-lg">

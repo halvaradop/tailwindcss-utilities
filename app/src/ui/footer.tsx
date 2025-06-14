@@ -59,8 +59,8 @@ export const Footer = () => {
                     </figure>
                 </div>
             </section>
-            <Separator rotate>
-                <span className="mx-auto">&#169; 2025 halvaradop.</span>
+            <Separator className="justify-center" redirectTo="@halvaradop/tailwindcss-utilities" rotate>
+                &#169; 2025 halvaradop.
             </Separator>
         </footer>
     )

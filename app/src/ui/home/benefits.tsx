@@ -3,7 +3,7 @@ import { useState } from "react"
 import { motion } from "motion/react"
 import { Separator } from "@/ui/separator"
 import { SegmentAnimation } from "@/ui/motion/segment"
-import { cardVariants } from "@/ui/motion-config/card.motion"
+import { cardVariants } from "@/ui/motion-config/benefit.motion"
 import { benefitsContent } from "@/lib/content"
 
 export const BenefitsSection = () => {

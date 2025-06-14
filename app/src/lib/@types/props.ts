@@ -23,8 +23,10 @@ export interface TitleProps extends ImageSetProps {
     title: string
 }
 
-export interface SeparatorProps extends PropsWithChildren {
-    index?: number
+export interface SeparatorProps {
+    className?: string
+    redirectTo?: string
+    children: string
     rotate?: boolean
 }
 
