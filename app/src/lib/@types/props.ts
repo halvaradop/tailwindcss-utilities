@@ -24,7 +24,7 @@ export interface TitleProps extends ImageSetProps {
 }
 
 export interface SeparatorProps extends PropsWithChildren {
-    index: number
+    index?: number
     rotate?: boolean
 }
 
@@ -84,7 +84,6 @@ export interface CallToActionProps {
     description: string
     button: string
     href: string
-    index: number
     separator: string
 }
 

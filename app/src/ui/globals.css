@@ -55,83 +55,96 @@ It is generating errors to load animations styles
 }
 
 @layer base {
-    main {
-        &#docs-layout {
+    html {
+        counter-reset: separator;
+
+        .separator .index {
+            counter-increment: separator;
+        }
+
+        .separator .index::after {
+            content: "#" counter(separator);
             @apply text-primary;
+        }
 
-            h1 {
-                @apply mb-4 text-2xl font-bold base:text-4xl;
-            }
+        main {
+            &#docs-layout {
+                @apply text-primary;
 
-            h2 {
-                @apply mb-3 text-xl font-bold base:text-3xl;
-            }
+                h1 {
+                    @apply mb-4 text-2xl font-bold base:text-4xl;
+                }
 
-            h3 {
-                @apply mb-2 text-lg font-bold base:text-2xl;
-            }
+                h2 {
+                    @apply mb-3 text-xl font-bold base:text-3xl;
+                }
 
-            pre {
-                @apply w-0 min-w-full my-4 p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-secondary;
-            }
+                h3 {
+                    @apply mb-2 text-lg font-bold base:text-2xl;
+                }
 
-            ul {
-                @apply m-4 list-disc list-inside;
-            }
+                pre {
+                    @apply w-0 min-w-full my-4 p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-secondary;
+                }
 
-            ol {
-                @apply m-4 list-decimal list-inside;
-            }
+                ul {
+                    @apply m-4 list-disc list-inside;
+                }
 
-            :not([data-id="call-to-action"]) > a {
-                @apply text-primary underline underline-offset-3 transition-colors duration-200;
-            }
+                ol {
+                    @apply m-4 list-decimal list-inside;
+                }
 
-            li {
-                @apply m-4 text-muted;
-            }
+                :not([data-id="call-to-action"]) > a {
+                    @apply text-primary underline underline-offset-3 transition-colors duration-200;
+                }
 
-            :not(pre) > code {
-                @apply text-on-secondary bg-secondary rounded-md px-1.5 py-0.5 font-mono;
-            }
+                li {
+                    @apply m-4 text-muted;
+                }
 
-            code.language-bash {
-                color: var(--color-hljs-token-string);
-            }
+                :not(pre) > code {
+                    @apply text-on-secondary bg-secondary rounded-md px-1.5 py-0.5 font-mono;
+                }
 
-            .hljs-keyword {
-                color: var(--color-hljs-token-keyword);
-            }
+                code.language-bash {
+                    color: var(--color-hljs-token-string);
+                }
 
-            .hljs-comment {
-                color: var(--color-hljs-token-comment);
-            }
+                .hljs-keyword {
+                    color: var(--color-hljs-token-keyword);
+                }
 
-            .hljs-string,
-            .hljs-name .language-bash {
-                color: var(--color-hljs-token-string);
-            }
+                .hljs-comment {
+                    color: var(--color-hljs-token-comment);
+                }
 
-            .hljs-title {
-                color: var(--color-hljs-token-function);
-            }
+                .hljs-string,
+                .hljs-name .language-bash {
+                    color: var(--color-hljs-token-string);
+                }
 
-            .hljs-constant,
-            .hljs-number {
-                color: var(--color-hljs-token-constant);
-            }
+                .hljs-title {
+                    color: var(--color-hljs-token-function);
+                }
 
-            .hljs-attr,
-            .hljs-tag {
-                color: var(--color-hljs-foreground);
-            }
+                .hljs-constant,
+                .hljs-number {
+                    color: var(--color-hljs-token-constant);
+                }
 
-            .hljs-built_in {
-                color: var(--color-hljs-built_in);
-            }
+                .hljs-attr,
+                .hljs-tag {
+                    color: var(--color-hljs-foreground);
+                }
 
-            .hljs-tag {
-                color: var(--color-hljs-foreground);
+                .hljs-built_in {
+                    color: var(--color-hljs-built_in);
+                }
+
+                .hljs-tag {
+                    color: var(--color-hljs-foreground);
+                }
             }
         }
     }

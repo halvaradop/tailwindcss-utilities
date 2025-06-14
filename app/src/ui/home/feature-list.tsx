@@ -4,8 +4,8 @@ import { SegmentAnimation } from "@/ui/motion/segment"
 
 export const FeatureListSection = () => {
     return (
-        <section className="">
-            <Separator index={2}>Explore our utilities</Separator>
+        <section>
+            <Separator>Explore our utilities</Separator>
             <section className="mx-10 border-x border-solid border-border base:mx-16">
                 <SegmentAnimation
                     title="What's Inside"

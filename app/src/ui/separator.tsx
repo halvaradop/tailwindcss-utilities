@@ -1,8 +1,9 @@
+"use client"
 import Image from "next/image"
 import arrow from "@/assets/arrow.svg"
 import type { SeparatorProps } from "@/lib/@types/props"
 
-export const Separator = ({ index, rotate = false, children }: SeparatorProps) => {
+export const Separator = ({ rotate = false, children }: SeparatorProps) => {
     return (
         <div className="h-16 flex items-center text-primary border-y border-solid border-border separator">
             <figure className="group w-10 h-full flex items-center justify-center relative overflow-hidden img:transition-transform img:ease-linear img:duration-300 hover:cursor-pointer base:w-16">
@@ -20,7 +21,7 @@ export const Separator = ({ index, rotate = false, children }: SeparatorProps) =
                 />
             </figure>
             <p className="flex-100 h-full px-4 flex items-center border-x border-border sm:px-6 md:px-8 base:px-10">{children}</p>
-            <p className="w-10 grid place-content-center base:w-16">#{index}</p>
+            <span className="w-10 grid place-content-center base:w-16 index" />
         </div>
     )
 }

@@ -8,7 +8,6 @@ const CommunityPage = () => {
             <HeroSection />
             <CommunitySection />
             <CallToAction
-                index={2}
                 separator="Start Contributing"
                 title="Join Our Community"
                 description="Become a part of our growing community and connect with like-minded individuals."

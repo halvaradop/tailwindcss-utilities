@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: LayoutProps) {
+    console.log("Rendering RootLayout")
     return (
         <html lang="en">
             <body

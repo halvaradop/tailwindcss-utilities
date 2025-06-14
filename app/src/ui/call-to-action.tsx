@@ -3,10 +3,10 @@ import { Button } from "@halvaradop/ui-button"
 import { Separator } from "@/ui/separator"
 import type { CallToActionProps } from "@/lib/@types/props"
 
-export const CallToAction = ({ index, separator, title, description, button, href }: CallToActionProps) => {
+export const CallToAction = ({ separator, title, description, button, href }: CallToActionProps) => {
     return (
         <section>
-            <Separator index={index}>{separator}</Separator>
+            <Separator>{separator}</Separator>
             <div
                 className="min-h-[50dvh] mx-10 py-16 px-4 flex items-center justify-center flex-col text-center border-x border-solid border-border sm:px-6 md:px-8  base:mx-16 base:px-10"
                 data-id="call-to-action"

@@ -11,7 +11,7 @@ export const BenefitsSection = () => {
 
     return (
         <section>
-            <Separator index={1}>Built for real projects</Separator>
+            <Separator>Built for real projects</Separator>
             <section className="min-h-[calc(100dvh-4rem)] mx-10 flex flex-col border-x border-solid border-border base:mx-16 xl:min-h-auto">
                 <SegmentAnimation
                     title="Why Choose Us"

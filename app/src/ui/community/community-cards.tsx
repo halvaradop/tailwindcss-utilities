@@ -11,7 +11,7 @@ export const CommunitySection = () => {
     const [hovered, setHovered] = useState<number | null>(null)
     return (
         <section>
-            <Separator index={1}>Get Involved</Separator>
+            <Separator>Get Involved</Separator>
             <section className="mx-10 border-x border-solid border-border base:mx-16 lg:min-h-[calc(100dvh-4rem)] lg:flex lg:flex-col">
                 <SegmentAnimation
                     title="Ways to Contribute"

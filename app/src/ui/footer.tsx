@@ -8,7 +8,7 @@ import tailwindLogo from "@/assets/tailwind.svg"
 export const Footer = () => {
     return (
         <footer>
-            <Separator index={5}>Stay connected</Separator>
+            <Separator>Stay connected</Separator>
             <section className="mx-10 text-primary border-x border-solid border-border base:grid md:grid-cols-2 base:mx-16">
                 <h2 className="py-16 px-4 text-fluid-xl text-center border-b border-solid border-border sm:px-6 md:px-8 base:px-10 base:col-span-2 hover:bg-surface">
                     @halvaradop/tailwindcss
@@ -59,7 +59,7 @@ export const Footer = () => {
                     </figure>
                 </div>
             </section>
-            <Separator index={6} rotate>
+            <Separator rotate>
                 <span className="mx-auto">&#169; 2025 halvaradop.</span>
             </Separator>
         </footer>
