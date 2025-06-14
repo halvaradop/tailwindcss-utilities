@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { Separator } from "./separator"
-import { SegmentAnimation } from "./animations/segment"
+import { Separator } from "@/ui/separator"
+import { SegmentAnimation } from "@/ui/motion/segment"
 
-export const UtilitiesSection = () => {
+export const FeatureListSection = () => {
     return (
         <section className="">
             <Separator index={2}>Explore our utilities</Separator>

@@ -1,4 +1,4 @@
-import { TextEffect } from "./text-effect"
+import { TextEffect } from "@/ui/motion/text-effect"
 
 export const HeroSection = () => {
     return (

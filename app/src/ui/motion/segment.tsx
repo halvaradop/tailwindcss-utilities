@@ -1,7 +1,7 @@
 "use client"
 import { useRef } from "react"
 import { useInView, AnimatePresence } from "motion/react"
-import { TextEffect } from "@/ui/text-effect"
+import { TextEffect } from "@/ui/motion/text-effect"
 import { SegmentAnimationProps } from "@/lib/@types/props"
 
 export const SegmentAnimation = ({ title, description }: SegmentAnimationProps) => {

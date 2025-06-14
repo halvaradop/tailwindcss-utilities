@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { motion } from "motion/react"
-import { itemVariants, menuVariants } from "@/ui/motion/menu.motion"
-import { TextScramble } from "../text-scramble"
+import { itemVariants, menuVariants } from "@/ui/motion-config/menu.motion"
+import { TextScramble } from "@/ui/motion/text-scramble"
 
 export const HeaderMenu = () => {
     return (

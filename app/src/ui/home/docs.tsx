@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@halvaradop/ui-button"
-import { Separator } from "./separator"
+import { Separator } from "@/ui/separator"
 
 export const DocsSection = () => {
     return (

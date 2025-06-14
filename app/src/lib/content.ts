@@ -1,4 +1,4 @@
-export const whyChooseUsContent = [
+export const benefitsContent = [
     {
         number: "/01",
         title: "Native",

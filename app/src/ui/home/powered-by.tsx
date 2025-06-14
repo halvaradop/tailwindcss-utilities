@@ -1,4 +1,4 @@
-import { Separator } from "./separator"
+import { Separator } from "@/ui/separator"
 
 export const PoweredBySection = () => {
     return (

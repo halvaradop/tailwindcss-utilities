@@ -1,15 +1,15 @@
 "use client"
 import { AnimatePresence, motion } from "motion/react"
 import type { TargetAndTransition, Transition, Variant, Variants } from "motion/react"
-import { TextEffectProps } from "@/lib/@types/props"
+import type { TextEffectProps } from "@/lib/@types/props"
 import type { PerType } from "@/lib/@types/types"
 import {
     defaultContainerVariants,
     defaultItemVariants,
     defaultStaggerTimes,
     presetVariants,
-} from "@/ui/motion/text-effect.motion"
-import { AnimationComponent } from "@/ui/animation-component"
+} from "@/ui/motion-config/text-effect.motion"
+import { AnimationComponent } from "@/ui/motion/animation-component"
 
 const splitText = (text: string, per: PerType) => {
     if (per === "line") return text.split("\n")
