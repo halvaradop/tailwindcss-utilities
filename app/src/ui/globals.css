@@ -83,7 +83,7 @@ It is generating errors to load animations styles
                 @apply m-4 list-decimal list-inside;
             }
 
-            a {
+            :not([data-id="call-to-action"]) > a {
                 @apply text-primary underline underline-offset-3 transition-colors duration-200;
             }
 
