@@ -56,82 +56,84 @@ It is generating errors to load animations styles
 
 @layer base {
     main {
-        @apply text-primary;
+        &#docs-layout {
+            @apply text-primary;
 
-        h1 {
-            @apply mt-8 mb-4 text-4xl font-bold;
-        }
+            h1 {
+                @apply mt-8 mb-4 text-2xl font-bold base:text-4xl;
+            }
 
-        h2 {
-            @apply mt-16 mb-3 text-3xl font-bold;
-        }
+            h2 {
+                @apply mt-16 mb-3 text-xl font-bold base:text-3xl;
+            }
 
-        h3 {
-            @apply mt-10 mb-2 text-2xl font-bold;
-        }
+            h3 {
+                @apply mt-10 mb-2 text-lg font-bold base:text-2xl;
+            }
 
-        pre {
-            @apply w-0 min-w-full p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded;
-        }
+            pre {
+                @apply w-0 min-w-full p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-secondary;
+            }
 
-        ul {
-            @apply m-4 pl-5 list-disc list-inside;
-        }
+            ul {
+                @apply m-4 pl-5 list-disc list-inside;
+            }
 
-        ol {
-            @apply m-4 pl-5 list-decimal list-inside;
-        }
+            ol {
+                @apply m-4 pl-5 list-decimal list-inside;
+            }
 
-        a {
-            @apply text-primary underline underline-offset-3 transition-colors duration-200;
-        }
+            a {
+                @apply text-primary underline underline-offset-3 transition-colors duration-200;
+            }
 
-        p,
-        li {
-            @apply m-4 text-muted;
-        }
+            p,
+            li {
+                @apply m-4 text-muted;
+            }
 
-        :not(pre) > code {
-            @apply text-on-secondary bg-secondary rounded-md px-1.5 py-0.5 font-mono;
-        }
+            :not(pre) > code {
+                @apply text-on-secondary bg-secondary rounded-md px-1.5 py-0.5 font-mono;
+            }
 
-        code.language-bash {
-            color: var(--color-hljs-token-string);
-        }
+            code.language-bash {
+                color: var(--color-hljs-token-string);
+            }
 
-        .hljs-keyword {
-            color: var(--color-hljs-token-keyword);
-        }
+            .hljs-keyword {
+                color: var(--color-hljs-token-keyword);
+            }
 
-        .hljs-comment {
-            color: var(--color-hljs-token-comment);
-        }
+            .hljs-comment {
+                color: var(--color-hljs-token-comment);
+            }
 
-        .hljs-string,
-        .hljs-name .language-bash {
-            color: var(--color-hljs-token-string);
-        }
+            .hljs-string,
+            .hljs-name .language-bash {
+                color: var(--color-hljs-token-string);
+            }
 
-        .hljs-title {
-            color: var(--color-hljs-token-function);
-        }
+            .hljs-title {
+                color: var(--color-hljs-token-function);
+            }
 
-        .hljs-constant,
-        .hljs-number {
-            color: var(--color-hljs-token-constant);
-        }
+            .hljs-constant,
+            .hljs-number {
+                color: var(--color-hljs-token-constant);
+            }
 
-        .hljs-attr,
-        .hljs-tag {
-            color: var(--color-hljs-foreground);
-        }
+            .hljs-attr,
+            .hljs-tag {
+                color: var(--color-hljs-foreground);
+            }
 
-        .hljs-built_in {
-            color: var(--color-hljs-built_in);
-        }
+            .hljs-built_in {
+                color: var(--color-hljs-built_in);
+            }
 
-        .hljs-tag {
-            color: var(--color-hljs-foreground);
+            .hljs-tag {
+                color: var(--color-hljs-foreground);
+            }
         }
     }
 }

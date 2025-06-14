@@ -4,6 +4,7 @@ import { LayoutProps } from "@/lib/@types/props"
 import { Header } from "@/ui/header/header"
 import { Footer } from "@/ui/footer"
 import "@/ui/globals.css"
+import { Cursor } from "@/ui/cursor"
 
 const inter = Inter({
     subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps) {
                 <Header />
                 {children}
                 <Footer />
+                <Cursor />
             </body>
         </html>
     )
