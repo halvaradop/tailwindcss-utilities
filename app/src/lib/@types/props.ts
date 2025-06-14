@@ -73,3 +73,8 @@ export interface TextScrambleProps {
     as?: React.ElementType
     characterSet?: string
 }
+
+export interface SegmentAnimationProps {
+    title: string
+    description: string
+}

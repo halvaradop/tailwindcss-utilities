@@ -49,7 +49,6 @@ export default function RootLayout({ children }: LayoutProps) {
                 <Header />
                 {children}
                 <Footer />
-                <Cursor />
             </body>
         </html>
     )

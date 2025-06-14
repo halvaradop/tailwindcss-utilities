@@ -20,7 +20,7 @@ It is generating errors to load animations styles
     --color-success: oklch(75% 0.18 140);
     --color-danger: oklch(65% 0.2 25);
 
-    --color-surface: oklch(98% 0 0);
+    --color-surface: #0a0a0b;
     --color-on-surface: oklch(20% 0.02 260);
 
     --color-primary: #f7f8f8;

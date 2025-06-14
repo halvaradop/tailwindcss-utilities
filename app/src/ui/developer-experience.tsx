@@ -1,58 +1,47 @@
+"use client"
+import { useState } from "react"
 import { Separator } from "./separator"
+import { motion } from "motion/react"
+import { SegmentAnimation } from "./animations/segment"
+import { cardVariants } from "./motion/card.motion"
+import { whyChooseUsContent } from "@/lib/content"
 
 export const DeveloperExperienceSection = () => {
+    const [hovered, setHovered] = useState<number | null>(null)
+
     return (
         <section>
             <Separator index={1}>Built for real projects</Separator>
             <section className="min-h-[calc(100dvh-4rem)] mx-10 flex flex-col border-x border-solid border-border base:mx-16 xl:min-h-auto">
-                <div className="py-16 px-4 grid sm:px-6 md:px-8 base:px-10 base:items-center base:grid-cols-2">
-                    <h2 className="mb-6 text-primary text-2xl md:text-fluid-3xl">Why Choose Us</h2>
-                    <p className="text-muted text-fluid-base">
-                        Tailwind CSS v4 brings a modern engine — and our utilities are built for it. We’ve designed every package
-                        to integrate seamlessly using the new configuration API, variant generator, and dynamic styling support.
-                    </p>
-                </div>
+                <SegmentAnimation
+                    title="Why Choose Us"
+                    description="Tailwind CSS v4 brings a modern engine — and our utilities are built for it. We’ve designed every package to integrate seamlessly using the new configuration API, variant generator, and dynamic styling support."
+                />
                 <div className="grid text-primary text-left article:border-t article:border-solid article:border-border lg:flex-100 lg:grid-cols-2 lg:article:border-r lg:article:even:border-r-0 xl:min-h-[30dvw] xl:grid-cols-4 xl:article:nth-[2]:border-r">
-                    <article className="w-full h-full py-14 px-4 flex items-center justify-between gap-x-6 sm:px-6 sm:gap-x-10 md:px-8 md:gap-x-12 base:px-10 base:gap-x-16 lg:flex-col lg:items-start">
-                        <span>/01</span>
-                        <div className="text-left self-end xl:text-right">
-                            <p>Native</p>
-                            <p className="mt-1 text-muted text-sm">
-                                Our utilities are built using Tailwind’s new API — no legacy plugins, no PostCSS. Just clean,
-                                modern extension.
-                            </p>
-                        </div>
-                    </article>
-                    <article className="w-full h-full py-14 px-4 flex items-center justify-between gap-x-6 sm:px-6 sm:gap-x-10 md:px-8 md:gap-x-12 base:px-10 base:gap-x-16 lg:flex-col lg:items-start">
-                        <span>/02</span>
-                        <div className="text-left self-end xl:text-right">
-                            <p>Dynamic Styling</p>
-                            <p className="mt-1 text-muted text-sm">
-                                Use Tailwind’s new syntax like `[margin:12px]` to update our utility styles inline, without
-                                modifying config files.
-                            </p>
-                        </div>
-                    </article>
-                    <article className="w-full h-full py-14 px-4 flex items-center justify-between gap-x-6 sm:px-6 sm:gap-x-10 md:px-8 md:gap-x-12 base:px-10 base:gap-x-16 lg:flex-col lg:items-start">
-                        <span>/03</span>
-                        <div className="text-left self-end xl:text-right">
-                            <p>Variant Support</p>
-                            <p className="mt-1 text-muted text-sm">
-                                Create custom variants easily with our utilities. Built on v4’s JIT engine, you get dynamic
-                                variant control out of the box.
-                            </p>
-                        </div>
-                    </article>
-                    <article className="w-full h-full py-14 px-4 flex items-center justify-between gap-x-6 sm:px-6 sm:gap-x-10 md:px-8 md:gap-x-12 base:px-10 base:gap-x-16 lg:flex-col lg:items-start">
-                        <span>/04</span>
-                        <div className="text-left self-end xl:text-right">
-                            <p>Clean Integration</p>
-                            <p className="mt-1 text-muted text-sm">
-                                We follow Tailwind’s core design philosophy — fast builds, atomic classes, and a unified,
-                                zero-runtime experience.
-                            </p>
-                        </div>
-                    </article>
+                    {whyChooseUsContent.map((item, idx) => (
+                        <motion.article
+                            key={item.number}
+                            className="group w-full h-full py-14 px-4 flex items-center justify-between gap-x-6 relative z-10 overflow-hidden sm:px-6 sm:gap-x-10 md:px-8 md:gap-x-12 base:px-10 base:gap-x-16 lg:flex-col lg:items-start hover:bg-surface hover:cursor-pointer"
+                            onMouseEnter={() => setHovered(idx)}
+                            onMouseLeave={() => setHovered(null)}
+                            transition={cardVariants}
+                        >
+                            <span>{item.number}</span>
+                            <div className="text-left self-end xl:text-right overflow-hidden">
+                                <p className="text-lg font-medium group-hover:text-primary">{item.title}</p>
+                                <motion.p
+                                    className="mt-1 text-muted overflow-hidden group-hover:text-primary"
+                                    animate={
+                                        hovered === idx ? { opacity: 1, y: 0, height: "auto" } : { opacity: 0, y: 20, height: 0 }
+                                    }
+                                    initial={{ opacity: 0, y: 20, height: 0 }}
+                                    transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                                >
+                                    {item.desc}
+                                </motion.p>
+                            </div>
+                        </motion.article>
+                    ))}
                 </div>
             </section>
         </section>
