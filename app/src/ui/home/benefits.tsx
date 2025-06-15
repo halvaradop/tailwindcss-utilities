@@ -3,7 +3,7 @@ import { useState } from "react"
 import { motion } from "motion/react"
 import { Separator } from "@/ui/separator"
 import { SegmentAnimation } from "@/ui/motion/segment"
-import { cardVariants } from "@/ui/motion-config/benefit.motion"
+import { hoverVariants, hoverTitleVariants, hoverDescVariants, hoverTransition } from "@/ui/motion-config/benefit.motion"
 import { benefitsContent } from "@/lib/content"
 
 export const BenefitsSection = () => {
@@ -18,30 +18,39 @@ export const BenefitsSection = () => {
                     description="Tailwind CSS v4 brings a modern engine — and our utilities are built for it. We’ve designed every package to integrate seamlessly using the new configuration API, variant generator, and dynamic styling support."
                 />
                 <div className="grid text-primary text-left article:border-t article:border-solid article:border-border lg:flex-100 lg:grid-cols-2 lg:article:border-r lg:article:even:border-r-0 xl:min-h-[30dvw] xl:grid-cols-4 xl:article:nth-[2]:border-r">
-                    {benefitsContent.map((item, idx) => (
-                        <motion.article
-                            key={item.number}
-                            className="group w-full h-full py-14 px-4 flex items-center justify-between gap-x-6 relative z-10 overflow-hidden sm:px-6 sm:gap-x-10 md:px-8 md:gap-x-12 base:px-10 base:gap-x-16 lg:flex-col lg:items-start hover:bg-surface hover:cursor-pointer"
-                            onMouseEnter={() => setHovered(idx)}
-                            onMouseLeave={() => setHovered(null)}
-                            transition={cardVariants}
-                        >
-                            <span>{item.number}</span>
-                            <div className="text-left self-end xl:text-right overflow-hidden">
-                                <p className="text-lg font-medium group-hover:text-primary">{item.title}</p>
-                                <motion.p
-                                    className="mt-1 text-muted overflow-hidden group-hover:text-primary"
-                                    animate={
-                                        hovered === idx ? { opacity: 1, y: 0, height: "auto" } : { opacity: 0, y: 20, height: 0 }
-                                    }
-                                    initial={{ opacity: 0, y: 20, height: 0 }}
-                                    transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                                >
-                                    {item.desc}
-                                </motion.p>
-                            </div>
-                        </motion.article>
-                    ))}
+                    {benefitsContent.map((item, idx) => {
+                        return (
+                            <motion.article
+                                key={item.number}
+                                className="group w-full h-full py-14 px-4 flex items-center justify-between gap-x-6 relative z-10 overflow-hidden sm:px-6 sm:gap-x-10 md:px-8 md:gap-x-12 base:px-10 base:gap-x-16 lg:flex-col lg:items-start hover:bg-surface hover:cursor-pointer"
+                                onMouseEnter={() => setHovered(idx)}
+                                onMouseLeave={() => setHovered(null)}
+                                transition={hoverVariants}
+                            >
+                                <span>{item.number}</span>
+                                <div className="h-full text-left flex items-center justify-center base:h-auto xl:text-right relative w-full flex-col xl:items-end">
+                                    <motion.p
+                                        className="text-lg font-medium group-hover:text-primary absolute left-0 right-0 w-full [--benefit-title-y:-3rem]"
+                                        animate={hovered === idx ? "visible" : "hidden"}
+                                        variants={hoverTitleVariants}
+                                        initial="hidden"
+                                        transition={hoverTransition}
+                                    >
+                                        {item.title}
+                                    </motion.p>
+                                    <motion.p
+                                        className="w-full text-muted text-sm absolute left-0 right-0 group-hover:text-primary [--benefit-desc-y:100%]"
+                                        animate={hovered === idx ? "visible" : "hidden"}
+                                        variants={hoverDescVariants}
+                                        initial="hidden"
+                                        transition={hoverTransition}
+                                    >
+                                        {item.desc}
+                                    </motion.p>
+                                </div>
+                            </motion.article>
+                        )
+                    })}
                 </div>
             </section>
         </section>
