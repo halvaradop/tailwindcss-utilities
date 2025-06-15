@@ -69,7 +69,7 @@ It is generating errors to load animations styles
 
         body:has(> header.open) {
             overflow-y: hidden;
-            padding-right: 0.2rem;
+            padding-right: 0.5rem;
         }
 
         main {
