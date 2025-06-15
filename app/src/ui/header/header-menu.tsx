@@ -2,8 +2,9 @@ import Link from "next/link"
 import { motion } from "motion/react"
 import { itemVariants, menuVariants } from "@/ui/motion-config/menu.motion"
 import { TextScramble } from "@/ui/motion/text-scramble"
+import { HeaderMenuProps } from "@/lib/@types/props"
 
-export const HeaderMenu = ({ onLinkClick }: { onLinkClick?: () => void } = {}) => {
+export const HeaderMenu = ({ onLinkClick }: HeaderMenuProps) => {
     return (
         <motion.div
             className="w-10/12 max-w-md absolute inset-y-0 right-0 z-20 border border-solid border-border bg-black [--nav-menu:100%] base:w-auto base:max-w-none base:inset-0 base:relative base:bg-transparent base:border-0 base:[--nav-menu:0%]"

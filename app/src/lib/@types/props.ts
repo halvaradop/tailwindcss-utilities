@@ -1,5 +1,5 @@
 import type { StaticImageData } from "next/image"
-import type { ButtonHTMLAttributes, PropsWithChildren, JSX, CSSProperties } from "react"
+import type { ButtonHTMLAttributes, PropsWithChildren, JSX, CSSProperties, MouseEventHandler } from "react"
 import type { VariantProps } from "class-variance-authority"
 import type { ArgsFunction, PerType, PresetType } from "./types"
 import type { Transition, Variants } from "motion"
@@ -91,4 +91,8 @@ export interface CallToActionProps {
 
 export interface SectionLayoutProps extends PropsWithChildren {
     className?: string
+}
+
+export interface HeaderMenuProps {
+    onLinkClick: MouseEventHandler
 }

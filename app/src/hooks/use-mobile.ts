@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 
-const defaultMediaQuery = "(min-width: 900px)"
+const defaultMediaQuery = "(max-width: 900px)"
 
-export const useMobile = (mediaQuery: string = defaultMediaQuery) => {
-    const [isMobile, setIsMobile] = useState(() => window.matchMedia(mediaQuery).matches)
+export const useIsMobile = (mediaQuery: string = defaultMediaQuery) => {
+    const [isMobile, setIsMobile] = useState(() => false)
 
     useEffect(() => {
         const matchMedia = window.matchMedia(mediaQuery)

@@ -13,7 +13,7 @@ export const HeroSection = () => {
                 Join Our Community
             </TextEffect>
             <TextEffect
-                className="px-4 text-muted text-lg sm:px-6 md:px-8 base:px-10"
+                className="px-4 text-muted text-lg sm:px-6 md:px-8 base:px-10 span:text-ellipsis span:[text-wrap:auto]"
                 preset="fade-in-blur"
                 speedReveal={1.1}
                 speedSegment={0.5}

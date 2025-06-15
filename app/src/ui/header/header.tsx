@@ -2,6 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useCallback, useEffect, useRef, useState } from "react"
+import { useIsMobile } from "@/hooks/use-mobile"
 import { HeaderMenu } from "./header-menu"
 import { AnimatePresence } from "motion/react"
 import { merge } from "@halvaradop/ui-core"
@@ -10,36 +11,31 @@ import menu from "@/assets/menu.svg"
 import arrow from "@/assets/arrow.svg"
 
 export const Header = () => {
+    const isMobile = useIsMobile()
     const [isOpen, setIsOpen] = useState(false)
     const menuRef = useRef<HTMLDivElement>(null)
 
     const handleToggleMenu = () => {
-        setIsOpen(!isOpen)
+        setIsOpen(previous => !previous)
     }
 
     const handleMenuLinkClick = useCallback(() => {
-        if (window.innerWidth < 900) {
+        if (!isMobile) {
             setIsOpen(false)
         }
     }, [])
 
     useEffect(() => {
-        const matchScreen = matchMedia("(min-width: 900px)")
-
-        const handleSetMatchMedia = () => {
-            setIsOpen(matchScreen.matches)
-        }
-
-        setIsOpen(matchScreen.matches)
-        matchScreen.addEventListener("change", handleSetMatchMedia)
-        return () => matchScreen.removeEventListener("change", handleSetMatchMedia)
-    }, [])
+        setIsOpen(!isMobile)
+    }, [isMobile])
 
     useEffect(() => {
         if (!isOpen) return
         const handleClickOutside = (event: MouseEvent) => {
-            if (window.innerWidth < 900 && menuRef.current && !menuRef.current.contains(event.target as Node)) {
-                setIsOpen(false)
+            const node = event.target as HTMLElement
+            if (node.hasAttribute("aria-description") && node.getAttribute("aria-description") === "menu icon") return
+            if (isMobile && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsOpen(() => false)
             }
         }
         document.addEventListener("mousedown", handleClickOutside)
@@ -57,7 +53,7 @@ export const Header = () => {
                         <Link href="/">@halvaradop/tailwindcss</Link>
                     </h2>
                 </div>
-                <div ref={menuRef} style={{ display: "contents" }}>
+                <div ref={menuRef}>
                     <AnimatePresence mode="wait">{isOpen && <HeaderMenu onLinkClick={handleMenuLinkClick} />}</AnimatePresence>
                 </div>
             </nav>
@@ -66,7 +62,7 @@ export const Header = () => {
                 variant="ghost"
                 onClick={handleToggleMenu}
             >
-                <Image className="hover:cursor-pointer" src={menu} alt="menu icon" />
+                <Image className="hover:cursor-pointer" src={menu} alt="menu icon" aria-description="menu icon" />
             </Button>
             <figure className="group w-10 h-16 hidden img:transition-transform img:ease-linear img:duration-300 hover:cursor-pointer base:w-16 base:flex base:items-center base:justify-center base:relative base:overflow-hidden">
                 <Image
