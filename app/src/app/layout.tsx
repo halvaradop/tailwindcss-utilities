@@ -41,9 +41,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps) {
     return (
-        <html lang="en">
+        <html className="scroll-smooth" lang="en">
             <body
-                className={`${inter.className} min-h-screen grid grid-rows-[auto,1fr_auto] antialiased relative overflow-x-hidden bg-black scroll-smooth scroll:w-2 track:my-2 thumb:rounded thumb:bg-gray-100 has-[header.open]:scroll:bg-gray-300`}
+                className={`${inter.className} max-w-dvw min-h-screen antialiased relative overflow-x-hidden bg-black scrollbar:w-2 track:my-2 thumb:rounded thumb:bg-gray-100 has-[header.open]:scroll:bg-gray-300`}
             >
                 <Header />
                 {children}

@@ -1,81 +1,162 @@
 @import "tailwindcss";
-@config "../../tailwind.config.ts";
+@source "../../node_modules/@halvaradop/ui-button";
+/*
+It is generating errors to load animations styles
 @reference "../../../packages/tailwindcss-animations/dist/plugin.css";
+*/
 @reference "../../../packages/tailwindcss-utilities/dist/plugin.css";
-@source "../../node_modules/@halvaradop/ui-button/dist/index.js";
 
 @theme {
+    --breakpoint-base: 900px;
+
+    --rounded: 0.375rem;
+    --opacity-cursor: 80%;
+
     --color-black: #08090a;
-    --color-black-header: hsla(0, 0%, 4%, 0.8);
-    --color-header-border: hsla(0, 0%, 100%, 0.08);
+    --color-muted: hsl(225 10% 70%);
+    --color-border: hsl(225 10% 18%);
+    --color-overlay: oklch(30% 0.02 260 / 0.3);
+
+    --color-success: oklch(75% 0.18 140);
+    --color-danger: oklch(65% 0.2 25);
+
+    --color-surface: #0a0a0b;
+    --color-on-surface: oklch(20% 0.02 260);
 
     --color-primary: #f7f8f8;
-    --color-secondary: rgba(255, 255, 255, 0.7);
-    --color-tertiary: #8a8f98;
+    --color-on-primary: #08090a;
 
-    --color-hljs-background: hsla(0, 0%, 4%, 0.8);
-    --color-hljs-token-keyword: hsl(341, 90%, 67%);
-    --color-hljs-token-comment: hsl(0, 0%, 63%);
-    --color-hljs-token-string: hsl(131, 43%, 57%);
-    --color-hljs-token-function: hsl(275, 80%, 71%);
-    --color-hljs-token-constant: hsl(210, 100%, 66%);
-    --color-hljs-foreground: #eeeeee;
-    --color-hljs-built_in: oklch(0.8 0.14 60.09);
+    --color-secondary: hsl(225 10% 18%);
+    --color-on-secondary: #ffffff;
+
+    --color-ghost: oklch(94% 0.01 260);
+
+    --color-disabled: oklch(92% 0 0);
+    --color-on-disabled: oklch(60% 0.01 260);
+
+    --size-sm: 1.75rem;
+    --size-base: 2.25rem;
+    --size-md: 2.75rem;
+    --size-lg: 3.25rem;
+
+    --text-fluid-4xl: clamp(2.8rem, 8vw, 4.2rem);
+    --text-fluid-4xl--line-height: 1.1;
+
+    --color-hljs-background: hsla(0, 0%, 4%, 0.85);
+    --color-hljs-foreground: #f7f8f8;
+    --color-hljs-token-keyword: hsl(335, 80%, 70%);
+    --color-hljs-token-comment: hsl(0, 0%, 47%);
+    --color-hljs-token-string: hsl(145, 45%, 55%);
+    --color-hljs-token-function: hsl(268, 70%, 75%);
+    --color-hljs-token-constant: hsl(200, 100%, 65%);
+    --color-hljs-built_in: hsl(43, 100%, 63%);
+    --color-hljs-token-operator: hsl(260, 100%, 75%);
+    --color-hljs-token-variable: hsl(15, 80%, 70%);
 }
 
 @layer base {
-    main {
-        @apply text-white;
+    html {
+        counter-reset: separator;
 
-        h1 {
-            @apply text-4xl font-bold;
+        .separator .index {
+            counter-increment: separator;
         }
 
-        h2 {
-            @apply text-3xl font-bold;
+        .separator .index::after {
+            content: "#" counter(separator);
+            @apply text-primary;
         }
 
-        pre {
-            @apply w-0 min-w-full p-4 rounded-md border border-solid border-header-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-header-border;
+        body:has(> header.open) {
+            overflow-y: hidden;
+            padding-right: 0.5rem;
         }
 
-        code.language-bash {
-            color: var(--color-hljs-token-string);
+        main {
+            &#docs-layout {
+                @apply text-primary;
+
+                h1 {
+                    @apply mb-4 text-2xl font-bold base:text-4xl;
+                }
+
+                h2 {
+                    @apply mb-3 text-xl font-bold base:text-3xl;
+                }
+
+                h3 {
+                    @apply mb-2 text-lg font-bold base:text-2xl;
+                }
+
+                pre {
+                    @apply w-0 min-w-full my-4 p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-secondary;
+                }
+
+                ul {
+                    @apply m-4 list-disc list-inside;
+                }
+
+                ol {
+                    @apply m-4 list-decimal list-inside;
+                }
+
+                :not([data-id="call-to-action"]) > a {
+                    @apply text-primary underline underline-offset-3 transition-colors duration-200;
+                }
+
+                li {
+                    @apply m-4 text-muted;
+                }
+
+                :not(pre) > code {
+                    @apply text-on-secondary bg-secondary rounded-md px-1.5 py-0.5 font-mono;
+                }
+
+                code.language-bash {
+                    color: var(--color-hljs-token-string);
+                }
+
+                .hljs-keyword {
+                    color: var(--color-hljs-token-keyword);
+                }
+
+                .hljs-comment {
+                    color: var(--color-hljs-token-comment);
+                }
+
+                .hljs-string,
+                .hljs-name .language-bash {
+                    color: var(--color-hljs-token-string);
+                }
+
+                .hljs-title {
+                    color: var(--color-hljs-token-function);
+                }
+
+                .hljs-constant,
+                .hljs-number {
+                    color: var(--color-hljs-token-constant);
+                }
+
+                .hljs-attr,
+                .hljs-tag {
+                    color: var(--color-hljs-foreground);
+                }
+
+                .hljs-built_in {
+                    color: var(--color-hljs-built_in);
+                }
+
+                .hljs-tag {
+                    color: var(--color-hljs-foreground);
+                }
+            }
         }
 
-        .hljs-keyword {
-            color: var(--color-hljs-token-keyword);
-        }
-
-        .hljs-comment {
-            color: var(--color-hljs-token-comment);
-        }
-
-        .hljs-string,
-        .hljs-name .language-bash {
-            color: var(--color-hljs-token-string);
-        }
-
-        .hljs-title {
-            color: var(--color-hljs-token-function);
-        }
-
-        .hljs-constant,
-        .hljs-number {
-            color: var(--color-hljs-token-constant);
-        }
-
-        .hljs-attr,
-        .hljs-tag {
-            color: var(--color-hljs-foreground);
-        }
-
-        .hljs-built_in {
-            color: var(--color-hljs-built_in);
-        }
-
-        .hljs-tag {
-            color: var(--color-hljs-foreground);
+        @media (min-width: 900px) {
+            body:has(> header.open) {
+                overflow-y: auto;
+            }
         }
     }
 }
