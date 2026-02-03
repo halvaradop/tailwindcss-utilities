@@ -18,10 +18,10 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.1",
     "highlight.js": "^11.11.1",
-    "motion": "^12.18.1",
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "motion": "^12.30.0",
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "rehype-highlight": "^7.0.2"
   },
   "devDependencies": {
@@ -30,8 +30,8 @@
     "@halvaradop/tailwindcss-utilities": "workspace:*",
     "@tailwindcss/postcss": "^4.1.4",
     "@types/mdx": "^2.0.13",
-    "@types/node": "^25.0.3",
-    "@types/react": "^19.2.7",
+    "@types/node": "^25.2.0",
+    "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
     "class-variance-authority": "^0.7.1"
   }
