@@ -1,18 +1,16 @@
 import type { NextConfig } from "next"
 import createMDX from "@next/mdx"
-import rehypeHighlight from "rehype-highlight"
 
 const nextConfig: NextConfig = {
     pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-    reactStrictMode: true,
 }
 
 const withMDX = createMDX({
     extension: /\.mdx?$/,
     options: {
         remarkPlugins: [],
-        rehypePlugins: [rehypeHighlight],
+        rehypePlugins: [["rehype-highlight", { ignoreMissing: true }]],
     },
 })
 
-export default withMDX(nextConfig)
+export default withMDX(nextConfig) as any
