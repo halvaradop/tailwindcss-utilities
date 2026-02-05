@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "turbo dev --parallel --filter=!*page",
     "dev:web": "turbo dev --filter=*page",
-    "build": "pnpm build:core && turbo run build --parallel --filter=!*core --filter=!*merge",
+    "build": "pnpm build:core && turbo run build --parallel --filter=!*core",
     "build:web": "turbo run build --filter=*page",
     "build:core": "turbo run build --filter=*core",
     "format": "prettier --write .",
@@ -43,11 +43,10 @@
   },
   "homepage": "https://github.com/halvaradop/tailwindcss-utilities#readme",
   "devDependencies": {
-    "@csstools/postcss-minify": "^2.0.3",
     "@halvaradop/ts-utility-types": "^0.19.0",
     "@tailwindcss/cli": "^4.1.4",
-    "@types/node": "^22.14.0",
-    "@vitest/coverage-v8": "^3.1.1",
+    "@types/node": "^25.2.0",
+    "@vitest/coverage-v8": "^4.0.18",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
@@ -55,7 +54,7 @@
     "tsup": "^8.4.0",
     "turbo": "^2.5.0",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.1"
+    "vitest": "^4.0.18"
   },
   "prettier": {
     "semi": false,
@@ -83,5 +82,5 @@
       }
     ]
   },
-  "packageManager": "pnpm@9.12.0"
+  "packageManager": "pnpm@10.15.0"
 }
