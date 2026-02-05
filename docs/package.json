@@ -1,5 +1,5 @@
 {
-  "name": "@halvaradop/tailwindcss-page",
+  "name": "docs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@halvaradop/tailwindcss-animations": "workspace:*",
-    "@halvaradop/tailwindcss-core": "workspace:*",
     "@halvaradop/tailwindcss-utilities": "workspace:*",
     "@tailwindcss/postcss": "^4.1.4",
     "@types/mdx": "^2.0.13",
