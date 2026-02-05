@@ -3,8 +3,8 @@
 /*
 It is generating errors to load animations styles
 @reference "../../../packages/tailwindcss-animations/dist/plugin.css";
-*/
 @reference "../../../packages/tailwindcss-utilities/dist/plugin.css";
+*/
 
 @theme {
     --breakpoint-base: 900px;
@@ -89,7 +89,7 @@ It is generating errors to load animations styles
                 }
 
                 pre {
-                    @apply w-0 min-w-full my-4 p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background scrollbar:h-1.5 track:mx-1 thumb:rounded thumb:bg-secondary;
+                    @apply w-0 min-w-full my-4 p-4 rounded-md border border-solid border-border overflow-auto bg-hljs-background;
                 }
 
                 ul {
