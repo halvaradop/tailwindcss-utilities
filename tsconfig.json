@@ -17,5 +17,5 @@
     "skipLibCheck": true
   },
   "include": ["packages/**/*"],
-  "exclude": ["app", "node_modules", "dist"]
+  "exclude": ["docs", "node_modules", "dist"]
 }
