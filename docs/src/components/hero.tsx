@@ -46,11 +46,11 @@ export const Hero = () => {
                             }
                         >
                             <h1 className="text-balance text-4xl font-medium sm:text-5xl md:text-6xl">
-                                Build with confidence using Tailwindcss
+                                Supercharge your Tailwind CSS workflow
                             </h1>
                             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg">
-                                Tailwindcss utilities for rapid UI development and design consistency for building modern websites
-                                and applications that look and feel the way you mean it.
+                                A collection of high-performance, accessible, and lightweight utility classes designed for
+                                building modern, consistent interfaces with Tailwind CSS v4.
                             </p>
                         </AnimatedGroup>
                         <div className="mt-8 space-x-4">
