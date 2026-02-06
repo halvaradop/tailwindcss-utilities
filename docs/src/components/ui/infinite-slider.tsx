@@ -1,18 +1,11 @@
 "use client"
-import { cn } from "@/lib/utils"
-import { useMotionValue, animate, motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import useMeasure from "react-use-measure"
+import { InfiniteSliderProps } from "@/@types/props"
+import { cn } from "@/lib/utils"
+import { useMotionValue, animate, motion } from "framer-motion"
 
-type InfiniteSliderProps = {
-    children: React.ReactNode
-    gap?: number
-    duration?: number
-    durationOnHover?: number
-    direction?: "horizontal" | "vertical"
-    reverse?: boolean
-    className?: string
-}
+
 
 export function InfiniteSlider({
     children,

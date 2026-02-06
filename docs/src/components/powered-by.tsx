@@ -10,7 +10,7 @@ export const PoweredBy = () => {
                         <p className="text-end text-sm">Powered by</p>
                     </div>
                     <div className="relative py-6 md:w-[calc(100%-7rem)]">
-                        <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+                        <InfiniteSlider durationOnHover={20} duration={40} gap={112}>
                             <div className="flex">
                                 <Image
                                     className="mx-auto h-4 w-fit dark:invert"

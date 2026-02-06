@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata = meta
 
-export default function RootLayout({ children }: Required<PropsWithChildren<{}>>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
         <html className="scroll-smooth" lang="en" suppressHydrationWarning>
             <body className={`${inter.className} max-w-dvw min-h-screen antialiased flex flex-col relative overflow-x-hidden`}>
