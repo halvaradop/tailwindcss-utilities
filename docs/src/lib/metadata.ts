@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata } from "next"
 
 const title = "TailwindCSS Utilities"
 const description =

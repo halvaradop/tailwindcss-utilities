@@ -5,8 +5,6 @@ import { InfiniteSliderProps } from "@/@types/props"
 import { cn } from "@/lib/utils"
 import { useMotionValue, animate, motion } from "framer-motion"
 
-
-
 export function InfiniteSlider({
     children,
     gap = 16,
