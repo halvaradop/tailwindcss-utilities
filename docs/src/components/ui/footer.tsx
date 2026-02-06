@@ -19,9 +19,6 @@ export const Footer = () => {
                         <Link href="/docs/animations" className="hover:text-primary">
                             Animations
                         </Link>
-                        <Link href="/docs/community" className="hover:text-primary">
-                            Community
-                        </Link>
                     </nav>
                     <div className="mb-8 flex space-x-4">
                         <Button className="rounded-full" variant="outline" size="icon" asChild>

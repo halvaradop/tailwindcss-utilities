@@ -1,0 +1,159 @@
+---
+title: "@halvaradop/tailwindcss-animations"
+description: "A robust animation library for Tailwind CSS v4, featuring advanced keyframes, custom easings, and animation controllers."
+---
+
+A utility package for Tailwind CSS v4 providing predefined animation classes, keyframes, and advanced properties not natively supported by Tailwind. Includes experimental features like "animation-iteration-count", "animation-fill-mode", "animation-range", and "animation-timeline", plus a suite of timing functions with the "ease" prefix.
+
+> Built with the latest Tailwind standards using @custom-variant and @utility from tailwindcss@v4.
+
+---
+
+## Table Of Content
+
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Core Features](#core-features)
+    - [Animation Controllers](#animation-controllers)
+    - [Timing Functions](#timing-functions)
+- [Animation Gallery](#animation-gallery)
+- [Customization](#customization)
+
+---
+
+## Installation
+
+Before using this package, ensures that Tailwind CSS v4 is installed and configured. If needed, refer to the [official Tailwind installation guide](https://tailwindcss.com/docs/installation).
+
+Once ready, install the package:
+
+```npm
+npm install -D @halvaradop/tailwindcss-animations
+```
+
+---
+
+## Configuration
+
+To use the utility classes from this package, add them to the Tailwind CSS setup as follows:
+
+1. Import Tailwind CSS in the main `.css` file using the `@import` directive.
+2. Import the utility CSS file from this package after Tailwind.
+
+```css title="tailwind.css" lineNumbers
+@import "tailwindcss";
+@import "@halvaradop/tailwindcss-animations/dist/plugin.css";
+```
+
+This setup ensures that the utility classes are available throughout the project.
+
+---
+
+## Core Features
+
+### Animation Controllers
+
+The package introduces several properties to carefully control animation behavior, leveraging modern CSS features.
+
+- **Iteration Count**: `animation-count-{number}` (none, once, twice, thrice, infinite)
+- **Fill Mode**: `animation-fill-mode-{mode}` (none, both, forwards, alternate)
+- **Range**: `animation-range-{type}` (normal, cover, contain, entry, exit, gradual, moderate, brisk, rapid)
+- **Timeline**: `animation-timeline-{type}` (none, auto, single, scroll, view)
+
+### Timing Functions
+
+A complete suite of custom easing functions is available via the `ease-{name}` utilities, providing smoother and more natural motion than standard easings.
+
+Supported curves include:
+
+- `sine`, `quad`, `cubic`, `quart`, `quint`, `expo`, `circ`, `back`
+- Each explicit curve has in, out, and in-out variants (e.g., `ease-circ-in-out`).
+
+---
+
+## Animation Gallery
+
+The package includes a vast collection of pre-configured animations ready to drop into any project.
+
+### Fade
+
+Smooth opacity transitions.
+
+- `animate-fade-in` / `animate-fade-out`
+- `animate-blurred-fade-in`
+- Directional: `fade-in-up`, `fade-in-down`, `fade-in-left`, `fade-in-right` (and corresponding outs).
+
+### Slide
+
+Movement without fading.
+
+- `animate-slide-in-top`, `animate-slide-in-bottom`, `animate-slide-in-left`, `animate-slide-in-right`
+- `animate-slide-out-top`, `animate-slide-out-bottom`, `animate-slide-out-left`, `animate-slide-out-right`
+
+### Zoom & Scale
+
+Scaling effects for emphasis.
+
+- `animate-zoom-in` / `animate-zoom-out`
+- `animate-scale`
+- `animate-pop`
+- `animate-rubber-band`
+
+### Rotation & Flip
+
+2D and 3D rotation effects.
+
+- `animate-rotate-90`, `animate-rotate-180`, `animate-rotate-360`
+- `animate-spin-clockwise`, `animate-spin-counter-clockwise`
+- `animate-flip-x`, `animate-flip-y`
+- `animate-flip-horizontal`, `animate-flip-vertical`
+
+### Attention Seekers
+
+Dynamic animations to grab user attention.
+
+- `animate-bounce`, `animate-bouncing`
+- `animate-pulse`, `animate-pulsing`
+- `animate-shake`, `animate-wobble`, `animate-tada`
+- `animate-jiggle`, `animate-swing`, `animate-hang`
+- `animate-flash`, `animate-blink`
+
+### Special Effects
+
+Unique animations for specific use cases.
+
+- `animate-roll-in` / `animate-roll-out`
+- `animate-float`, `animate-sink`
+- `animate-sway`
+- `animate-heartbeat`
+- `animate-jelly`
+
+**Example**
+
+```html title="index.html" lineNumbers
+<div class="space-y-4">
+    <div class="animate-fade-in-up ease-circ-out animation-count-once">Fade In Up with Circular Easing</div>
+    <button class="hover:animate-rubber-band">Hover Me</button>
+</div>
+```
+
+---
+
+## Customization
+
+### Custom Values
+
+Animation utilities can be extended using the `@theme` directive in the CSS file:
+
+```css title="tailwind.css" lineNumbers
+@theme {
+    --animation-count-5: 5;
+    --animation-range-xs: normal 25%;
+    --animation-timeline-axis: scroll(scroller axis);
+    --animation-fill-mode-revert: revert;
+    --ease-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+```
+
+Use these variables to extend and customize the animation utilities to fit specific design requirements.

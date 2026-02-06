@@ -1,0 +1,140 @@
+---
+title: "@halvaradop/tailwindcss-utilities"
+description: "A comprehensive utility package for Tailwind CSS v4, enhancing projects with fluid typography, custom selectors, and scrollbar controls."
+---
+
+A modern utility package for Tailwind CSS v4, providing missing utility classes, advanced selectors, and dynamic CSS variables for rapid, scalable UI development.
+
+> Built with the latest Tailwind standards using @custom-variant and @utility from tailwindcss@v4.
+
+---
+
+## Table Of Content
+
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Core Features](#core-features)
+    - [Fluid Typography](#fluid-typography)
+    - [Scrollbar Utilities](#scrollbar-utilities)
+    - [Element Selectors](#element-selectors)
+    - [Min-Width Breakpoints](#min-width-breakpoints)
+- [Customization](#customization)
+
+---
+
+## Installation
+
+Before using this package, ensures that Tailwind CSS v4 is installed and configured. If needed, refer to the [official Tailwind installation guide](https://tailwindcss.com/docs/installation).
+
+Once ready, install the package:
+
+```npm
+npm install -D @halvaradop/tailwindcss-utilities
+```
+
+---
+
+## Configuration
+
+To use the utility classes from this package, add them to the Tailwind CSS setup as follows:
+
+1. Import Tailwind CSS in the main `.css` file using the `@import` directive.
+2. Import the utility CSS file from this package after Tailwind.
+
+```css title="tailwind.css" lineNumbers
+@import "tailwindcss";
+@import "@halvaradop/tailwindcss-utilities/utilities.css";
+```
+
+This setup ensures that the utility classes are available throughout the project.
+
+---
+
+## Core Features
+
+### Fluid Typography
+
+The package provides a set of fluid typography utilities that scale smoothly between screen sizes. These utilities use `clamp()` functions to ensure accessible and responsive text sizing without media queries.
+
+| Class             | CSS Variable        | Definition                         |
+| :---------------- | :------------------ | :--------------------------------- |
+| `text-fluid-xs`   | `--text-fluid-xs`   | `clamp(0.75rem, 1.5vw, 1rem)`      |
+| `text-fluid-sm`   | `--text-fluid-sm`   | `clamp(0.875rem, 1.5vw, 1.125rem)` |
+| `text-fluid-base` | `--text-fluid-base` | `clamp(1rem, 2vw, 1.25rem)`        |
+| `text-fluid-lg`   | `--text-fluid-lg`   | `clamp(1.125rem, 2.5vw, 1.5rem)`   |
+| `text-fluid-xl`   | `--text-fluid-xl`   | `clamp(1.25rem, 3vw, 1.75rem)`     |
+| `text-fluid-2xl`  | `--text-fluid-2xl`  | `clamp(1.5rem, 4vw, 2rem)`         |
+| `text-fluid-3xl`  | `--text-fluid-3xl`  | `clamp(1.875rem, 5vw, 2.5rem)`     |
+| `text-fluid-4xl`  | `--text-fluid-4xl`  | `clamp(2.25rem, 6vw, 3rem)`        |
+| `text-fluid-5xl`  | `--text-fluid-5xl`  | `clamp(3rem, 7vw, 3.5rem)`         |
+| `text-fluid-6xl`  | `--text-fluid-6xl`  | `clamp(3.75rem, 8vw, 4.5rem)`      |
+
+**Example**
+
+```html
+<div class="p:text-slate-200">
+    <h1 class="text-fluid-2xl font-bold">Responsive Title</h1>
+    <p class="text-fluid-base">This paragraph scales fluidly with the viewport width.</p>
+</div>
+```
+
+### Scrollbar Utilities
+
+Custom variants allow for direct styling of scrollbars, a common requirement that can be verbose in standard CSS.
+
+- `scrollbar`: Targets `&::-webkit-scrollbar`
+- `thumb`: Targets `&::-webkit-scrollbar-thumb`
+- `track`: Targets `&::-webkit-scrollbar-track`
+
+**Example**
+
+```html title="index.html" lineNumbers
+<div class="h-64 overflow-y-auto scrollbar:w-2 thumb:bg-gray-500 track:bg-gray-200">
+    <!-- Content -->
+</div>
+```
+
+### Element Selectors
+
+The package exposes custom variants for targeting HTML elements directly. This is particularly useful for styling typography within markdown content or rich text editors where classes cannot be applied directly to child elements.
+
+Supported selectors include: `h1` through `h6`, `p`, `a`, `span`, `div`, `ul`, `ol`, `li`, `section`, `article`, `header`, `footer`, `nav`, `main`, `aside`, `figure`, `img`, `table`, `form`, `input`, `button`, and more.
+
+**Example**
+
+```html title="index.html" lineNumbers
+<article class="h1:text-2xl h1:font-bold p:mb-4 a:text-blue-600 a:underline">
+    <h1>Article Title</h1>
+    <p>Some content with a <a href="#">link</a>.</p>
+</article>
+```
+
+### Min-Width Breakpoints
+
+Provides custom properties defining standard minimal widths, accessible as CSS variables.
+
+- `--min-width-sm`: 640px
+- `--min-width-md`: 768px
+- `--min-width-lg`: 1024px
+- `--min-width-xl`: 1280px
+- `--min-width-2xl`: 1526px
+- `--min-width-dvw`: 100dvw
+
+---
+
+## Customization
+
+### Adding Custom Values
+
+Currently, `text-fluid` supports extension and custom values. Future releases will allow more utilities to be customized.
+
+Users can define their own utility values using the `@theme` directive in the `.css` file and add CSS variables with the appropriate prefixes.
+
+```css title="tailwind.css" lineNumbers
+@theme {
+    /* Recommended: Use `clamp()` for responsive fluid sizes */
+    --text-fluid-7xl: clamp(4.5rem, 9.2vw, 6.8rem);
+    --text-fluid--line-height: 1.2;
+    --text-fluid--letter-spacing: -0.038em;
+}
+```

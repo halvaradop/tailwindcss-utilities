@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 const menuItems = [
     { name: "Utilities", href: "/docs/utilities" },
     { name: "Animations", href: "/docs/animations" },
-    { name: "Community", href: "/docs/community" },
 ]
 
 export const Header = () => {
