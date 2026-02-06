@@ -1,5 +1,5 @@
 import { memo } from "react"
-import { AnimationComponentProps } from "@/lib/@types/props"
+import { AnimationComponentProps } from "@/@types/props"
 import { motion } from "motion/react"
 import { merge } from "@halvaradop/ui-core"
 

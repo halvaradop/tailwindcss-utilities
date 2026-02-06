@@ -2,7 +2,7 @@ import Link from "next/link"
 import { motion } from "motion/react"
 import { itemVariants, menuVariants } from "@/ui/deprecated/motion-config/menu.motion"
 import { TextScramble } from "@/ui/deprecated/motion/text-scramble"
-import { HeaderMenuProps } from "@/lib/@types/props"
+import { HeaderMenuProps } from "@/@types/props"
 
 export const HeaderMenu = ({ onLinkClick }: HeaderMenuProps) => {
     return (

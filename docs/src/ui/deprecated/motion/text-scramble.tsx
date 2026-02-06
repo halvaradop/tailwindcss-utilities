@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { TextScrambleEffect } from "./text-scramble-effect"
-import { TextScrambleProps } from "@/lib/@types/props"
+import { TextScrambleProps } from "@/@types/props"
 
 export const TextScramble = ({ children, as = "p", characterSet }: TextScrambleProps) => {
     const [isTriggered, setIsTriggered] = useState(false)

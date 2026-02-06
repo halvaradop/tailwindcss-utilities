@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@halvaradop/ui-button"
 import { Separator } from "@/ui/deprecated/separator"
-import type { CallToActionProps } from "@/lib/@types/props"
+import type { CallToActionProps } from "@/@types/props"
 
 export const CallToAction = ({ separator, title, description, button, href }: CallToActionProps) => {
     return (

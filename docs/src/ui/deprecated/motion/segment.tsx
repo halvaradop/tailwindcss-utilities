@@ -2,7 +2,7 @@
 import { useRef } from "react"
 import { useInView, AnimatePresence } from "motion/react"
 import { TextEffect } from "@/ui/deprecated/motion/text-effect"
-import { SegmentAnimationProps } from "@/lib/@types/props"
+import { SegmentAnimationProps } from "@/@types/props"
 
 export const SegmentAnimation = ({ title, description }: SegmentAnimationProps) => {
     const containerRef = useRef<HTMLDivElement>(null)

@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import arrow from "@/assets/arrow.svg"
-import type { SeparatorProps } from "@/lib/@types/props"
+import type { SeparatorProps } from "@/@types/props"
 
 export const Separator = ({ rotate = false, className, children, redirectTo }: SeparatorProps) => {
     const name = encodeURIComponent(

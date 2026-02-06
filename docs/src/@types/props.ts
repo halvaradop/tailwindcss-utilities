@@ -5,10 +5,6 @@ import type { ArgsFunction, PerType, PresetType } from "./types"
 import type { Transition, Variants } from "motion"
 import type { MotionProps } from "motion/react"
 
-export interface LayoutProps {
-    children: React.ReactNode
-}
-
 export type ButtonProps<T extends ArgsFunction> = ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<T>
 
 export interface ImageSetProps {
@@ -95,4 +91,13 @@ export interface SectionLayoutProps extends PropsWithChildren {
 
 export interface HeaderMenuProps {
     onLinkClick: MouseEventHandler
+}
+
+export interface AnimatedGroupProps extends PropsWithChildren {
+    className?: string
+    variants?: {
+        container?: Variants
+        item?: Variants
+    }
+    preset?: PresetType
 }

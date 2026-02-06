@@ -1,8 +1,8 @@
 "use client"
 import { AnimatePresence, motion } from "motion/react"
 import type { TargetAndTransition, Transition, Variant, Variants } from "motion/react"
-import type { TextEffectProps } from "@/lib/@types/props"
-import type { PerType } from "@/lib/@types/types"
+import type { TextEffectProps } from "@/@types/props"
+import type { PerType } from "@/@types/types"
 import {
     defaultContainerVariants,
     defaultItemVariants,

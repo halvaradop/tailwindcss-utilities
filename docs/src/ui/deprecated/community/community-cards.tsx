@@ -3,7 +3,12 @@ import Link from "next/link"
 import { useState } from "react"
 import { motion } from "motion/react"
 import { Separator } from "@/ui/deprecated/separator"
-import { hoverDescVariants, hoverTitleVariants, hoverTransition, hoverVariants } from "@/ui/deprecated/motion-config/benefit.motion"
+import {
+    hoverDescVariants,
+    hoverTitleVariants,
+    hoverTransition,
+    hoverVariants,
+} from "@/ui/deprecated/motion-config/benefit.motion"
 import { SegmentAnimation } from "@/ui/deprecated/motion/segment"
 import { communityCards } from "@/lib/content"
 

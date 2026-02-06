@@ -3,7 +3,12 @@ import { useState } from "react"
 import { motion } from "motion/react"
 import { Separator } from "@/ui/deprecated/separator"
 import { SegmentAnimation } from "@/ui/deprecated/motion/segment"
-import { hoverVariants, hoverTitleVariants, hoverDescVariants, hoverTransition } from "@/ui/deprecated/motion-config/benefit.motion"
+import {
+    hoverVariants,
+    hoverTitleVariants,
+    hoverDescVariants,
+    hoverTransition,
+} from "@/ui/deprecated/motion-config/benefit.motion"
 import { benefitsContent } from "@/lib/content"
 
 export const BenefitsSection = () => {

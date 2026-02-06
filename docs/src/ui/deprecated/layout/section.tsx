@@ -1,4 +1,4 @@
-import type { SectionLayoutProps } from "@/lib/@types/props"
+import type { SectionLayoutProps } from "@/@types/props"
 
 export const SectionLayout = ({ className = "", children }: SectionLayoutProps) => {
     return (

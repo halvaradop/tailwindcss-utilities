@@ -1,7 +1,7 @@
 "use client"
 import { type JSX, useEffect, useState } from "react"
 import { motion } from "motion/react"
-import { TextScrambleEffectProps } from "@/lib/@types/props"
+import { TextScrambleEffectProps } from "@/@types/props"
 
 const defaultChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 

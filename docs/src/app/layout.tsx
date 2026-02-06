@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { LayoutProps } from "@/lib/@types/props"
-import { Header } from "@/ui/deprecated/header/header"
-import { Footer } from "@/ui/deprecated/footer"
 import { RootProvider } from "fumadocs-ui/provider/next"
 import "@/ui/globals.css"
+import { PropsWithChildren } from "@halvaradop/ui-core"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/ui/footer"
 
 const inter = Inter({
     subsets: ["latin"],
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
     },
 }
 
-export default function RootLayout({ children }: LayoutProps) {
+export default function RootLayout({ children }: Required<PropsWithChildren<{}>>) {
     return (
         <html className="scroll-smooth" lang="en" suppressHydrationWarning>
             <body
                 className={`${inter.className} max-w-dvw min-h-screen antialiased  flex flex-col relative overflow-x-hidden bg-black`}
             >
                 <RootProvider>
-                    {/* <Header /> */}
+                    <Header />
                     {children}
-                    {/* <Footer /> */}
+                    <Footer />
                 </RootProvider>
             </body>
         </html>

@@ -1,5 +1,5 @@
 import type { Variants } from "motion"
-import type { PerType, PresetType } from "@/lib/@types/types"
+import type { PerType, PresetType } from "@/@types/types"
 
 export const defaultStaggerTimes: Record<PerType, number> = {
     char: 0.03,
