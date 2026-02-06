@@ -5,7 +5,8 @@
   "type": "module",
   "description": "A monorepo project for managing multiple packages with features and utilities for TailwindCSS.",
   "scripts": {
-    "dev": "turbo dev --parallel --filter=!*page",
+    "dev": "turbo dev --parallel",
+    "dev:core": "turbo dev --parallel --filter=./packages/*",
     "dev:docs": "turbo dev --filter=docs",
     "build": "pnpm build:core && turbo run build --parallel --filter=!*core",
     "build:docs": "turbo run build --filter=docs",
